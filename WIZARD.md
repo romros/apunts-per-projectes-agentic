@@ -77,12 +77,14 @@ Per al projecte destí, genera en ordre:
 
 **1. `CLAUDE.md` base**
 
-Contingut:
-- Secció `## Missió` — 2-3 línies del domini (el que ha confirmat l'usuari)
-- Secció `## Normes globals` — copia el contingut íntegre de `NORMES_GLOBALS.md` que has llegit
-  - Particularitza les normes 2, 5 i 9 amb el domini concret (marcades amb `→` al fitxer)
-- Secció `## Serveis actius` — llista el que has activat
-- Marcador de versió al final: `<!-- generat des de apunts-per-projectes-agentic, llegit des de [URL] -->`
+Llegeix `plantilles/CLAUDE.md` des de la URL base. Usa'l com a esquelet i:
+- Omple `[NOM DEL PROJECTE]` amb el nom real
+- Omple la secció `## Missió` amb el que has après de la inspecció i les respostes
+- Injecta el contingut íntegre de `NORMES_GLOBALS.md` a la secció `## Normes globals`
+  - Particularitza les normes 2, 5 i 9 amb el domini concret (marcades amb `→` a NORMES_GLOBALS.md)
+- Omple `## Serveis actius` amb la llista del que s'ha activat
+- Substitueix `COMMIT_SHA` al marcador de versió per la referència de la URL que has llegit
+- Esborra les seccions comentades que no s'usen (serveis no activats, invariants buits, etc.)
 
 **2. Agents del nucli**
 

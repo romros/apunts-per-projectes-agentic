@@ -51,6 +51,16 @@ Les normes 2, 5 i 9 requereixen 1-2 línies de particularització per domini (ev
 
 ---
 
+## Plantilles
+
+Esquelets parametritzables per al wizard. **No còpies del projecte origen** — fitxers dissenyats per ser omplerts.
+
+| Plantilla | Conté | Notes |
+|-----------|-------|-------|
+| `plantilles/CLAUDE.md` | Esquelet complet: inici sessió, missió, calibratge, modes de prompt, normes (injectades), memòria, serveis actius | Wizard omple els placeholders i injecta NORMES_GLOBALS.md |
+
+---
+
 ## Estat de construcció
 
 | Component | Estat |
@@ -59,6 +69,7 @@ Les normes 2, 5 i 9 requereixen 1-2 línies de particularització per domini (ev
 | `CLAUDE.md` (manteniment intern repo) | ✓ |
 | `MANIFEST.md` (aquest fitxer) | ✓ |
 | `NORMES_GLOBALS.md` | ✓ |
+| `plantilles/CLAUDE.md` | ✓ |
 | `nucli/worker.md` | Pendent (Fase 2) |
 | `nucli/oracle.md` | Pendent (Fase 2) |
 | `serveis/memoria/` | Pendent (Fase 3) |
