@@ -25,7 +25,8 @@ Claude llegirà el manual, inspeccionarà el teu projecte i et guiarà pas a pas
 WIZARD.md           ← entry point per a agents (llegit via URL)
 NORMES_GLOBALS.md   ← 9 regles fundacionals
 MANIFEST.md         ← catàleg de components disponibles
-nucli/              ← agents base: worker, oracle
+plantilles/         ← esquelets parametritzables (CLAUDE.md, AGENTS.md)
+nucli/              ← agents base: orquestrador, worker, oracle
 serveis/            ← serveis modulars activables
 scripts/            ← bootstrap i activació
 ```

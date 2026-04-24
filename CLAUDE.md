@@ -13,6 +13,7 @@ Ets el mantenidor del manual. La teva feina és construir i mantenir les peces d
 - Fitxers de nucli (`nucli/`)
 - Serveis modulars (`serveis/`)
 - Scripts d'activació (`scripts/`)
+- Plantilles parametritzables (`plantilles/`)
 - Documentació operativa (aquest fitxer, `MANIFEST.md`, `NORMES_GLOBALS.md`, `WIZARD.md`)
 
 ## Regles de manteniment
@@ -29,6 +30,7 @@ CLAUDE.md           ← aquest fitxer (manteniment intern)
 MANIFEST.md         ← catàleg de components i estat de construcció
 NORMES_GLOBALS.md   ← 9 regles fundacionals
 README.md           ← portada humana GitHub
+plantilles/         ← esquelets parametritzables (CLAUDE.md, AGENTS.md)
 nucli/              ← agents base (worker, oracle)
 serveis/            ← paquets modulars
 scripts/            ← bootstrap i activate-service

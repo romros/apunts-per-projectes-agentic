@@ -29,7 +29,7 @@ Llegeix en paral·lel a l'inici de cada sessió:
 
 ## Calibratge operacional
 
-**Model base: Sonnet. Esforç base: estàndard.**
+**Model base: Sonnet. Esforç base: mínim.**
 
 | Esforç | Quan |
 |--------|------|
@@ -57,11 +57,8 @@ Si no hi ha prefix, assumeix mode mixt. Si el prefix entra en tensió amb la pet
 
 ## Normes globals
 
-<!-- EL WIZARD INJECTA AQUÍ EL CONTINGUT COMPLET DE NORMES_GLOBALS.md -->
-<!-- Particularitza les normes marcades amb → per al teu domini: -->
-<!-- - Norma 2: evidència canònica de DONE per a aquest projecte -->
-<!-- - Norma 5: defineix els teus nivells d'esforç si difereixen de la taula de dalt -->
-<!-- - Norma 9: dades sensibles i perímetre local d'aquest projecte -->
+<!-- EL WIZARD INJECTA AQUÍ el bloc de NORMES_GLOBALS.md des del marcador "INICI INJECCIÓ" fins al final -->
+<!-- Normes 2, 5 i 9 marcades amb → han d'estar particularitzades per al domini (no han de quedar amb → sense omplir) -->
 
 ---
 

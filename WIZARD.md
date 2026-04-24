@@ -35,11 +35,20 @@ Amb aquesta informació saps: quin tipus de projecte és, si ja té configuraci�
 
 ## Pas 2 — Una sola pregunta
 
-Amb el que has inspeccionat, fes una sola pregunta:
+**Si al Pas 1 no has detectat configuració agentic prèvia:**
 
-> "He llegit el teu projecte. [Resum breu del que has vist: stack, si ja té agents, etc.]
+> "He llegit el teu projecte. [Resum breu del que has vist: stack, etc.]
 > Confirma o corregeix: [la teva hipòtesi de missió del projecte].
 > Vols que procedeixi a fer-lo agentic?"
+
+**Si al Pas 1 has detectat `CLAUDE.md`, `.claude/` o `AGENTS.md` existents:**
+
+Aquesta pregunta muta. No proposes setup nou — proposes fusió:
+
+> "El teu projecte ja té configuració agentic. He vist: [llista el que existeix].
+> Vols que: (a) fusioni el manual amb el que tens, (b) substitueixi la configuració existent, o (c) ho deixem com està?"
+
+Espera decisió explícita. **No procedeixis fins que l'usuari confirmi.**
 
 No demanis coses que ja saps per la inspecció. Si alguna cosa no has pogut determinar, pregunta-ho aquí.
 
@@ -80,22 +89,36 @@ Per al projecte destí, genera en ordre:
 Llegeix `plantilles/CLAUDE.md` des de la URL base. Usa'l com a esquelet i:
 - Omple `[NOM DEL PROJECTE]` amb el nom real
 - Omple la secció `## Missió` amb el que has après de la inspecció i les respostes
-- Injecta el contingut íntegre de `NORMES_GLOBALS.md` a la secció `## Normes globals`
-  - Particularitza les normes 2, 5 i 9 amb el domini concret (marcades amb `→` a NORMES_GLOBALS.md)
+- Injecta a la secció `## Normes globals` el bloc de `NORMES_GLOBALS.md` **des del marcador `<!-- INICI INJECCIÓ -->`** fins al final del fitxer. No injectes el preàmbul.
+  - Particularitza les normes 2, 5 i 9 amb el domini concret (marcades amb `→` a NORMES_GLOBALS.md). Cap `→` ha de quedar sense omplir al fitxer generat.
 - Omple `## Serveis actius` amb la llista del que s'ha activat
 - Substitueix `COMMIT_SHA` al marcador de versió per la referència de la URL que has llegit
 - Esborra les seccions comentades que no s'usen (serveis no activats, invariants buits, etc.)
 
-**2. Agents del nucli**
+**2. `AGENTS.md` base**
+
+Llegeix `plantilles/AGENTS.md` des de la URL base. Usa'l com a esquelet:
+- Omple `[NOM DEL PROJECTE]`
+- Afegeix a la taula d'agents qualsevol agent de servei activat al Pas 4
+- Omple la secció `## Validació canònica` amb la comanda DONE del projecte destí (si n'hi ha)
+- Substitueix `COMMIT_SHA` com al fitxer anterior
+- Esborra les seccions condicionals no aplicables
+
+**3. Agents del nucli**
 
 Llegeix `nucli/worker.md` i `nucli/oracle.md` des de la URL base.
 Copia'ls a `.claude/agents/worker.md` i `.claude/agents/oracle.md` del projecte destí.
 
-*(Si els fitxers de nucli no existeixen encara — el manual està en construcció — informa l'usuari i proposa els agents manuals o un placeholder.)*
+*(Si els fitxers de nucli no existeixen encara — el manual està en construcció — informa l'usuari i usa un placeholder mínim: un fitxer amb nom i rol documentats.)*
 
-**3. Serveis activats**
+**4. Serveis activats**
 
-Per cada servei confirmat, llegeix `serveis/<nom>/MANIFEST.md` i segueix les instruccions d'activació manual que conté.
+Per cada servei confirmat:
+- Si existeix `scripts/activate-service.sh`: executa `bash scripts/activate-service.sh <nom>`.
+- Si no existeix (manual en construcció): llegeix `serveis/<nom>/MANIFEST.md` i segueix les instruccions d'activació manual.
+- Si `serveis/<nom>/` tampoc existeix: informa l'usuari que el servei és pendent de construcció i proposa ajornar-ne l'activació.
+
+**Nota sobre el Servei Memòria**: és obligatori. Si no s'ha construït `serveis/memoria/` encara, activa'l manualment copiant l'estructura `.claude/agent-memory/` (consulta l'usuari per al path font).
 
 ---
 

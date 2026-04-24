@@ -30,7 +30,11 @@ Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 
 Cada servei té `serveis/<nom>/MANIFEST.md` amb: descripció, fitxers que aporta, dependències, i instruccions d'activació manual.
 
-Activar un servei = activar-lo amb les seves dependències transitives. L'script `scripts/activate-service.sh` ho resol automàticament.
+Activar un servei = activar-lo amb les seves dependències transitives.
+- Si `scripts/activate-service.sh` existeix: resol dependències automàticament.
+- Si no: activa manualment seguint `serveis/<nom>/MANIFEST.md` de cada servei i dependències.
+
+**Nota**: el Servei Memòria és obligatori per a qualsevol projecte. No és opcional.
 
 ---
 
@@ -46,8 +50,10 @@ Les normes 2, 5 i 9 requereixen 1-2 línies de particularització per domini (ev
 
 | Script | Funció |
 |--------|--------|
-| `scripts/bootstrap.sh` | Primer setup interactiu. Pregunta serveis, genera `CLAUDE.md` destí, copia fitxers. |
+| `scripts/bootstrap.sh` | Versió scriptificada del flow de `WIZARD.md`. Per a usuaris que **no** usen Claude Code. |
 | `scripts/activate-service.sh <nom>` | Afegeix un servei a un projecte ja bootstrapejat. Resol dependències. |
+
+**Relació `bootstrap.sh` vs `WIZARD.md`**: el wizard és el camí agentic (Claude Code llegeix el repo via URL i guia l'usuari). `bootstrap.sh` és el camí no-agentic (script que fa el mateix flow sense Claude). Ambdós produeixen el mateix resultat. Usa el wizard si tens Claude Code; usa l'script si prefereixes automatització directa.
 
 ---
 
@@ -57,7 +63,8 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 
 | Plantilla | Conté | Notes |
 |-----------|-------|-------|
-| `plantilles/CLAUDE.md` | Esquelet complet: inici sessió, missió, calibratge, modes de prompt, normes (injectades), memòria, serveis actius | Wizard omple els placeholders i injecta NORMES_GLOBALS.md |
+| `plantilles/CLAUDE.md` | Inici sessió, missió, calibratge, modes de prompt, normes (injectades), memòria, serveis actius | Wizard omple placeholders + injecta NORMES_GLOBALS.md des del marcador |
+| `plantilles/AGENTS.md` | Taula d'agents (orquestrador/worker/oracle + serveis), sistema de memòria, validació canònica | Wizard omple taula amb agents activats |
 
 ---
 
@@ -70,6 +77,7 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `MANIFEST.md` (aquest fitxer) | ✓ |
 | `NORMES_GLOBALS.md` | ✓ |
 | `plantilles/CLAUDE.md` | ✓ |
+| `plantilles/AGENTS.md` | ✓ |
 | `nucli/worker.md` | Pendent (Fase 2) |
 | `nucli/oracle.md` | Pendent (Fase 2) |
 | `serveis/memoria/` | Pendent (Fase 3) |

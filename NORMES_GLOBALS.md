@@ -2,7 +2,9 @@
 
 Regles fundacionals per a qualsevol projecte agentic Claude Code.
 
-**Com incorporar-les**: copia aquesta secció al `CLAUDE.md` del projecte destí. Particularitza les normes 2, 5 i 9 amb 1-2 línies del domini concret (marcades amb `→`). Les 6 restants s'apliquen sense canvis.
+**Instrucció per al wizard**: injecta el bloc que comença al marcador `INICI INJECCIÓ` al `CLAUDE.md` del projecte destí. Particularitza les normes 2, 5 i 9 (marcades amb `→`) amb el domini concret. No injectes aquest preàmbul.
+
+<!-- INICI INJECCIÓ — el wizard injecta des d'aquí fins al final del fitxer -->
 
 ---
 
