@@ -1,101 +1,67 @@
-# apunts-per-projectes-agentic
+# Catàleg de components
 
-> Manual de bones pràctiques per a sistemes agentic Claude Code.  
-> Per consultar, no per clonar.
+## Nucli — Trinitat
 
----
+Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 
-## Què és
+| Agent | Rol | Fitxer |
+|-------|-----|--------|
+| **Orquestrador** | Coordina. Tradueix intenció en acció. No decideix arquitectura. | El Claude principal — no té fitxer separat |
+| **Worker** | Executa tasques. No jutja decisions d'arquitectura. | `nucli/worker.md` |
+| **Oracle** | Criteri arquitectònic independent. Latent entre convocatòries. | `nucli/oracle.md` |
 
-Un conjunt mínim de peces que pots portar al teu projecte i que germinen allà.
-
-No és un framework. No és una eina d'instal·lació automàtica. És un conjunt de decisions destil·lades d'experiència real que et donen un punt de partida sòlid en lloc d'haver de reinventar-les.
-
-La idea base: la majoria de projectes agentic fracassen perquè l'agent que decideix i l'agent que executa són el mateix. Sense una veu que aporti criteri independent, el sistema és ràpid però fràgil. Aquest manual dóna estructura per evitar-ho des del primer dia.
-
----
-
-## Què conté
-
-### Nucli — la Trinitat (obligatori)
-
-Tres rols mínims que fan possible qualsevol projecte agentic:
-
-| Rol | Funció |
-|-----|--------|
-| **Orquestrador** | Tradueix intenció en acció. Coordina, no decideix arquitectura. |
-| **Worker** | Executa. Implementa les tasques que rep. |
-| **Oracle** | Porta el criteri arquitectònic. Es convoca en moments crítics, no a cada cicle. |
-
-Els tres rols no son jeràrquics — són complementaris. Sense oracle, el sistema no té criteri independent. Sense worker, les decisions no es materialitzen. Sense orquestrador, no hi ha pont entre els dos.
-
-Veure `nucli/` per als fitxers d'agent base.
-
-### Normes globals
-
-Regles fundacionals aplicables a qualsevol projecte agentic, independentment del domini.
-
-Veure `NORMES_GLOBALS.md`.
-
-### Serveis modulars
-
-Paquets autocontinguts que s'afegeixen quan el projecte els necessita:
-
-| Servei | Quan activar-lo |
-|--------|-----------------|
-| **Memòria** | Sempre (la trinitat sense memòria és amnèsica) |
-| **Docs** | Quan el projecte comença a tenir documentació que cal mantenir |
-| **OKR** | Quan el projecte té objectius formals i un roadmap |
-| **PM** | Quan el volum de tasques justifica metodologia estructurada |
-| **Dev** | Quan hi ha codi i cal validació canònica |
-
-Cada servei és independent i declara les seves dependències. Veure `serveis/`.
+**Quan convocar l'oracle** — en aquests moments, sempre; fora d'ells, a criteri:
+- Bootstrap del projecte
+- Alta d'agent o servei nou
+- Incoherència estructural detectada
+- Consulta explícita de l'usuari
 
 ---
 
-## Com s'usa
+## Serveis modulars
 
-### Primer ús (bootstrap)
+| Servei | Directori | Depèn de |
+|--------|-----------|----------|
+| **Memòria** | `serveis/memoria/` | — |
+| **Docs** | `serveis/docs/` | — |
+| **OKR** | `serveis/okr/` | Docs |
+| **PM** | `serveis/pm/` | OKR |
+| **Dev** | `serveis/dev/` | Memòria |
 
-1. Copia `nucli/` al teu projecte.
-2. Copia `NORMES_GLOBALS.md` i adapta les 2-3 línies de context específic del teu domini.
-3. Activa el **Servei Memòria** (imprescindible des del dia 1).
-4. Para. Treballa 2-3 setmanes. Observa quina fricció apareix.
-5. Activa el servei que resol la fricció que has observat. No abans.
+Cada servei té `serveis/<nom>/MANIFEST.md` amb: descripció, fitxers que aporta, dependències, i instruccions d'activació manual.
 
-### Regla d'activació
-
-> **Activa el mínim, observa la fricció, activa el següent.**
-
-La temptació d'activar tots els serveis d'entrada és sobreenginyeria disfressada de modularitat. Un projecte que comença no necessita OKRs ni metodologia PM — necessita la trinitat i memòria. Res més fins que la fricció concreta no ho demani.
-
-### Activació successiva
-
-```bash
-# Quan arribi la fricció que justifica un servei nou:
-bash scripts/activate-service.sh <nom-servei>
-```
-
-El script copia els fitxers del servei, resol dependències transitives i actualitza el `CLAUDE.md` del teu projecte.
-
-*(Script disponible a partir de Fase 4 del manual. Si el script no existeix encara, consulta `serveis/<nom>/MANIFEST.md` per activació manual.)*
+Activar un servei = activar-lo amb les seves dependències transitives. L'script `scripts/activate-service.sh` ho resol automàticament.
 
 ---
 
-## Origen
+## Normes globals
 
-Destil·lat de **laboratori_profes**, un projecte real d'eina de correcció d'exàmens. Les normes i els serveis no s'han inventat — han sorgit de l'ús i s'han formalitzat quan han provat el seu valor.
+`NORMES_GLOBALS.md` — 9 regles fundacionals. S'incorporen al `CLAUDE.md` del projecte destí.
 
-Cap peça entra a aquest manual sense haver funcionat en un projecte real prèviament.
+Les normes 2, 5 i 9 requereixen 1-2 línies de particularització per domini (evidència DONE, dades sensibles, dependències estructurals). La resta s'apliquen tal com estan.
 
 ---
 
-## Estructura del repo
+## Scripts
 
-```
-MANIFEST.md          ← estàs aquí
-NORMES_GLOBALS.md    ← les regles fundacionals
-nucli/               ← orquestrador, worker, oracle (agents base)
-serveis/             ← paquets modulars activables
-scripts/             ← bootstrap i activate-service
-```
+| Script | Funció |
+|--------|--------|
+| `scripts/bootstrap.sh` | Primer setup interactiu. Pregunta serveis, genera `CLAUDE.md` destí, copia fitxers. |
+| `scripts/activate-service.sh <nom>` | Afegeix un servei a un projecte ja bootstrapejat. Resol dependències. |
+
+---
+
+## Estat de construcció
+
+| Component | Estat |
+|-----------|-------|
+| `CLAUDE.md` (instruccions setup) | ✓ |
+| `MANIFEST.md` (aquest fitxer) | ✓ |
+| `NORMES_GLOBALS.md` | ✓ |
+| `nucli/worker.md` | Pendent (Fase 2) |
+| `nucli/oracle.md` | Pendent (Fase 2) |
+| `serveis/memoria/` | Pendent (Fase 3) |
+| `serveis/docs/` | Pendent (Fase 3) |
+| `serveis/okr/` `serveis/pm/` `serveis/dev/` | Pendent (Fase 6) |
+| `scripts/bootstrap.sh` | Pendent (Fase 4) |
+| `scripts/activate-service.sh` | Pendent (Fase 4) |
