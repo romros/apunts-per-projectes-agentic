@@ -31,7 +31,7 @@ MANIFEST.md         ← catàleg de components i estat de construcció
 NORMES_GLOBALS.md   ← 9 regles fundacionals
 README.md           ← portada humana GitHub
 plantilles/         ← esquelets parametritzables (CLAUDE.md, AGENTS.md)
-nucli/              ← agents base (worker, oracle)
+nucli/              ← agents base (worker, oracle; orquestrador = Claude principal, sense fitxer)
 serveis/            ← paquets modulars
 scripts/            ← bootstrap i activate-service
 ```
