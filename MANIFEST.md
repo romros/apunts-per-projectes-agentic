@@ -55,7 +55,8 @@ Les normes 2, 5 i 9 requereixen 1-2 línies de particularització per domini (ev
 
 | Component | Estat |
 |-----------|-------|
-| `CLAUDE.md` (instruccions setup) | ✓ |
+| `WIZARD.md` (entry point agents externs) | ✓ |
+| `CLAUDE.md` (manteniment intern repo) | ✓ |
 | `MANIFEST.md` (aquest fitxer) | ✓ |
 | `NORMES_GLOBALS.md` | ✓ |
 | `nucli/worker.md` | Pendent (Fase 2) |

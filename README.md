@@ -2,32 +2,36 @@
 
 Manual de bones pràctiques per a sistemes agentic Claude Code.
 
-**Per consultar, no per clonar.**
-
 ---
 
-La majoria de projectes agentic fracassen per un patró concret: l'agent que decideix i l'agent que executa són el mateix. Sense una veu que aporti criteri independent, el sistema és ràpid però fràgil — cada decisió important acaba necessitant la persona humana com a àrbitre extern.
+## Com usar-ho
 
-Aquest manual dóna l'estructura mínima per evitar-ho des del primer commit.
+Vols que el teu projecte sigui agentic? Copia això i enganxa-ho a Claude Code:
+
+```
+Llegeix el manual agentic d'aquesta URL i ajuda'm a fer el meu projecte agentic:
+https://raw.githubusercontent.com/USUARI/apunts-per-projectes-agentic/main/WIZARD.md
+```
+
+*(Substitueix `USUARI` pel nom d'usuari de GitHub quan el repo estigui publicat.)*
+
+Claude llegirà el manual, inspeccionarà el teu projecte i et guiarà pas a pas.
 
 ---
 
 ## Contingut
 
-- [`MANIFEST.md`](MANIFEST.md) — Què és, com funciona, com s'usa
-- [`NORMES_GLOBALS.md`](NORMES_GLOBALS.md) — Les 9 regles fundacionals
-- [`nucli/`](nucli/) — Els tres agents base (Trinitat)
-- [`serveis/`](serveis/) — Paquets modulars activables segons necessitat
-- [`scripts/`](scripts/) — Bootstrap i activació de serveis
-
----
-
-## Punt d'entrada recomanat
-
-Llegeix [`MANIFEST.md`](MANIFEST.md) primer.
+```
+WIZARD.md           ← entry point per a agents (llegit via URL)
+NORMES_GLOBALS.md   ← 9 regles fundacionals
+MANIFEST.md         ← catàleg de components disponibles
+nucli/              ← agents base: worker, oracle
+serveis/            ← serveis modulars activables
+scripts/            ← bootstrap i activació
+```
 
 ---
 
 ## Origen
 
-Destil·lat de laboratori_profes, un projecte real d'eina de correcció d'exàmens. Les peces d'aquest manual no s'han inventat — han sorgit de l'ús i s'han formalitzat quan han provat el seu valor.
+Destil·lat de laboratori_profes, un projecte real. Cap peça entra aquí sense haver provat el seu valor prèviament.
