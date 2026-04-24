@@ -16,7 +16,7 @@
 
 ## Sistema de memòria
 
-<!-- ACTIU NOMÉS SI SERVEI MEMÒRIA INSTAL·LAT — si no, esborra aquesta secció -->
+<!-- El wizard omple els paths concrets. No elimines aquesta secció — el Servei Memòria és obligatori. -->
 
 ```bash
 # Escriure memòria
