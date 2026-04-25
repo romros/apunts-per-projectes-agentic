@@ -13,6 +13,14 @@ Amb la URL base, llegeix aquests fitxers en ordre:
 
 1. `NORMES_GLOBALS.md` — les 9 regles que copiaràs al projecte destí
 2. `MANIFEST.md` — catàleg de components disponibles i el seu estat
+3. `plantilles/CLAUDE.md` — esquelet per generar el CLAUDE.md destí
+4. `plantilles/AGENTS.md` — esquelet per generar l'AGENTS.md destí
+
+Exemple d'URL per als fitxers de plantilles (substitueix la URL base):
+```
+<URL_BASE>plantilles/CLAUDE.md
+<URL_BASE>plantilles/AGENTS.md
+```
 
 Llegeix-los ara, abans de fer cap pregunta.
 
@@ -86,7 +94,7 @@ Per al projecte destí, genera en ordre:
 
 **1. `CLAUDE.md` base**
 
-Llegeix `plantilles/CLAUDE.md` des de la URL base. Usa'l com a esquelet i:
+Usa l'esquelet de `plantilles/CLAUDE.md` que ja has llegit al Pas 0. Completa'l:
 - Omple `[NOM DEL PROJECTE]` amb el nom real
 - Omple la secció `## Missió` amb el que has après de la inspecció i les respostes
 - Injecta a la secció `## Normes globals` el bloc de `NORMES_GLOBALS.md` **des del marcador `<!-- INICI INJECCIÓ -->`** fins al final del fitxer. No injectes el preàmbul.
@@ -97,7 +105,7 @@ Llegeix `plantilles/CLAUDE.md` des de la URL base. Usa'l com a esquelet i:
 
 **2. `AGENTS.md` base**
 
-Llegeix `plantilles/AGENTS.md` des de la URL base. Usa'l com a esquelet:
+Usa l'esquelet de `plantilles/AGENTS.md` que ja has llegit al Pas 0. No el busquis a l'arrel del repo destí — és una plantilla del llavor, no un fitxer del projecte. Usa'l com a esquelet:
 - Omple `[NOM DEL PROJECTE]`
 - Afegeix a la taula d'agents qualsevol agent de servei activat al Pas 4
 - Omple la secció `## Validació canònica` amb la comanda DONE del projecte destí (si n'hi ha)
