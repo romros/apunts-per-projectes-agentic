@@ -66,7 +66,7 @@ No demanis coses que ja saps per la inspecció. Si alguna cosa no has pogut dete
 
 Informa l'usuari del que activaràs per defecte:
 
-- **Trinitat**: orquestrador (Claude principal) + worker + oracle
+- **Agents base**: orquestrador (Claude principal) + worker + oracle
 - **Servei Memòria**: necessari des del dia 1 — sense memòria, l'agent oblida entre sessions
 
 Pregunta de confirmació: "Confirmes que vols activar el nucli mínim i el Servei Memòria?"

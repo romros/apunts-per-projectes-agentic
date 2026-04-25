@@ -4,7 +4,7 @@
 
 Pipeline de memòria persistent per a agents Claude Code. Permet que els agents recordin decisions, preferències i lliçons entre sessions, sense cap MCP extern — tot és local, basat en fitxers, git-trackeable.
 
-**Obligatori per a qualsevol projecte que usa la Trinitat.** Sense memòria, els agents comencen de zero a cada sessió.
+**Obligatori per a qualsevol projecte que usa els agents base.** Sense memòria, els agents comencen de zero a cada sessió.
 
 ---
 

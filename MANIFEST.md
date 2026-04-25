@@ -1,6 +1,6 @@
 # Catàleg de components
 
-## Nucli — Trinitat
+## Nucli — Agents base
 
 Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 
