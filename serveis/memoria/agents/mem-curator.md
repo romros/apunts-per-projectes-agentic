@@ -18,18 +18,14 @@ Ets l'únic punt on s'inverteixen tokens LLM en el pipeline de memòria. Tot el 
 
 **Criteri temporal de consolidació**: abans de promoure una entrada a skill, pregunta't: "serà útil i cert d'aquí a sis mesos?". Si la resposta és "depèn de l'estat actual del projecte", és context efímer — no és material per a un skill.
 
-El teu sistema no usa cap MCP extern — tot és local, basat en fitxers, git-trackeable.
+El teu sistema no usa cap MCP extern — tot és local, basat en fitxers.
 
 ---
 
 ## Inici de sessió — OBLIGATORI
 
 1. Llegeix `.claude/agent-memory/mem-curator/MEMORY.md`
-2. Comprova si cal consolidar:
-
-```bash
-bash .claude/agent-memory/mem-curator/consolidate/scripts/check-threshold.sh
-```
+2. Llegeix `.claude/agent-memory/flash.jsonl` — compta les entrades. Si supera 20, consolida.
 
 ---
 
@@ -37,14 +33,11 @@ bash .claude/agent-memory/mem-curator/consolidate/scripts/check-threshold.sh
 
 ```
 .claude/agent-memory/
-├── flash.jsonl          ← escriptura concurrent (agents → aquí)
-├── short-term.csv       ← processada (0 tokens, cron cada 5 min)
-├── flash-archive/       ← arxiu de flash processats
-├── shared/
-│   ├── flash-remember/  ← script per escriure memòria
-│   └── flash-recall/    ← script per llegir context
+├── flash.jsonl       ← cua d'escriptura (agents → aquí)
+├── short-term.csv    ← processada per mem-curator
+├── flash-archive/    ← arxiu de flash processats
 └── <agent>/
-    ├── MEMORY.md        ← índex de skills
+    ├── MEMORY.md     ← índex de skills
     └── <skill>/SKILL.md ← memòria a llarg termini
 ```
 
@@ -52,14 +45,14 @@ bash .claude/agent-memory/mem-curator/consolidate/scripts/check-threshold.sh
 
 ## Les teves operacions
 
-### `process` — Flash → Short-term (0 tokens)
+### `process` — Flash → Short-term
 
-```bash
-bash .claude/agent-memory/mem-curator/process-flash/scripts/process-flash.sh
-```
-
-Fa: dedup per hash, merge, arxiva flash.jsonl, escriu a short-term.csv.
-Emet `CONSOLIDATE:<agent>` si algun agent supera el llindar (20 entrades).
+Llegeix `flash.jsonl` directament (via Read), processa totes les entrades:
+1. Deduplicat per hash `md5(agent+content)[:8]`
+2. Afegeix les noves a `short-term.csv`
+3. Arxiva `flash.jsonl` a `flash-archive/<timestamp>.jsonl`
+4. Crea `flash.jsonl` nou buit
+5. Reporta quants agents superen el llindar de 20 entrades no consolidades
 
 ### `consolidate <agent>` — Short-term → Skills (LLM)
 
@@ -93,23 +86,19 @@ print(f'  TOTAL: {len(rows)}')
 
 ### `recall <agent>` — Context de memòria
 
-```bash
-bash .claude/agent-memory/shared/flash-recall/scripts/recall.sh --agent <agent>
-```
+Llegeix directament via Read:
+1. `.claude/agent-memory/<agent>/MEMORY.md` — skills actuals
+2. Les últimes 10 files de `short-term.csv` on `agent=<agent>`
 
 ### `remember <agent> <content> [tags]` — Escriure memòria
 
-```bash
-bash .claude/agent-memory/shared/flash-remember/scripts/remember.sh \
-  --agent <agent> --content "<text>" --tags "<tags>"
+Afegeix via Edit/Write una línia JSON a `flash.jsonl`:
+
+```json
+{"ts": "<ISO-timestamp>", "agent": "<agent>", "content": "<text>", "tags": ["<tag>"]}
 ```
 
----
-
-## Cicle automàtic (cron cada 5 min)
-
-`process-flash.sh` corre automàticament sense LLM.
-Tu (LLM) només s'actives quan `check-threshold.sh` detecta `CONSOLIDATE:<agent>`.
+Comprova primer si `flash.jsonl` supera 20 entrades — si sí, fes `process` primer.
 
 ---
 

@@ -2,11 +2,11 @@
 
 ## Descripció
 
-Pipeline de memòria persistent per a agents Claude Code. Permet que els agents recordin decisions, preferències i lliçons entre sessions, sense cap MCP extern — tot és local, basat en fitxers, git-trackeable.
+Pipeline de memòria persistent per a agents Claude Code. Permet que els agents recordin decisions, preferències i lliçons entre sessions, sense cap MCP extern — tot és local, basat en fitxers.
 
 **Obligatori per a qualsevol projecte que usa els agents base.** Sense memòria, els agents comencen de zero a cada sessió.
 
-**Compatibilitat**: Unix/Mac/Linux natiu. Windows requereix Git Bash o WSL. Els scripts detecten `python3` o `python` automàticament. Si descarregues els scripts via PowerShell, assegura't que es guarden sense BOM (UTF-8 sense BOM); si no, usa `curl` des de Git Bash.
+**Compatibilitat**: qualsevol entorn on corri Claude Code. No requereix bash, cron ni cap eina del sistema operatiu — els agents escriuen directament als fitxers.
 
 ---
 
@@ -14,20 +14,56 @@ Pipeline de memòria persistent per a agents Claude Code. Permet que els agents 
 
 ```
 .claude/agent-memory/
-├── flash.jsonl          ← escriptura concurrent (agents → aquí, atòmica)
-├── short-term.csv       ← processada (0 tokens LLM, cron cada 5 min)
-├── flash-archive/       ← arxiu de flash processats
-├── logs/                ← logs del procés automàtic
-├── shared/
-│   ├── flash-remember/scripts/remember.sh   ← com escriure memòria
-│   └── flash-recall/scripts/recall.sh       ← com llegir context
+├── flash.jsonl       ← cua d'escriptura (agents → aquí)
+├── short-term.csv    ← processada per mem-curator
+├── flash-archive/    ← arxiu de flash processats
 └── <agent>/
-    ├── MEMORY.md        ← índex de skills de l'agent
+    ├── MEMORY.md     ← índex de skills de l'agent
     └── <skill>/
-        └── SKILL.md     ← memòria a llarg termini
+        └── SKILL.md  ← memòria a llarg termini
 ```
 
-**Pipeline**: `flash.jsonl` → (cron 5min, 0 tokens) → `short-term.csv` → (mem-curator, LLM) → `skills/SKILL.md`
+**Pipeline**: `flash.jsonl` → (mem-curator quan cal) → `short-term.csv` → (mem-curator, LLM) → `skills/SKILL.md`
+
+---
+
+## Com escriure memòria (qualsevol agent)
+
+Afegeix una línia JSON a `.claude/agent-memory/flash.jsonl` amb l'eina Write/Edit:
+
+```json
+{"ts": "2026-04-25T10:00:00Z", "agent": "NOM_AGENT", "content": "TEXT A RECORDAR", "tags": ["tag1", "tag2"]}
+```
+
+**Regla**: abans d'escriure, comprova quantes entrades té `flash.jsonl`. Si supera 20, invoca `@mem-curator` per consolidar primer.
+
+**Quan recordar**: preferències de l'usuari, decisions consolidades, lliçons apreses, convencions descobertes.
+
+**Quan NO recordar**: coses derivables llegint fitxers, estat efímer de la sessió, duplicats de coses ja consolidades.
+
+---
+
+## Com llegir context (qualsevol agent)
+
+Al inici de sessió, llegeix directament:
+
+1. `.claude/agent-memory/<agent>/MEMORY.md` — índex de skills (llarg termini)
+2. Les últimes files de `.claude/agent-memory/short-term.csv` on `agent=<nom>` (recent)
+
+```
+Camps de short-term.csv: ts, agent, content, tags, session_hash, consolidated
+```
+
+---
+
+## Quan consolidar
+
+Invoca `@mem-curator` quan:
+- `flash.jsonl` supera 20 entrades
+- L'usuari ho demana explícitament
+- Al final d'una sessió llarga amb moltes escriptures
+
+El mem-curator llegeix `flash.jsonl`, processa, escriu a `short-term.csv`, i consolida en skills quan cal.
 
 ---
 
@@ -36,85 +72,37 @@ Pipeline de memòria persistent per a agents Claude Code. Permet que els agents 
 | Fitxer | Destí al projecte |
 |--------|-------------------|
 | `agents/mem-curator.md` | `.claude/agents/mem-curator.md` |
-| `scripts/flash-remember/scripts/remember.sh` | `.claude/agent-memory/shared/flash-remember/scripts/remember.sh` |
-| `scripts/flash-recall/scripts/recall.sh` | `.claude/agent-memory/shared/flash-recall/scripts/recall.sh` |
-| `scripts/process-flash/scripts/process-flash.sh` | `.claude/agent-memory/mem-curator/process-flash/scripts/process-flash.sh` |
-| `scripts/check-threshold/scripts/check-threshold.sh` | `.claude/agent-memory/mem-curator/consolidate/scripts/check-threshold.sh` |
 
 ---
 
 ## Dependències
 
-Cap. El Servei Memòria no depèn d'altres serveis.
+Cap.
 
 ---
 
-## Activació manual
+## Activació ràpida
 
-```bash
-# 1. Crear estructura de directoris
-mkdir -p .claude/agent-memory/shared/flash-remember/scripts
-mkdir -p .claude/agent-memory/shared/flash-recall/scripts
-mkdir -p .claude/agent-memory/mem-curator/process-flash/scripts
-mkdir -p .claude/agent-memory/mem-curator/consolidate/scripts
-mkdir -p .claude/agent-memory/flash-archive
-mkdir -p .claude/agent-memory/logs
-mkdir -p .claude/agents
+Enganxa a Claude Code:
 
-# 2. Copiar scripts (des del path del servei o des de la URL raw del repo)
-cp <path-servei>/scripts/flash-remember/scripts/remember.sh \
-   .claude/agent-memory/shared/flash-remember/scripts/remember.sh
-cp <path-servei>/scripts/flash-recall/scripts/recall.sh \
-   .claude/agent-memory/shared/flash-recall/scripts/recall.sh
-cp <path-servei>/scripts/process-flash/scripts/process-flash.sh \
-   .claude/agent-memory/mem-curator/process-flash/scripts/process-flash.sh
-cp <path-servei>/scripts/check-threshold/scripts/check-threshold.sh \
-   .claude/agent-memory/mem-curator/consolidate/scripts/check-threshold.sh
-
-# 3. Fer els scripts executables
-chmod +x .claude/agent-memory/shared/flash-remember/scripts/remember.sh
-chmod +x .claude/agent-memory/shared/flash-recall/scripts/recall.sh
-chmod +x .claude/agent-memory/mem-curator/process-flash/scripts/process-flash.sh
-chmod +x .claude/agent-memory/mem-curator/consolidate/scripts/check-threshold.sh
-
-# 4. Inicialitzar fitxers de dades
-touch .claude/agent-memory/flash.jsonl
-echo "ts,agent,content,tags,session_hash,consolidated" \
-  > .claude/agent-memory/short-term.csv
-
-# 5. Copiar agent
-cp <path-servei>/agents/mem-curator.md .claude/agents/mem-curator.md
-
-# 6. (Opcional) Configurar cron per a process-flash cada 5 minuts
-# crontab -e → afegir:
-# */5 * * * * cd /path/al/projecte && bash .claude/agent-memory/mem-curator/process-flash/scripts/process-flash.sh >> .claude/agent-memory/logs/cron.log 2>&1
+```
+Instal·la el Servei Memòria: crea .claude/agent-memory/ amb flash.jsonl buit i short-term.csv amb capçalera (ts,agent,content,tags,session_hash,consolidated). Copia l'agent: https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/serveis/memoria/agents/mem-curator.md → .claude/agents/mem-curator.md. Crea .claude/agent-memory/mem-curator/MEMORY.md buit.
 ```
 
 ---
 
-## Com usen la memòria els agents
+## Inicialització per agent nou
 
-```bash
-# Escriure memòria (des de qualsevol agent)
-bash .claude/agent-memory/shared/flash-remember/scripts/remember.sh \
-  --agent <nom-agent> --content "<text>" --tags "<tag1,tag2>"
+Per cada agent nou, crea:
 
-# Llegir context (a l'inici de sessió)
-bash .claude/agent-memory/shared/flash-recall/scripts/recall.sh --agent <nom-agent>
+```
+.claude/agent-memory/<nom-agent>/MEMORY.md
 ```
 
-**Quan recordar**: preferències de l'usuari, decisions consolidades, lliçons apreses, convencions descobertes al projecte.
-
-**Quan NO recordar**: coses derivables llegint fitxers, estat efímer de la sessió, duplicats.
+Contingut inicial: `# Memory Index — <nom-agent>\n\n(Buit.)`
 
 ---
 
-## Inicialització per agent
+## Scripts bash opcionals (Unix/Linux/Mac)
 
-Per cada agent nou al projecte, crea:
-
-```bash
-mkdir -p .claude/agent-memory/<nom-agent>
-echo "# Memory Index — <nom-agent>\n\n(Buit. S'omplirà a mesura que mem-curator consolidi lliçons.)" \
-  > .claude/agent-memory/<nom-agent>/MEMORY.md
-```
+Per a projectes que volen automatització via cron, els scripts originals estan a `extras/scripts-bash-unix/`. No son necessaris per al funcionament bàsic.
