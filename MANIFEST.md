@@ -81,7 +81,7 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `nucli/worker.md` | ✓ |
 | `nucli/oracle.md` | ✓ |
 | `serveis/memoria/` | ✓ |
-| `serveis/docs/` | Pendent (Fase 3) |
+| `serveis/docs/` | ✓ |
 | `serveis/okr/` `serveis/pm/` `serveis/dev/` | Pendent (Fase 6) |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
 | `scripts/activate-service.sh` | Pendent (Fase 4) |
