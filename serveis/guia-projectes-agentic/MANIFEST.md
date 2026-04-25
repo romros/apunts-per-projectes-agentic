@@ -1,0 +1,74 @@
+# Servei guia-projectes-agentic
+
+## Descripció
+
+Guardià del sistema agentic del projecte. Connecta el projecte amb el repo de referència (`apunts-per-projectes-agentic`) per guiar el creixement del sistema agentic al llarg del temps: activa serveis nous quan la fricció ho justifica, detecta millores disponibles, manté l'inventari d'agents actualitzat.
+
+**Activa'l quan**: el projecte ja porta camí agentic i vols que algú vetlli per la coherència i l'evolució del sistema sense haver de recordar-te de consultar la guia.
+
+**Categoria**: servei meta — no aporta capacitat de domini, aporta governança del sistema agentic.
+
+---
+
+## Fitxers que aporta
+
+| Fitxer | Destí al projecte |
+|--------|-------------------|
+| `agents/guia-projectes-agentic.md` | `.claude/agents/guia-projectes-agentic.md` |
+
+---
+
+## Dependències
+
+- **Servei Memòria** — necessita `flash-remember` per registrar consultes al repo de referència
+
+---
+
+## Prerequisit al `CLAUDE.md` del projecte
+
+Abans d'activar, afegeix al `CLAUDE.md` del projecte la secció:
+
+```markdown
+## Origen del sistema agentic
+
+- **Repo de referència**: https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/
+- **Commit adoptat**: <COMMIT_SHA_DEL_BOOTSTRAP>
+```
+
+Substitueix `<COMMIT_SHA_DEL_BOOTSTRAP>` pel SHA del commit del repo de referència que vas usar en fer el bootstrap (visible al comentari `<!-- generat des de apunts-per-projectes-agentic@SHA -->` del teu `CLAUDE.md`).
+
+---
+
+## Activació manual
+
+```bash
+# 1. Afegir la secció ## Origen del sistema agentic al CLAUDE.md del projecte
+#    (veure prerequisit dalt)
+
+# 2. Copiar l'agent
+mkdir -p .claude/agents
+cp <path-servei>/agents/guia-projectes-agentic.md .claude/agents/guia-projectes-agentic.md
+
+# 3. Inicialitzar memòria de l'agent
+mkdir -p .claude/agent-memory/guia-projectes-agentic
+echo "# Memory Index — guia-projectes-agentic\n\n(Buit. S'omplirà a mesura que mem-curator consolidi lliçons.)" \
+  > .claude/agent-memory/guia-projectes-agentic/MEMORY.md
+
+# 4. Actualitzar AGENTS.md del projecte
+# Afegir fila: | **guia-projectes-agentic** | Guardià del sistema agentic | `.claude/agents/guia-projectes-agentic.md` | Quan vols activar un servei nou, actualitzar el sistema o diagnosticar l'estat agentic |
+```
+
+---
+
+## Quan invocar-lo
+
+- "Necessito [nova capacitat]" → diagnostica si hi ha un servei al catàleg que ho cobreixi
+- "Quins serveis tinc disponibles?" → `estat`
+- "Hi ha novetats al repo de referència?" → `actualitza`
+- Quan el sistema agentic porta temps sense revisió → `estat` per detectar derives
+
+## Quan NO invocar-lo
+
+- Per a tasques de domini (codi, dades, docs de producte) → worker o agents especialitzats
+- Per a decisions arquitectòniques → oracle
+- Per a gestió de memòria → mem-curator

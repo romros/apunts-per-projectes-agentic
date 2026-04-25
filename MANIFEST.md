@@ -18,7 +18,9 @@ Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 
 ---
 
-## Serveis modulars
+## Serveis de domini
+
+Aporten capacitats al projecte: memòria, gestió documental, metodologia, validació de codi.
 
 | Servei | Directori | Depèn de |
 |--------|-----------|----------|
@@ -28,13 +30,25 @@ Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 | **PM** | `serveis/pm/` | OKR |
 | **Dev** | `serveis/dev/` | Memòria |
 
+**Nota**: el Servei Memòria és obligatori per a qualsevol projecte. No és opcional.
+
+---
+
+## Serveis meta
+
+Governança del sistema agentic — no aporten capacitat de domini, vetllen pel sistema en si.
+
+| Servei | Directori | Depèn de | Quan activar |
+|--------|-----------|----------|--------------|
+| **guia-projectes-agentic** | `serveis/guia-projectes-agentic/` | Memòria | Quan el sistema agentic ja porta camí i cal que algú el mantingui i faci créixer |
+
+---
+
 Cada servei té `serveis/<nom>/MANIFEST.md` amb: descripció, fitxers que aporta, dependències, i instruccions d'activació manual.
 
 Activar un servei = activar-lo amb les seves dependències transitives.
 - Si `scripts/activate-service.sh` existeix: resol dependències automàticament.
 - Si no: activa manualment seguint `serveis/<nom>/MANIFEST.md` de cada servei i dependències.
-
-**Nota**: el Servei Memòria és obligatori per a qualsevol projecte. No és opcional.
 
 ---
 
@@ -82,6 +96,7 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `nucli/oracle.md` | ✓ |
 | `serveis/memoria/` | ✓ |
 | `serveis/docs/` | ✓ |
+| `serveis/guia-projectes-agentic/` | ✓ |
 | `serveis/okr/` `serveis/pm/` `serveis/dev/` | Pendent (Fase 6) |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
 | `scripts/activate-service.sh` | Pendent (Fase 4) |

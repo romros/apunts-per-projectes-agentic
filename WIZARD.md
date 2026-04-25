@@ -84,6 +84,15 @@ Basant-te en la inspecció i la resposta del Pas 2, proposa **únicament** els s
 | Codi i validació canònica | Servei Dev |
 | Documentació creixent | Servei Docs |
 
+**Servei meta — proposa sempre en aquests casos:**
+
+| Situació | Proposa |
+|----------|---------|
+| El projecte ja porta camí agentic (configuració prèvia detectada al Pas 1) | `guia-projectes-agentic` |
+| L'usuari diu "vull que el sistema creixi sol" o "vull mantenir-me actualitzat" | `guia-projectes-agentic` |
+
+Per a projectes nous (primer dia), ofereix-lo com a opció amb context: *"Quan el sistema agentic creixi, el servei `guia-projectes-agentic` el mantindrà actualitzat i t'ajudarà a activar nous serveis. Pots activar-lo ara o més tard."*
+
 Si no és evident que ho necessita, **no ho proposis**. Un servei que no s'usa és soroll.
 
 ---

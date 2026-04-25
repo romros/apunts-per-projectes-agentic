@@ -85,3 +85,11 @@ Arquitectura: `flash.jsonl` → (cron 5min) → `short-term.csv` → (mem-curato
 <!-- Exemple: -->
 <!-- - Servei Memòria (`serveis/memoria/`) -->
 <!-- - Servei Docs (`serveis/docs/`) -->
+
+---
+
+## Origen del sistema agentic
+
+<!-- WIZARD: omple amb la URL base i el commit SHA del moment del bootstrap -->
+- **Repo de referència**: https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/
+- **Commit adoptat**: COMMIT_SHA
