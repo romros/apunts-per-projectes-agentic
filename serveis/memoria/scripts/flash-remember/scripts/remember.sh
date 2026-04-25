@@ -4,7 +4,13 @@
 
 set -euo pipefail
 
-FLASH_FILE="$(git rev-parse --show-toplevel)/.claude/agent-memory/flash.jsonl"
+# Troba el root del projecte: git si disponible, fallback a CLAUDE_PROJECT_ROOT o directori actual
+if git rev-parse --show-toplevel 2>/dev/null; then
+  ROOT="$(git rev-parse --show-toplevel)"
+else
+  ROOT="${CLAUDE_PROJECT_ROOT:-$(pwd)}"
+fi
+FLASH_FILE="$ROOT/.claude/agent-memory/flash.jsonl"
 
 # Parse args
 AGENT=""

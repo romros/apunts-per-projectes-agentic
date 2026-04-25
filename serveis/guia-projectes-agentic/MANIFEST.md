@@ -44,10 +44,10 @@ Substitueix `<COMMIT_SHA_DEL_BOOTSTRAP>` pel SHA del commit del repo de referèn
 Enganxa **una sola línia** a Claude Code al teu projecte:
 
 ```
-Instal·la aquest agent: https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/serveis/guia-projectes-agentic/agents/guia-projectes-agentic.md — copia'l a .claude/agents/, crea .claude/agent-memory/guia-projectes-agentic/MEMORY.md, actualitza AGENTS.md i CLAUDE.md (secció Serveis actius), i demana'm el diagnosi inicial del sistema agentic.
+Instal·la el servei guia-projectes-agentic seguint aquest ordre: (1) Si no existeix .claude/agent-memory/shared/flash-remember/scripts/remember.sh, instal·la el Servei Memòria complet des de https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/serveis/memoria/MANIFEST.md. (2) Instal·la l'agent: https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/serveis/guia-projectes-agentic/agents/guia-projectes-agentic.md — copia'l a .claude/agents/, crea .claude/agent-memory/guia-projectes-agentic/MEMORY.md, actualitza AGENTS.md. (3) Fes el diagnosi inicial del sistema agentic.
 ```
 
-Claude fa tot sol i l'agent comença a treballar immediatament.
+Claude comprova les dependències, instal·la el que falta i comença immediatament.
 
 ---
 

@@ -3,7 +3,11 @@
 
 set -euo pipefail
 
-ROOT="$(git rev-parse --show-toplevel)"
+if git rev-parse --show-toplevel 2>/dev/null; then
+  ROOT="$(git rev-parse --show-toplevel)"
+else
+  ROOT="${CLAUDE_PROJECT_ROOT:-$(pwd)}"
+fi
 BASE="$ROOT/.claude/agent-memory"
 FLASH="$BASE/flash.jsonl"
 SHORT_TERM="$BASE/short-term.csv"
