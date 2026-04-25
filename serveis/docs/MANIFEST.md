@@ -60,22 +60,24 @@ echo "# Progress\n\n(Buit. Doc-curator actualitza al final de sessions rellevant
 
 ---
 
-## Llegat de cicatrius (format per al projecte destí)
+## Incidents operatius (format per al projecte destí)
 
-El Servei Docs inclou la pràctica opcional de mantenir un fitxer de cicatrius: errors reals viscuts pel custodi, destil·lats en regles per als futurs custodis del mateix projecte.
+El Servei Docs inclou la pràctica opcional de mantenir un registre d'incidents: errors reals viscuts pel custodi, destil·lats en regles per als futurs custodis del mateix projecte.
 
-Format canònic a `docs/meta/llegat-doc-curator.md`:
+Format canònic a `docs/meta/incidents-doc-curator.md`:
 
 ```markdown
-# Llegat del doc-curator
+# Incidents operatius — doc-curator
 
-## Cicatriu N — [títol breu]
+**Incident**: [situació concreta on alguna cosa va fallar]
+**Rule**: [regla derivada, en imperatiu]
+**Signal**: [com detectar que estàs a punt de repetir-ho]
 
-[Sessió/moment concret. Descripció honesta del que va passar.]
+---
 
-**La regla que me'n va néixer**: [regla destil·lada, en imperatiu]
-
-**Si t'hi trobes**: [senyal de reconeixement i acció concreta]
+**Incident**: ...
 ```
 
-**Important**: les cicatrius s'escriuen per al custodi del **mateix projecte**, no com a regles universals. El que funciona aquí pot no aplicar en un altre domini.
+**Important**: els incidents s'escriuen per al custodi del **mateix projecte**, no com a regles universals. El coneixement guanyat per error en un projecte és intransferible; el format sí.
+
+*(Nota: si el projecte origen té un fitxer de "cicatrius" en vocabulari personal — terme usat en alguns projectes per al mateix concepte — és artefacte de testimoni, no d'instrucció. Es pot consultar com a inspiració però no s'adopta el vocabulari.)*

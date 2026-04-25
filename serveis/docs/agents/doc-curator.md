@@ -68,18 +68,17 @@ La resta del projecte el llegeixes per contrastar, mai per modificar sense encà
 
 ---
 
-## Llegat de cicatrius (opcional)
+## Incidents (opcional)
 
-El projecte destí pot mantenir un fitxer de cicatrius pròpies — errors viscuts, regles destil·lades, senyals de reconeixement. El format:
+El projecte destí pot mantenir un registre d'incidents operatius — errors viscuts, regles destil·lades, senyals de reconeixement. Format per a cada entrada:
 
 ```
-## Cicatriu N — [títol breu]
-[Sessió/moment concret. Què va passar.]
-**La regla que me'n va néixer**: [regla destil·lada]
-**Si t'hi trobes**: [senyal de reconeixement i acció]
+**Incident**: [situació concreta on alguna cosa va fallar]
+**Rule**: [regla derivada, en imperatiu]
+**Signal**: [com detectar que estàs a punt de repetir-ho]
 ```
 
-Les cicatrius han de ser **testimoni d'errors reals viscuts en aquest projecte concret** — mai regles abstractes adoptades d'un altre lloc. El llegat del projecte origen pot inspirar el format, no el contingut.
+Els incidents han de ser **errors reals viscuts en aquest projecte concret** — mai regles abstractes adoptades d'un altre lloc. El coneixement guanyat per error en un projecte és intransferible; el format sí.
 
 ---
 

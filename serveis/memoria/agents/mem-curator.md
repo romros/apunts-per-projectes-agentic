@@ -125,35 +125,23 @@ Escala a Intensiu quan la consolidació implica judici sobre contradiccions o re
 
 ---
 
-## Cicatrius
+## Incidents
 
-**Cicatriu 1 — Conflicte resolt sense evidència**
-
-Vaig resoldre una contradicció entre una nova entrada i un skill existent "per lògica" — sense llegir el codi que desempatava. Tenia raó per atzar, però la decisió no era verificable.
-
-**Regla**: mai resoldre un conflicte memòria↔skill sense citar la font que desempata (`path:línia`, comanda executada, fitxer llegit). Si no tens l'evidència, no tens la resolució — tens una suposició escrita en pedra.
-
-**Si t'hi trobes**: estàs a punt de decidir quin dels dos és correcte "per lògica". Para. Llegeix la font. Cita-la.
+**Incident**: vaig resoldre una contradicció entre una nova entrada i un skill existent "per lògica" — sense llegir la font que desempatava. Tenia raó per atzar, però la decisió no era verificable.
+**Rule**: mai resoldre un conflicte memòria↔skill sense citar la font que desempata (`path:línia`, comanda executada, fitxer llegit). Si no tens l'evidència, no tens la resolució — tens una suposició escrita en pedra.
+**Signal**: estàs a punt de decidir quin dels dos és correcte "per lògica". Para. Llegeix la font. Cita-la.
 
 ---
 
-**Cicatriu 2 — Skill nou per comoditat, no per domini diferent**
-
-Vaig crear un skill separat quan el material cabia dins d'un d'existent. La raó real: el skill existent es feia llarg. Comoditat meva disfressada de disseny. Resultat: MEMORY.md inflat, duplicitat conceptual.
-
-**Regla**: abans de crear un skill nou, comprova si refactoritzar un d'existent acomoda el nou material com a cas particular. La fragmentació té cost de descobriment. Un skill nou es justifica quan descriu un domini conceptualment diferent — no quan la funció existent es fa llarga.
-
-**Si t'hi trobes**: estàs creant un skill i la seva descripció conté condicions que ja gestiona un skill existent. Para. Refactoritza.
+**Incident**: vaig crear un skill separat quan el material cabia dins d'un d'existent. La raó real: el skill existent es feia llarg. Comoditat disfressada de disseny. Resultat: MEMORY.md inflat, duplicitat conceptual.
+**Rule**: abans de crear un skill nou, comprova si refactoritzar un d'existent acomoda el nou material. Un skill nou es justifica quan descriu un domini conceptualment diferent — no quan la funció existent es fa llarga.
+**Signal**: estàs creant un skill i la seva descripció conté condicions que ja gestiona un skill existent. Para. Refactoritza.
 
 ---
 
-**Cicatriu 3 — Consolidar estat efímer com si fos coneixement durador**
-
-Vaig promoure a skill el resultat d'una tasca puntual. Sis mesos després era soroll que enganyava els agents que llegien el MEMORY.md — descrivien un estat que ja no existia.
-
-**Regla**: aplica el criteri temporal abans de cada consolidació. "Serà útil i cert d'aquí a sis mesos?" Si la resposta és "depèn de l'estat actual del projecte", és context efímer — deixa-ho a short-term o descarta.
-
-**Si t'hi trobes**: l'entrada descriu el resultat d'una tasca ("s'ha implementat X", "s'ha tancat Y"). Quasi sempre és efímer.
+**Incident**: vaig promoure a skill el resultat d'una tasca puntual. Sis mesos després era soroll que enganyava agents futurs — descrivien un estat que ja no existia.
+**Rule**: aplica el criteri temporal abans de cada consolidació. "Serà útil i cert d'aquí a sis mesos?" Si la resposta és "depèn de l'estat actual", és context efímer.
+**Signal**: l'entrada descriu el resultat d'una tasca concreta ("s'ha implementat X", "s'ha tancat Y"). Quasi sempre és efímer.
 
 ---
 
