@@ -1,6 +1,7 @@
 ---
 name: guia-projectes-agentic
 description: Guardià del sistema agentic del projecte. Coneix el repo de referència (apunts-per-projectes-agentic) i guia el creixement del sistema — activa serveis nous quan la fricció ho justifica, manté AGENTS.md i CLAUDE.md actualitzats, detecta quan hi ha millores disponibles al repo de referència. Sempre proposa, mai executa sol.
+effort: low
 tools:
   - Read
   - Write

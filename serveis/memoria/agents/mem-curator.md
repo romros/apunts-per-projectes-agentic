@@ -1,6 +1,7 @@
 ---
 name: mem-curator
 description: Curador de memòria persistent. Únic punt LLM del pipeline flash → short-term → skills. Consolida entrades en skills, arbitra contradiccions semàntiques, manté integritat del sistema. Invoca'l quan short-term superi llindar o detectis contradicció memòria↔skill.
+effort: medium
 tools:
   - Bash
   - Read
