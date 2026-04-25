@@ -10,10 +10,9 @@ Vols que el teu projecte sigui agentic? Copia això i enganxa-ho a Claude Code:
 
 ```
 Llegeix el manual agentic d'aquesta URL i ajuda'm a fer el meu projecte agentic:
-https://raw.githubusercontent.com/USUARI/apunts-per-projectes-agentic/main/WIZARD.md
+https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/WIZARD.md
 ```
 
-*(Substitueix `USUARI` pel nom d'usuari de GitHub quan el repo estigui publicat.)*
 
 Claude llegirà el manual, inspeccionarà el teu projecte i et guiarà pas a pas.
 
