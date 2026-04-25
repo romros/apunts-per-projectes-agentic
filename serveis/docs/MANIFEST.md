@@ -80,4 +80,3 @@ Format canònic a `docs/meta/incidents-doc-curator.md`:
 
 **Important**: els incidents s'escriuen per al custodi del **mateix projecte**, no com a regles universals. El coneixement guanyat per error en un projecte és intransferible; el format sí.
 
-*(Nota: si el projecte origen té un fitxer de "cicatrius" en vocabulari personal — terme usat en alguns projectes per al mateix concepte — és artefacte de testimoni, no d'instrucció. Es pot consultar com a inspiració però no s'adopta el vocabulari.)*

@@ -77,13 +77,10 @@ La URL i el commit del repo de referència viuen al `CLAUDE.md` del projecte:
 
 ## Registre de consultes — OBLIGATORI
 
-Cada vegada que consultes el repo de referència, registra-ho:
+Cada vegada que consultes el repo de referència, registra-ho afegint una línia JSON a `.claude/agent-memory/flash.jsonl`:
 
-```bash
-bash .claude/agent-memory/shared/flash-remember/scripts/remember.sh \
-  --agent guia-projectes-agentic \
-  --content "Consulta llavor: [operació] — commit [SHA] — proposta: [què has proposat] — decisió: [què ha decidit l'usuari]" \
-  --tags "consulta-llavor,<operació>"
+```json
+{"ts": "<ISO-timestamp>", "agent": "guia-projectes-agentic", "content": "Consulta llavor: [operació] — commit [SHA] — proposta: [què has proposat] — decisió: [què ha decidit l'usuari]", "tags": ["consulta-llavor", "<operació>"]}
 ```
 
 Sense registre, no hi ha traçabilitat. Sense traçabilitat, l'usuari no sap com ha evolucionat el sistema.

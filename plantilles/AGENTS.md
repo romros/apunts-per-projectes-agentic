@@ -16,22 +16,19 @@
 
 ## Sistema de memòria
 
-<!-- El wizard omple els paths concrets. No elimines aquesta secció — el Servei Memòria és obligatori. -->
+<!-- No elimines aquesta secció — el Servei Memòria és obligatori. -->
 
-```bash
-# Escriure memòria
-bash .claude/agent-memory/shared/flash-remember/scripts/remember.sh \
-  --agent <nom-agent> --content "<text>" --tags "<tags>"
+Per recordar, afegeix una línia JSON a `.claude/agent-memory/flash.jsonl`:
 
-# Recuperar context
-bash .claude/agent-memory/shared/flash-recall/scripts/recall.sh --agent <nom-agent>
+```json
+{"ts": "2026-01-01T00:00:00Z", "agent": "NOM_AGENT", "content": "TEXT", "tags": ["tag"]}
 ```
 
-Arquitectura: `flash.jsonl` → (cron 5min) → `short-term.csv` → (mem-curator) → `skills/SKILL.md`
+Arquitectura: `flash.jsonl` → (mem-curator quan cal) → `short-term.csv` → `skills/SKILL.md`
 
 A l'inici de cada sessió, els agents han de:
 1. Llegir `.claude/agent-memory/<agent>/MEMORY.md`
-2. Executar `flash-recall` per carregar context recent
+2. Llegir les últimes files de `short-term.csv` on `agent=<nom>`
 
 ---
 

@@ -62,12 +62,22 @@ Les normes 2, 5 i 9 requereixen 1-2 línies de particularització per domini (ev
 
 ## Scripts
 
-| Script | Funció |
-|--------|--------|
-| `scripts/bootstrap.sh` | Versió scriptificada del flow de `WIZARD.md`. Per a usuaris que **no** usen Claude Code. |
-| `scripts/activate-service.sh <nom>` | Afegeix un servei a un projecte ja bootstrapejat. Resol dependències. |
+*(Pendent — Fase 4. No existeixen encara. El camí principal és el WIZARD.md.)*
 
-**Relació `bootstrap.sh` vs `WIZARD.md`**: el wizard és el camí agentic (Claude Code llegeix el repo via URL i guia l'usuari). `bootstrap.sh` és el camí no-agentic (script que fa el mateix flow sense Claude). Ambdós produeixen el mateix resultat. Usa el wizard si tens Claude Code; usa l'script si prefereixes automatització directa.
+| Script | Funció | Estat |
+|--------|--------|-------|
+| `scripts/bootstrap.sh` | Versió no-agentic del flow de `WIZARD.md` | Pendent Fase 4 |
+| `scripts/activate-service.sh <nom>` | Activa un servei amb resolució de dependències | Pendent Fase 4 |
+
+---
+
+## Extras
+
+Scripts bash opcionals per a projectes Unix/Linux/Mac que volen automatització via cron.
+
+| Contingut | Notes |
+|-----------|-------|
+| `extras/scripts-bash-unix/` | Scripts del pipeline de memòria (flash-remember, flash-recall, process-flash, check-threshold). No necessaris per al funcionament normal — els agents escriuen directament a `flash.jsonl`. |
 
 ---
 

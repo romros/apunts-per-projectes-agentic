@@ -27,7 +27,8 @@ MANIFEST.md         ← catàleg de components disponibles
 plantilles/         ← esquelets parametritzables (CLAUDE.md, AGENTS.md)
 nucli/              ← agents base: orquestrador, worker, oracle
 serveis/            ← serveis modulars activables
-scripts/            ← bootstrap i activació
+scripts/            ← (pendent) bootstrap i activació automatitzada
+extras/             ← scripts bash opcionals per a Unix/cron
 ```
 
 ---

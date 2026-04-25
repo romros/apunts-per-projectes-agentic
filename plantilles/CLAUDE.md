@@ -64,18 +64,21 @@ Si no hi ha prefix, assumeix mode mixt. Si el prefix entra en tensió amb la pet
 
 ## Sistema de memòria
 
-<!-- El wizard omple els paths concrets. No elimines aquesta secció — el Servei Memòria és obligatori. -->
+<!-- No elimines aquesta secció — el Servei Memòria és obligatori. -->
 
-```bash
-# Escriure memòria
-bash .claude/agent-memory/shared/flash-remember/scripts/remember.sh \
-  --agent <nom-agent> --content "<text>" --tags "<tags>"
+Per recordar alguna cosa, afegeix una línia JSON a `.claude/agent-memory/flash.jsonl`:
 
-# Recuperar context
-bash .claude/agent-memory/shared/flash-recall/scripts/recall.sh --agent <nom-agent>
+```json
+{"ts": "2026-01-01T00:00:00Z", "agent": "NOM_AGENT", "content": "TEXT", "tags": ["tag"]}
 ```
 
-Arquitectura: `flash.jsonl` → (cron 5min) → `short-term.csv` → (mem-curator) → `skills/SKILL.md`
+Per llegir context a l'inici de sessió:
+1. Llegeix `.claude/agent-memory/<agent>/MEMORY.md` — skills actuals
+2. Llegeix les últimes files de `.claude/agent-memory/short-term.csv` on `agent=<nom>`
+
+Quan `flash.jsonl` supera 20 entrades → invoca `@mem-curator` per consolidar.
+
+Arquitectura: `flash.jsonl` → (mem-curator quan cal) → `short-term.csv` → `skills/SKILL.md`
 
 ---
 

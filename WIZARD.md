@@ -135,7 +135,7 @@ Per cada servei confirmat:
 - Si no existeix (manual en construcció): llegeix `serveis/<nom>/MANIFEST.md` i segueix les instruccions d'activació manual.
 - Si `serveis/<nom>/` tampoc existeix: informa l'usuari que el servei és pendent de construcció i proposa ajornar-ne l'activació.
 
-**Nota sobre el Servei Memòria**: és obligatori. Si no s'ha construït `serveis/memoria/` encara, activa'l manualment copiant l'estructura `.claude/agent-memory/` (consulta l'usuari per al path font).
+**Nota sobre el Servei Memòria**: és obligatori. Segueix les instruccions d'activació a `serveis/memoria/MANIFEST.md`.
 
 ---
 
