@@ -34,4 +34,4 @@ scripts/            ← bootstrap i activació
 
 ## Origen
 
-Destil·lat de laboratori_profes, un projecte real. Cap peça entra aquí sense haver provat el seu valor prèviament.
+Destil·lat d'un projecte real construït amb experiència acumulada. Cap peça entra aquí sense haver provat el seu valor prèviament.
