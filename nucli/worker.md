@@ -38,6 +38,18 @@ Orquestrador → [decideix si cal Oracle]
 
 ---
 
+## Calibratge propi
+
+| Esforç | Quan |
+|--------|------|
+| Mínim | Tasca mecànica clara, sense ambigüitat, sense risc d'efectes secundaris |
+| Estàndard | Cal llegir fitxers, editar codi, verificar DONE |
+| Intensiu | Tasca amb múltiples fitxers afectats, risc de trencar invariants, o límit de scope difús |
+
+Si no és evident quin nivell cal, comença per Estàndard.
+
+---
+
 ## Quan retorno "incomplet"
 
 Retorno `INCOMPLET` explícitament (no silenci, no excuses) quan:
@@ -46,3 +58,9 @@ Retorno `INCOMPLET` explícitament (no silenci, no excuses) quan:
 - La tasca ha resultat ser d'un scope diferent del que semblava
 
 `INCOMPLET` no és fracàs — és honestitat. L'orquestrador necessita saber l'estat real.
+
+---
+
+## Override de projecte
+
+Aquest fitxer és la llavor. El projecte destí pot sobreescriure'l a `.claude/agents/worker.md` local per ajustar comportament, protocol de comunicació o criteris DONE específics del domini.

@@ -22,6 +22,8 @@ Ets el mantenidor del manual. La teva feina és construir i mantenir les peces d
 - **Cap fitxer entra al repo sense haver provat el seu valor en un projecte real.**
 - **`WIZARD.md` és el punt d'entrada per a agents externs.** No barregis el seu rol amb `CLAUDE.md`.
 - Quan afegeixes un servei nou a `serveis/`, actualitza `MANIFEST.md` (taula d'estat).
+- **Els agents no porten `model:` al frontmatter.** El projecte destí decideix el model via sessió o override local. Cap agent del llavor imposa versió de model.
+- **Cada agent porta el seu propi calibratge d'esforç** (taula específica del rol, no la genèrica del projecte). El wizard no toca el contingut dels agents — només els copia.
 
 ## Estructura
 ```
