@@ -39,24 +39,15 @@ Substitueix `<COMMIT_SHA_DEL_BOOTSTRAP>` pel SHA del commit del repo de referèn
 
 ---
 
-## Activació manual
+## Activació ràpida
 
-```bash
-# 1. Afegir la secció ## Origen del sistema agentic al CLAUDE.md del projecte
-#    (veure prerequisit dalt)
+Enganxa **una sola línia** a Claude Code al teu projecte:
 
-# 2. Copiar l'agent
-mkdir -p .claude/agents
-cp <path-servei>/agents/guia-projectes-agentic.md .claude/agents/guia-projectes-agentic.md
-
-# 3. Inicialitzar memòria de l'agent
-mkdir -p .claude/agent-memory/guia-projectes-agentic
-echo "# Memory Index — guia-projectes-agentic\n\n(Buit. S'omplirà a mesura que mem-curator consolidi lliçons.)" \
-  > .claude/agent-memory/guia-projectes-agentic/MEMORY.md
-
-# 4. Actualitzar AGENTS.md del projecte
-# Afegir fila: | **guia-projectes-agentic** | Guardià del sistema agentic | `.claude/agents/guia-projectes-agentic.md` | Quan vols activar un servei nou, actualitzar el sistema o diagnosticar l'estat agentic |
 ```
+Instal·la aquest agent: https://raw.githubusercontent.com/romros/apunts-per-projectes-agentic/main/serveis/guia-projectes-agentic/agents/guia-projectes-agentic.md — copia'l a .claude/agents/, crea .claude/agent-memory/guia-projectes-agentic/MEMORY.md, actualitza AGENTS.md i CLAUDE.md (secció Serveis actius), i demana'm el diagnosi inicial del sistema agentic.
+```
+
+Claude fa tot sol i l'agent comença a treballar immediatament.
 
 ---
 
