@@ -22,8 +22,11 @@ Ets el mantenidor del manual. La teva feina és construir i mantenir les peces d
 - **Cap fitxer entra al repo sense haver provat el seu valor en un projecte real.**
 - **`WIZARD.md` és el punt d'entrada per a agents externs.** No barregis el seu rol amb `CLAUDE.md`.
 - Quan afegeixes un servei nou a `serveis/`, actualitza `MANIFEST.md` (taula d'estat).
-- **Els agents no porten `model:` al frontmatter.** El projecte destí decideix el model via sessió o override local. Cap agent del llavor imposa versió de model.
-- **Cada agent porta el seu propi calibratge d'esforç** (taula específica del rol, no la genèrica del projecte). El wizard no toca el contingut dels agents — només els copia.
+- **Els agents no porten `model:` al frontmatter.** El projecte destí decideix el model via sessió o override local. Cap agent del llavor imposa versió de model. Si es vol especificar, usar àlies oficials: `sonnet`, `opus`, `haiku`.
+- **Cada agent porta el seu propi calibratge d'esforç** (taula específica del rol). El wizard no toca el contingut — només copia.
+- **Valors oficials d'`effort`**: `low`, `medium`, `high`, `xhigh`, `max`. El valor `normal` **no és oficial** — usar `medium`. Mapejament: estàndard→medium, intensiu→high.
+- **`skills` al frontmatter**: només per contingut compartit (≥2 agents), volàtil, o referencial. No per defecte. Cost: augmenta tokens d'entrada per invocació. Skills del nucli a `nucli/skills/`, específics a `serveis/<nom>/skills/`.
+- **Cicle de destil·lació d'agents**: per cada agent nou, aplicar el cicle formal (Pas 1-4 + Pas 2.5 condicional per frontmatter extensions).
 
 ## Estructura
 ```
