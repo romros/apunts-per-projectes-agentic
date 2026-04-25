@@ -9,7 +9,8 @@
 | **Orquestrador** | Coordina. Tradueix intenció en acció. | Claude principal (sense fitxer) | Sempre actiu |
 | **Worker** | Executa tasques. | `.claude/agents/worker.md` | Per a implementació i feina mecànica |
 | **Oracle** | Criteri arquitectònic independent. | `.claude/agents/oracle.md` | Bootstrap, nous agents/serveis, incoherències, consulta explícita |
-<!-- Afegeix aquí els agents de servei que hagis activat -->
+| **Mem-curator** | Curador de memòria persistent. | `.claude/agents/mem-curator.md` | Quan flash.jsonl supera 20 entrades o cal consolidar skills |
+<!-- Afegeix aquí els agents de servei addicionals que hagis activat -->
 <!-- Exemple (Servei Docs): | **Doc-curator** | Manté coherència documental | `.claude/agents/doc-curator.md` | Auditoria docs, reorganització, detecció obsolets | -->
 
 ---

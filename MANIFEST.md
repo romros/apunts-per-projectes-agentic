@@ -18,19 +18,24 @@ Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 
 ---
 
+## Infraestructura — sempre activa
+
+| Component | Directori | Rol |
+|-----------|-----------|-----|
+| **Memòria** | `serveis/memoria/` | Pipeline de memòria persistent. Obligatori. Sense memòria, els agents comencen de zero cada sessió. |
+
+---
+
 ## Serveis de domini
 
-Aporten capacitats al projecte: memòria, gestió documental, metodologia, validació de codi.
+Aporten capacitats al projecte. Opcionals, activables per fricció observada.
 
 | Servei | Directori | Depèn de |
 |--------|-----------|----------|
-| **Memòria** | `serveis/memoria/` | — |
 | **Docs** | `serveis/docs/` | — |
 | **OKR** | `serveis/okr/` | Docs |
 | **PM** | `serveis/pm/` | OKR |
 | **Dev** | `serveis/dev/` | Memòria |
-
-**Nota**: el Servei Memòria és obligatori per a qualsevol projecte. No és opcional.
 
 ---
 
