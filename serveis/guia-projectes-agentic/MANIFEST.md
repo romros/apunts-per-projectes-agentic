@@ -20,7 +20,7 @@ Guardià del sistema agentic del projecte. Connecta el projecte amb el repo de r
 
 ## Dependències
 
-- **Servei Memòria** — necessita `flash-remember` per registrar consultes al repo de referència
+- **Servei Memòria** — necessita específicament `flash-remember/scripts/remember.sh` per registrar consultes al repo de referència. Verifica que `.claude/agent-memory/shared/flash-remember/scripts/remember.sh` existeix al projecte abans d'activar.
 
 ---
 
