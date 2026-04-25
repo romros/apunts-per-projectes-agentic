@@ -80,7 +80,7 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `plantilles/AGENTS.md` | ✓ |
 | `nucli/worker.md` | ✓ |
 | `nucli/oracle.md` | ✓ |
-| `serveis/memoria/` | Pendent (Fase 3) |
+| `serveis/memoria/` | ✓ |
 | `serveis/docs/` | Pendent (Fase 3) |
 | `serveis/okr/` `serveis/pm/` `serveis/dev/` | Pendent (Fase 6) |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
