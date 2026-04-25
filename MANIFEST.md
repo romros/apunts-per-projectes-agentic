@@ -78,8 +78,8 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `NORMES_GLOBALS.md` | ✓ |
 | `plantilles/CLAUDE.md` | ✓ |
 | `plantilles/AGENTS.md` | ✓ |
-| `nucli/worker.md` | Pendent (Fase 2) |
-| `nucli/oracle.md` | Pendent (Fase 2) |
+| `nucli/worker.md` | ✓ |
+| `nucli/oracle.md` | ✓ |
 | `serveis/memoria/` | Pendent (Fase 3) |
 | `serveis/docs/` | Pendent (Fase 3) |
 | `serveis/okr/` `serveis/pm/` `serveis/dev/` | Pendent (Fase 6) |
