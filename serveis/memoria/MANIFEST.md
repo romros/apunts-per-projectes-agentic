@@ -6,6 +6,8 @@ Pipeline de memòria persistent per a agents Claude Code. Permet que els agents 
 
 **Obligatori per a qualsevol projecte que usa els agents base.** Sense memòria, els agents comencen de zero a cada sessió.
 
+**Compatibilitat**: Unix/Mac/Linux natiu. Windows requereix Git Bash o WSL. Els scripts detecten `python3` o `python` automàticament. Si descarregues els scripts via PowerShell, assegura't que es guarden sense BOM (UTF-8 sense BOM); si no, usa `curl` des de Git Bash.
+
 ---
 
 ## Arquitectura

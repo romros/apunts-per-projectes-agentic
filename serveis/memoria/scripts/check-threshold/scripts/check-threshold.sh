@@ -5,6 +5,10 @@
 
 set -euo pipefail
 
+# Detecta Python (python3 en Unix/Mac, python en Windows)
+PYTHON=$(command -v python3 2>/dev/null || command -v python 2>/dev/null || echo "")
+[[ -z "$PYTHON" ]] && echo "Error: python3 o python no trobat al PATH" >&2 && exit 1
+
 if git rev-parse --show-toplevel 2>/dev/null; then
   ROOT="$(git rev-parse --show-toplevel)"
 else
@@ -15,7 +19,7 @@ THRESHOLD=${FLASH_THRESHOLD:-20}
 
 [[ ! -f "$SHORT_TERM" ]] && exit 1
 
-python3 << PYEOF
+$PYTHON << PYEOF
 import csv, sys, os
 from collections import Counter
 

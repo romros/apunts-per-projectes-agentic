@@ -3,6 +3,10 @@
 
 set -euo pipefail
 
+# Detecta Python (python3 en Unix/Mac, python en Windows)
+PYTHON=$(command -v python3 2>/dev/null || command -v python 2>/dev/null || echo "")
+[[ -z "$PYTHON" ]] && echo "Error: python3 o python no trobat al PATH" >&2 && exit 1
+
 if git rev-parse --show-toplevel 2>/dev/null; then
   ROOT="$(git rev-parse --show-toplevel)"
 else
@@ -25,7 +29,7 @@ mkdir -p "$BASE/proposals"
 LINES=$(wc -l < "$FLASH")
 echo "[process-flash] processant $LINES entrades de flash.jsonl"
 
-BASE="$BASE" FLASH_THRESHOLD="$THRESHOLD" python3 << 'PYEOF'
+BASE="$BASE" FLASH_THRESHOLD="$THRESHOLD" $PYTHON << 'PYEOF'
 import json, csv, hashlib, os, sys
 from pathlib import Path
 from datetime import datetime, timezone

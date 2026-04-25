@@ -4,6 +4,10 @@
 
 set -euo pipefail
 
+# Detecta Python (python3 en Unix/Mac, python en Windows)
+PYTHON=$(command -v python3 2>/dev/null || command -v python 2>/dev/null || echo "")
+[[ -z "$PYTHON" ]] && echo "Error: python3 o python no trobat al PATH" >&2 && exit 1
+
 # Troba el root del projecte: git si disponible, fallback a CLAUDE_PROJECT_ROOT o directori actual
 if git rev-parse --show-toplevel 2>/dev/null; then
   ROOT="$(git rev-parse --show-toplevel)"
@@ -32,7 +36,7 @@ done
 TS=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
 # Escriu JSON en una sola línia (append atòmic)
-python3 -c "
+$PYTHON -c "
 import json, sys
 entry = {
     'ts': '$TS',

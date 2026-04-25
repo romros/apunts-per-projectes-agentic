@@ -6,6 +6,10 @@
 set -euo pipefail
 
 # Troba el root del projecte: git si disponible, fallback a CLAUDE_PROJECT_ROOT o directori actual
+# Detecta Python (python3 en Unix/Mac, python en Windows)
+PYTHON=$(command -v python3 2>/dev/null || command -v python 2>/dev/null || echo "")
+[[ -z "$PYTHON" ]] && echo "Error: python3 o python no trobat al PATH" >&2 && exit 1
+
 if git rev-parse --show-toplevel 2>/dev/null; then
   ROOT="$(git rev-parse --show-toplevel)"
 else
@@ -34,7 +38,7 @@ echo ""
 
 # --- Session checkpoint (si existeix i és fresc <24h) ---
 if [[ -f "$CHECKPOINT" ]]; then
-  python3 << PYEOF
+  $PYTHON << PYEOF
 import re, subprocess
 from datetime import datetime, timezone
 
@@ -95,14 +99,14 @@ fi
 
 # --- Short-term recent ---
 if [[ -f "$SHORT_TERM" ]]; then
-  COUNT=$(python3 -c "
+  COUNT=$($PYTHON -c "
 import csv
 with open('$SHORT_TERM') as f:
     rows = [r for r in csv.DictReader(f) if r.get('agent','') == '$AGENT']
 print(len(rows))
 ")
   echo "## Short-term recent (últimes $LIMIT de $COUNT entrades per $AGENT)"
-  python3 -c "
+  $PYTHON -c "
 import csv
 with open('$SHORT_TERM') as f:
     rows = [r for r in csv.DictReader(f) if r.get('agent','') == '$AGENT']
@@ -121,7 +125,7 @@ if [[ -d "$PROPOSALS_DIR" ]]; then
   CONFLICTS=$(grep -rl "status: CONFLICT" "$PROPOSALS_DIR" 2>/dev/null | wc -l) || true
   if [[ "$CONFLICTS" -gt 0 ]]; then
     echo "## CONFLICTES DE MEMÒRIA PENDENTS ($CONFLICTS)"
-    python3 << PYEOF
+    $PYTHON << PYEOF
 import os, re
 from pathlib import Path
 from datetime import datetime, timezone
