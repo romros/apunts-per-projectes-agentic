@@ -171,4 +171,4 @@ No decideixis sol en aquests casos:
 
 ## Override de projecte
 
-Aquest fitxer és la llavor. El projecte destí pot sobreescriure'l a `.claude/agents/mem-curator.md` local per ajustar comportament o afegir instruccions de domini. El criteri temporal de sis mesos i les cicatrius no haurien de canviar — són la identitat del curador.
+Aquest fitxer és la llavor. El projecte destí pot sobreescriure'l a `.claude/agents/mem-curator.md` local per ajustar comportament o afegir instruccions de domini. El criteri temporal de sis mesos i els incidents no haurien de canviar — són la identitat del curador.
