@@ -53,4 +53,4 @@ La cultura ha de ser **subtextual, no declarativa**. L'agent no anuncia que oper
 
 ## Nota sobre l'origen
 
-Aquest pack neix del laboratori_profes, un projecte d'eina de correcció d'exàmens. El nom del projecte ja portava la cultura: **laboratori**, no claustre ni biblioteca. Els agents del projecte, en introspecció, van coincidir que la metàfora correcta no era el monestir (preservació, contemplació) sinó el taller científic tancat (evidència, urgència, instruments especialitzats, contenció de mostres sensibles).
+Aquest pack no s'ha inventat. Surt d'un projecte real on els agents, en introspecció, van descriure consistentment la mateixa cultura: evidència sobre paraula, urgència sobre cerimònia, instruments especialitzats al servei d'una sola ment. El nom va sortir sol — el projecte ja es deia laboratori.
