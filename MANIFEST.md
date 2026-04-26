@@ -128,7 +128,11 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `nucli/skills/auto-oracle/SKILL.md` | ✓ |
 | `nucli/hooks/oracle-gate-post.sh` | ✓ |
 | `nucli/hooks/oracle-gate-pre-commit.sh` | ✓ |
+| `nucli/hooks/oracle-session-start.sh` | ✓ |
 | `nucli/hooks/settings-example.json` | ✓ |
+| `nucli/plantilles/oracle-memory/MODEL.md` | ✓ |
+| `nucli/plantilles/oracle-memory/PREDICTIONS.md` | ✓ |
+| `nucli/plantilles/oracle-memory/WATCHLIST.md` | ✓ |
 | `serveis/memoria/` | ✓ |
 | `serveis/docs/` | ✓ |
 | `serveis/guia-projectes-agentic/` | ✓ |

@@ -112,6 +112,8 @@ Usa l'esquelet de `plantilles/CLAUDE.md` que ja has llegit al Pas 0. Completa'l:
 - Omple `## Agents actius i latents`: declara quins agents s'invocaran habitualment (actius) i quins estan disponibles però no per defecte (latents). Regla: oracle és sempre latent.
 - Copia `nucli/orquestracio.md` → `docs/orquestracio.md` (protocol de coordinació)
 - Crea `docs/decisions.md` a partir de `nucli/plantilles/decisions.md` (registre de decisions oracle)
+- Crea `.claude/agent-memory/oracle/MODEL.md`, `PREDICTIONS.md`, `WATCHLIST.md` a partir de `nucli/plantilles/oracle-memory/`
+- (Opcional) Activa l'Oracle Gate: copia `nucli/hooks/oracle-gate-post.sh`, `oracle-gate-pre-commit.sh` a `.claude/hooks/` i registra a `.claude/settings.json`
 - Substitueix `COMMIT_SHA` al marcador de versió per la referència de la URL que has llegit
 - Esborra les seccions comentades que no s'usen (serveis no activats, invariants buits, etc.)
 

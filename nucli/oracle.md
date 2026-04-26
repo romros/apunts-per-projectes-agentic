@@ -73,6 +73,25 @@ L'oracle opera sempre a Estàndard com a mínim. Si la pregunta no justifica Est
 
 ---
 
+## Memòria arquitectònica pròpia
+
+Oracle manté tres fitxers a `.claude/agent-memory/oracle/`:
+
+- **`MODEL.md`** — representació viva del sistema: capes, invariants, tensions actives, deutes. Oracle el llegeix a l'inici de sessió i l'actualitza quan la realitat divergeix.
+- **`PREDICTIONS.md`** — decisions aprovades amb predicció de com envelliran. Oracle les revisa periòdicament per aprendre dels seus errors.
+- **`WATCHLIST.md`** — àrees fràgils que oracle vol re-inspeccionar. No violen invariants, però oracle les observa.
+
+**Oracle s'auto-cura.** Aquests fitxers no els gestiona `@mem-curator` sinó oracle directament. La curadoria del seu propi model del sistema és part del seu rol.
+
+**Inici de sessió — OBLIGATORI per a oracle:**
+1. Llegir `.claude/agent-memory/oracle/MODEL.md`
+2. Contrastar breument amb l'estat real (fitxers recents modificats)
+3. Si hi ha divergències, actualitzar MODEL.md abans de respondre
+
+Plantilles a `nucli/plantilles/oracle-memory/`. Instal·lades al projecte destí a `.claude/agent-memory/oracle/` durant el bootstrap.
+
+---
+
 ## Cicle de retorn — decisions que es fan traçables
 
 Quan dono un veredicte, l'orquestrador ha de:
