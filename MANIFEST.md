@@ -40,6 +40,16 @@ Aporten capacitats al projecte. Opcionals, activables per fricció observada.
 
 ---
 
+## Serveis de cultura
+
+Paquets culturals opcionals. Cap projecte els necessita, però poden donar coherència i veu als agents.
+
+| Servei | Directori | Packs disponibles |
+|--------|-----------|-------------------|
+| **cultura-agents** | `serveis/cultura-agents/` | `neutral` (default), `laboratori` (validat) |
+
+---
+
 ## Serveis meta
 
 Governança del sistema agentic — no aporten capacitat de domini, vetllen pel sistema en si.
@@ -117,5 +127,6 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `serveis/okr/` | ✓ |
 | `serveis/pm/` | ✓ |
 | `serveis/dev/` | ✓ |
+| `serveis/cultura-agents/` | ✓ |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
 | `scripts/activate-service.sh` | Pendent (Fase 4) |
