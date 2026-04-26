@@ -14,7 +14,8 @@ Sistema de gestió d'objectius (OKR) per a projectes agentics. Manté la font de
 |--------|-------------------|
 | `agents/okr-curator.md` | `.claude/agents/okr-curator.md` |
 | `plantilles/tasca.md` | `[directori-okr]/plantilles/tasca.md` — plantilla canònica de tasques |
-| `plantilles/BOARD.md` | `[directori-okr]/BOARD.md` — esquelet del board (regenerar amb okr-curator) |
+| `plantilles/BOARD.md` | `[directori-okr]/BOARD.md` — esquelet del board |
+| `skills/estat/SKILL.md` | `.claude/skills/estat/SKILL.md` → `/estat` |
 
 ---
 

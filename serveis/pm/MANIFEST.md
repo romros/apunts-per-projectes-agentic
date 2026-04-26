@@ -14,6 +14,7 @@ Product Manager agentic per al projecte. Gestiona el flux de treball: defineix t
 |--------|-------------------|
 | `agents/pm.md` | `.claude/agents/pm.md` |
 | `coordinacio-pm-okr.md` | `docs/coordinacio-pm-okr.md` (recomanat — és un doc de referència, no un agent) |
+| `skills/tasca-seguent/SKILL.md` | `.claude/skills/tasca-seguent/SKILL.md` → `/tasca-seguent` |
 
 ---
 

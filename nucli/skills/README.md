@@ -64,6 +64,8 @@ El camp `description` és el que Claude usa per decidir quan activar el skill au
 
 Ref: https://code.claude.com/docs/en/skills
 
-## Skills del nucli previstos
+## Skills del nucli disponibles
 
-*(Cap creat encara. S'afegiran quan un contingut demostri ser compartit per ≥2 agents.)*
+| Skill | Command | Quan usar |
+|-------|---------|-----------|
+| `oracle/SKILL.md` | `/oracle <pregunta>` | Decisions arquitectòniques amb trade-offs reals |
