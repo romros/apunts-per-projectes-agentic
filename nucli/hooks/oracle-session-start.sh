@@ -60,4 +60,19 @@ else
   fi
 fi
 
+# 5. Report d'auditoria cron recent?
+AUDITS_DIR="$ROOT/.claude/agent-memory/oracle/audits"
+if [[ -d "$AUDITS_DIR" ]]; then
+  LATEST_AUDIT=$(ls "$AUDITS_DIR"/*.md 2>/dev/null | sort -r | head -1)
+  if [[ -n "$LATEST_AUDIT" ]]; then
+    AUDIT_DATE=$(basename "$LATEST_AUDIT" .md)
+    AUDIT_AGE_DAYS=$(( ( $(date +%s) - $(date -d "$AUDIT_DATE" +%s 2>/dev/null || date -j -f "%Y-%m-%d" "$AUDIT_DATE" +%s 2>/dev/null || echo 0) ) / 86400 ))
+    if [[ "$AUDIT_AGE_DAYS" -le 2 ]]; then
+      echo "📋 Auditoria oracle recent ($AUDIT_DATE):"
+      grep -E "^(REVISAR|TENSIONS|NET|Auditoria)" "$LATEST_AUDIT" | head -3 | sed 's/^/   /'
+      echo ""
+    fi
+  fi
+fi
+
 echo "=== FI ORACLE AUDIT ==="

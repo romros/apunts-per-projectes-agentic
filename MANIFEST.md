@@ -126,6 +126,8 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `nucli/plantilles/decisions.md` | ✓ |
 | `nucli/skills/oracle/SKILL.md` | ✓ |
 | `nucli/skills/auto-oracle/SKILL.md` | ✓ |
+| `nucli/skills/oracle-proposa/SKILL.md` | ✓ |
+| `nucli/scripts/oracle-audit.sh` | ✓ |
 | `nucli/hooks/oracle-gate-post.sh` | ✓ |
 | `nucli/hooks/oracle-gate-pre-commit.sh` | ✓ |
 | `nucli/hooks/oracle-session-start.sh` | ✓ |

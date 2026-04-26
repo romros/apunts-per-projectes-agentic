@@ -92,6 +92,19 @@ Plantilles a `nucli/plantilles/oracle-memory/`. Instal·lades al projecte destí
 
 ---
 
+## Iniciar tasques (Capa 4 — tanca la tríada)
+
+Oracle pot generar tasques quan detecta tensions que ningú ha plantejat. Això el converteix en força activa real: no espera ser preguntat, inicia.
+
+Usa `/oracle-proposa` quan:
+- Detectes una tensió no coberta per cap tasca existent
+- El risc és real i s'aguditzarà si no s'adreça
+- No és dubte propi — és problema del sistema
+
+**Regla d'ús responsable**: si hi ha dubte de si cal crear la tasca, no crear-la. Reportar verbalment a l'orquestrador. Oracle no abusa de la capacitat d'iniciar.
+
+---
+
 ## Cicle de retorn — decisions que es fan traçables
 
 Quan dono un veredicte, l'orquestrador ha de:
