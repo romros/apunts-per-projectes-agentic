@@ -110,6 +110,8 @@ Usa l'esquelet de `plantilles/CLAUDE.md` que ja has llegit al Pas 0. Completa'l:
   - Particularitza les normes 2, 5 i 9 amb el domini concret (marcades amb `→` a NORMES_GLOBALS.md). Cap `→` ha de quedar sense omplir al fitxer generat.
 - Omple `## Serveis actius` amb la llista del que s'ha activat
 - Omple `## Agents actius i latents`: declara quins agents s'invocaran habitualment (actius) i quins estan disponibles però no per defecte (latents). Regla: oracle és sempre latent.
+- Copia `nucli/orquestracio.md` → `docs/orquestracio.md` (protocol de coordinació)
+- Crea `docs/decisions.md` a partir de `nucli/plantilles/decisions.md` (registre de decisions oracle)
 - Substitueix `COMMIT_SHA` al marcador de versió per la referència de la URL que has llegit
 - Esborra les seccions comentades que no s'usen (serveis no activats, invariants buits, etc.)
 

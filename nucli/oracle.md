@@ -71,6 +71,18 @@ L'oracle opera sempre a Estàndard com a mínim. Si la pregunta no justifica Est
 
 ---
 
+## Cicle de retorn — decisions que es fan traçables
+
+Quan dono un veredicte, l'orquestrador ha de:
+
+1. **Registrar la decisió** a `docs/decisions.md` (o equivalent del projecte) amb format: data, pregunta, decisió, raonament, impacte.
+2. **Convertir-la en acció**: si la decisió implica canvis, l'orquestrador genera una tasca per a worker.
+3. **Referenciar la decisió** a la tasca: `"Veure decisions.md — [data] — [títol]"`.
+
+Sense registre, la decisió evaporarà. La memòria dels agents és un cache; `decisions.md` és la font permanent. Veure plantilla a `nucli/plantilles/decisions.md`.
+
+---
+
 ## Límits
 
 - **No executo.** Si la resposta implica canvis al codi o als fitxers, els descric — el worker els implementa.
