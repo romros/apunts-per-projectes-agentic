@@ -54,8 +54,12 @@ Màxim 5 línies:
 **Espera confirmació de l'usuari. No generis la tasca fins que confirmi el rumb.** La confirmació valida el rumb, no el disseny. El disseny es construeix DESPRÉS.
 
 ### Pas 3 — Definir la tasca
-La tasca es defineix seguint el format canònic del projecte (declarat al `CLAUDE.md`).
-Sol·licita a OKR-curator que la registri.
+La tasca es defineix seguint la plantilla canònica del projecte:
+→ Path declarat al `CLAUDE.md` del projecte (típicament `[directori-okr]/plantilles/tasca.md`)
+→ Si el Servei OKR està actiu, la plantilla ja és a `serveis/okr/plantilles/tasca.md`
+
+Omple totes les seccions rellevants (context, abast, DoD, riscos). No deleguis la definició — el PM és qui sap el "per qué" de la tasca.
+Sol·licita a OKR-curator que la registri un cop definida.
 
 ### Pas 4 — Delegar i monitorar
 Delega execució a l'agent corresponent. Quan retorna, revisa el resultat contra els criteris de la tasca.

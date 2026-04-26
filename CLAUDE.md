@@ -27,6 +27,8 @@ Ets el mantenidor del manual. La teva feina és construir i mantenir les peces d
 - **Valors oficials d'`effort`**: `low`, `medium`, `high`, `xhigh`, `max`. El valor `normal` **no és oficial** — usar `medium`. Mapejament: estàndard→medium, intensiu→high.
 - **`skills` al frontmatter**: només per contingut compartit (≥2 agents), volàtil, o referencial. No per defecte. Cost: augmenta tokens d'entrada per invocació. Skills del nucli a `nucli/skills/`, específics a `serveis/<nom>/skills/`.
 - **Cicle de destil·lació d'agents**: per cada agent nou, aplicar el cicle formal (Pas 1-4 + Pas 2.5 condicional per frontmatter extensions).
+- **Esquelet d'agent**: `nucli/plantilles/agent.md` — segueix el model oficial Claude Code (frontmatter: `name`, `description`, `model`, `effort`, `tools`, `skills` opcional). Tot agent nou al llavor ha de seguir aquest esquelet.
+- **Format oficial de skills**: `<nom>/SKILL.md` amb frontmatter (`name`, `description`, `when_to_use`, `disable-model-invocation`). Veure documentació oficial: https://code.claude.com/docs/en/skills
 
 ## Estructura
 ```

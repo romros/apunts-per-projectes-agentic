@@ -74,8 +74,11 @@ Demana interactivament: id, objectiu, confidence, estat. Crea l'OKR. Registra.
 ### `new-task`
 1. Verifica que no hi ha cap tasca a `actual/` — si n'hi ha, atura i informa PM
 2. Demana: id, nom, okr_id, kr_num, estat
-3. Crea entrada a `tasques.csv` i el fitxer .md a `actual/`
-4. Registra a `history.csv`
+3. Crea entrada a `tasques.csv`
+4. Crea el fitxer `.md` a `actual/` seguint la plantilla canònica del projecte
+   → El projecte declara el path de la plantilla al seu `CLAUDE.md`
+   → Per defecte: `[directori-okr]/plantilles/tasca.md` (instal·lada amb el Servei OKR)
+5. Registra a `history.csv`
 
 ### `check`
 Auditoria d'integritat:
