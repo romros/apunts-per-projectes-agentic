@@ -31,12 +31,12 @@ Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 
 Aporten capacitats al projecte. Opcionals, activables per fricció observada.
 
-| Servei | Directori | Depèn de |
-|--------|-----------|----------|
-| **Docs** | `serveis/docs/` | — |
-| **OKR** | `serveis/okr/` | Docs | Rastreig d'objectius i tasques. Custodi de la font de veritat. |
+| Servei | Directori | Depèn de | Descripció |
+|--------|-----------|----------|------------|
+| **Docs** | `serveis/docs/` | — | Custòdia documental entre sessions. Inventari, coherència, progrés. |
+| **OKR** | `serveis/okr/` | — | Rastreig d'objectius i tasques. Custodi de la font de veritat (CSVs). |
 | **PM** | `serveis/pm/` | OKR | Coordinació del flux de treball agentic. Activa sempre amb OKR. |
-| **Dev** | `serveis/dev/` | Memòria | Worker especialitzat per a codi. Skills per projecte + dev-worker (protocol propi). |
+| **Dev** | `serveis/dev/` | Memòria | Worker especialitzat per a codi. Skills per projecte + dev-worker. |
 
 ---
 

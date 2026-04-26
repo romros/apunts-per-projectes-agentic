@@ -66,7 +66,7 @@ No demanis coses que ja saps per la inspecció. Si alguna cosa no has pogut dete
 
 Informa l'usuari del que activaràs per defecte:
 
-- **Agents base**: orquestrador (Claude principal) + worker + oracle
+- **Agents base**: orquestrador (Claude principal) + worker + easy-worker + oracle
 - **Servei Memòria**: necessari des del dia 1 — sense memòria, l'agent oblida entre sessions
 
 Pregunta de confirmació: "Confirmes que vols activar el nucli mínim i el Servei Memòria?"
@@ -109,6 +109,7 @@ Usa l'esquelet de `plantilles/CLAUDE.md` que ja has llegit al Pas 0. Completa'l:
 - Injecta a la secció `## Normes globals` el bloc de `NORMES_GLOBALS.md` **des del marcador `<!-- INICI INJECCIÓ -->`** fins al final del fitxer. No injectes el preàmbul.
   - Particularitza les normes 2, 5 i 9 amb el domini concret (marcades amb `→` a NORMES_GLOBALS.md). Cap `→` ha de quedar sense omplir al fitxer generat.
 - Omple `## Serveis actius` amb la llista del que s'ha activat
+- Omple `## Agents actius i latents`: declara quins agents s'invocaran habitualment (actius) i quins estan disponibles però no per defecte (latents). Regla: oracle és sempre latent.
 - Substitueix `COMMIT_SHA` al marcador de versió per la referència de la URL que has llegit
 - Esborra les seccions comentades que no s'usen (serveis no activats, invariants buits, etc.)
 
@@ -123,8 +124,8 @@ Usa l'esquelet de `plantilles/AGENTS.md` que ja has llegit al Pas 0. No el busqu
 
 **3. Agents del nucli**
 
-Llegeix `nucli/worker.md` i `nucli/oracle.md` des de la URL base.
-Copia'ls a `.claude/agents/worker.md` i `.claude/agents/oracle.md` del projecte destí.
+Llegeix `nucli/worker.md`, `nucli/easy-worker.md` i `nucli/oracle.md` des de la URL base.
+Copia'ls a `.claude/agents/worker.md`, `.claude/agents/easy-worker.md` i `.claude/agents/oracle.md` del projecte destí.
 
 *(Si els fitxers de nucli no existeixen encara — el manual està en construcció — informa l'usuari i usa un placeholder mínim: un fitxer amb nom i rol documentats.)*
 

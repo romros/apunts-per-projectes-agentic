@@ -13,6 +13,7 @@ Custòdia documental per a projectes agentic. Manté la coherència entre el que
 | Fitxer | Destí al projecte |
 |--------|-------------------|
 | `agents/doc-curator.md` | `.claude/agents/doc-curator.md` |
+| (creat pel projecte) `docs/meta/incidents-doc-curator.md` | `docs/meta/incidents-doc-curator.md` — el projecte el crea quan acumula incidents propis |
 
 ---
 

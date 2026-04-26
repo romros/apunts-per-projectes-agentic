@@ -13,7 +13,7 @@ Product Manager agentic per al projecte. Gestiona el flux de treball: defineix t
 | Fitxer | Destí al projecte |
 |--------|-------------------|
 | `agents/pm.md` | `.claude/agents/pm.md` |
-| `coordinacio-pm-okr.md` | `.claude/agents/coordinacio-pm-okr.md` o `docs/coordinacio-pm-okr.md` |
+| `coordinacio-pm-okr.md` | `docs/coordinacio-pm-okr.md` (recomanat — és un doc de referència, no un agent) |
 
 ---
 
