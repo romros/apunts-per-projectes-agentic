@@ -69,3 +69,4 @@ Ref: https://code.claude.com/docs/en/skills
 | Skill | Command | Quan usar |
 |-------|---------|-----------|
 | `oracle/SKILL.md` | `/oracle <pregunta>` | Decisions arquitectòniques amb trade-offs reals |
+| `auto-oracle/SKILL.md` | *(fons, sense command)* | Patrons que disparen oracle automàticament. `user-invocable: false` |

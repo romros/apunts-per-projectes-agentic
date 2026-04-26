@@ -34,6 +34,8 @@ Fora d'aquests moments, a criteri de l'orquestrador. Si la decisió és tàctica
 
 > Aquest és el filtre inicial. El `CLAUDE.md` del projecte pot afinar quan i com se'm convoca un cop la missió estigui clara.
 
+El skill `nucli/skills/auto-oracle/SKILL.md` (fons, `user-invocable: false`) injecta el patró de reconeixement al context de Claude — sense que l'usuari el cridi, Claude sap quins senyals han de disparar la meva convocatòria. Instal·la'l al projecte destí a `.claude/skills/auto-oracle/SKILL.md`.
+
 ---
 
 ## Com responc

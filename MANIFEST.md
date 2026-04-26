@@ -124,6 +124,8 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `nucli/orquestracio.md` | ✓ |
 | `nucli/plantilles/agent.md` | ✓ |
 | `nucli/plantilles/decisions.md` | ✓ |
+| `nucli/skills/oracle/SKILL.md` | ✓ |
+| `nucli/skills/auto-oracle/SKILL.md` | ✓ |
 | `serveis/memoria/` | ✓ |
 | `serveis/docs/` | ✓ |
 | `serveis/guia-projectes-agentic/` | ✓ |

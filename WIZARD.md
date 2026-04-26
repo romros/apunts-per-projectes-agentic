@@ -124,10 +124,14 @@ Usa l'esquelet de `plantilles/AGENTS.md` que ja has llegit al Pas 0. No el busqu
 - Substitueix `COMMIT_SHA` com al fitxer anterior
 - Esborra les seccions condicionals no aplicables
 
-**3. Agents del nucli**
+**3. Agents i skills del nucli**
 
 Llegeix `nucli/worker.md`, `nucli/easy-worker.md` i `nucli/oracle.md` des de la URL base.
 Copia'ls a `.claude/agents/worker.md`, `.claude/agents/easy-worker.md` i `.claude/agents/oracle.md` del projecte destí.
+
+Llegeix `nucli/skills/auto-oracle/SKILL.md` des de la URL base.
+Copia'l a `.claude/skills/auto-oracle/SKILL.md` del projecte destí.
+*(Aquest skill és de fons — s'activa automàticament, no apareix al menú `/`.)*
 
 *(Si els fitxers de nucli no existeixen encara — el manual està en construcció — informa l'usuari i usa un placeholder mínim: un fitxer amb nom i rol documentats.)*
 
