@@ -1,7 +1,9 @@
 # Model del sistema — oracle
 
 > Oracle manté i actualitza aquest fitxer. No és memòria flash — és el seu model viu del projecte.
-> Llegir-lo a l'inici de cada sessió oracle. Actualitzar-lo quan la realitat divergeixi.
+> **Regla de contingut**: MODEL.md conté NOMÉS invariants i contractes que oracle necessita en CADA invocació.
+> Si una secció no aplica al >70% de les preguntes, va a fitxers secundaris llegits sota demanda.
+> Llegit a l'inici de cada sessió oracle. Actualitzat quan la realitat divergeixi.
 
 ---
 

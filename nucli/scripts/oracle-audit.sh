@@ -27,6 +27,38 @@ if ! command -v claude &>/dev/null; then
   exit 1
 fi
 
+# Condició per executar l'auditoria (B — reformulada per oracle)
+# Surt sense cridar claude si: cap commit nou + cap predicció vençuda + cap agent nou
+LAST_AUDIT_FILE=$(ls "$AUDITS_DIR"/*.md 2>/dev/null | sort -r | head -1)
+SKIP=true
+
+if command -v git &>/dev/null && git -C "$ROOT" rev-parse HEAD &>/dev/null; then
+  if [[ -n "$LAST_AUDIT_FILE" ]]; then
+    LAST_AUDIT_DATE=$(basename "$LAST_AUDIT_FILE" .md)
+    # Commits des de l'última auditoria?
+    COMMITS_SINCE=$(git -C "$ROOT" log --since="$LAST_AUDIT_DATE" --oneline 2>/dev/null | wc -l | tr -d ' ')
+    if [[ "$COMMITS_SINCE" -gt 0 ]]; then SKIP=false; fi
+
+    # Agents modificats des de l'última auditoria?
+    AGENTS_MODIFIED=$(git -C "$ROOT" diff --name-only HEAD~"$COMMITS_SINCE" HEAD 2>/dev/null | grep ".claude/agents/" | wc -l | tr -d ' ')
+    if [[ "$AGENTS_MODIFIED" -gt 0 ]]; then SKIP=false; fi
+  else
+    SKIP=false  # Primera execució — sempre auditar
+  fi
+fi
+
+# Prediccions vençudes?
+if [[ -f "$ORACLE_MEMORY/PREDICTIONS.md" ]]; then
+  if grep -q "$(date +"%Y-%m")" "$ORACLE_MEMORY/PREDICTIONS.md" 2>/dev/null; then
+    SKIP=false
+  fi
+fi
+
+if [[ "$SKIP" == "true" ]]; then
+  echo "[oracle-audit] Cap canvi des de l'última auditoria. Saltant (0 tokens)."
+  exit 0
+fi
+
 # Construir el prompt d'auditoria
 PROMPT=$(cat <<'EOF'
 Ets oracle, l'agent de criteri arquitectònic del projecte. Fas una auditoria autònoma del sistema.
