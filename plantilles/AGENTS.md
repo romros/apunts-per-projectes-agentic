@@ -7,7 +7,8 @@
 | Agent | Rol | Fitxer | Quan invocar |
 |-------|-----|--------|--------------|
 | **Orquestrador** | Coordina. Tradueix intenció en acció. | Claude principal (sense fitxer) | Sempre actiu |
-| **Worker** | Executa tasques. | `.claude/agents/worker.md` | Per a implementació i feina mecànica |
+| **Worker** | Executa tasques que requereixen context i judici tàctic. | `.claude/agents/worker.md` | Implementació, refactorització, tasques amb criteri |
+| **Easy-worker** | Executa tasques mecàniques (output prescrit). Model Haiku, cost baix. | `.claude/agents/easy-worker.md` | Git, fitxers, webfetch, scripts predefinits, tancament administratiu |
 | **Oracle** | Criteri arquitectònic independent. | `.claude/agents/oracle.md` | Bootstrap, nous agents/serveis, incoherències, consulta explícita |
 | **Mem-curator** | Curador de memòria persistent. | `.claude/agents/mem-curator.md` | Quan flash.jsonl supera 20 entrades o cal consolidar skills |
 <!-- Afegeix aquí els agents de servei addicionals que hagis activat -->

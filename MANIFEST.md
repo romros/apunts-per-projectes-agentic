@@ -7,7 +7,8 @@ Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 | Agent | Rol | Fitxer |
 |-------|-----|--------|
 | **Orquestrador** | Coordina. Tradueix intenció en acció. No decideix arquitectura. | El Claude principal — no té fitxer separat |
-| **Worker** | Executa tasques. No jutja decisions d'arquitectura. | `nucli/worker.md` |
+| **Worker** | Executa tasques que requereixen context i judici tàctic. | `nucli/worker.md` |
+| **Easy-worker** | Executa tasques mecàniques (output prescrit per input). Model Haiku, cost baix. | `nucli/easy-worker.md` |
 | **Oracle** | Criteri arquitectònic independent. Latent entre convocatòries. | `nucli/oracle.md` |
 
 **Quan convocar l'oracle** — en aquests moments, sempre; fora d'ells, a criteri:
@@ -108,6 +109,7 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `plantilles/CLAUDE.md` | ✓ |
 | `plantilles/AGENTS.md` | ✓ |
 | `nucli/worker.md` | ✓ |
+| `nucli/easy-worker.md` | ✓ |
 | `nucli/oracle.md` | ✓ |
 | `serveis/memoria/` | ✓ |
 | `serveis/docs/` | ✓ |
