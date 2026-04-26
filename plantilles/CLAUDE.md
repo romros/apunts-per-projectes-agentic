@@ -91,6 +91,25 @@ Arquitectura: `flash.jsonl` → (mem-curator quan cal) → `short-term.csv` → 
 
 ---
 
+## Agents actius i latents
+
+Declara explícitament quins agents invoca aquest projecte. Agents no llistats com a actius son **latents** — existeixen però no s'invoquen per defecte.
+
+**Actius** (invocables sense restricció):
+<!-- EL WIZARD OMPLE SEGONS ELS SERVEIS ACTIVATS I LA MISSIÓ DEL PROJECTE -->
+<!-- Exemple: -->
+<!-- - `@worker` — implementació i tasques amb context -->
+<!-- - `@easy-worker` — tasques mecàniques (git, fitxers, scripts) -->
+<!-- - `@mem-curator` — consolidació de memòria quan flash.jsonl > 20 entrades -->
+
+**Latents** (disponibles però no invocats habitualment):
+<!-- - `@oracle` — decisions arquitectòniques i fork points (convocar ritualment) -->
+<!-- - Afegir/treure segons el projecte -->
+
+> Un agent latent no és un agent absent. Pot ser convocat quan calgui. Declarar-lo latent evita invocacions per defecte innecessàries.
+
+---
+
 ## Origen del sistema agentic
 
 <!-- WIZARD: omple amb la URL base i el commit SHA del moment del bootstrap -->
