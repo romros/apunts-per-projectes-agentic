@@ -121,6 +121,7 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `nucli/worker.md` | ✓ |
 | `nucli/easy-worker.md` | ✓ |
 | `nucli/oracle.md` | ✓ |
+| `nucli/plantilles/agent.md` | ✓ |
 | `serveis/memoria/` | ✓ |
 | `serveis/docs/` | ✓ |
 | `serveis/guia-projectes-agentic/` | ✓ |

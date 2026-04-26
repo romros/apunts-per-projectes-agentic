@@ -13,7 +13,8 @@ Sistema de gestió d'objectius (OKR) per a projectes agentics. Manté la font de
 | Fitxer | Destí al projecte |
 |--------|-------------------|
 | `agents/okr-curator.md` | `.claude/agents/okr-curator.md` |
-| (format d'estructura OKR declarat al MANIFEST) | El projecte crea els directoris i CSVs |
+| `plantilles/tasca.md` | `[directori-okr]/plantilles/tasca.md` — plantilla canònica de tasques |
+| `plantilles/BOARD.md` | `[directori-okr]/BOARD.md` — esquelet del board (regenerar amb okr-curator) |
 
 ---
 
