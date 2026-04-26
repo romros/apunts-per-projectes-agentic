@@ -34,8 +34,8 @@ Aporten capacitats al projecte. Opcionals, activables per fricció observada.
 | Servei | Directori | Depèn de |
 |--------|-----------|----------|
 | **Docs** | `serveis/docs/` | — |
-| **OKR** | `serveis/okr/` | Docs |
-| **PM** | `serveis/pm/` | OKR |
+| **OKR** | `serveis/okr/` | Docs | Rastreig d'objectius i tasques. Custodi de la font de veritat. |
+| **PM** | `serveis/pm/` | OKR | Coordinació del flux de treball agentic. Activa sempre amb OKR. |
 | **Dev** | `serveis/dev/` | Memòria |
 
 ---
@@ -114,6 +114,8 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `serveis/memoria/` | ✓ |
 | `serveis/docs/` | ✓ |
 | `serveis/guia-projectes-agentic/` | ✓ |
-| `serveis/okr/` `serveis/pm/` `serveis/dev/` | Pendent (Fase 6) |
+| `serveis/okr/` | ✓ |
+| `serveis/pm/` | ✓ |
+| `serveis/dev/` | Pendent |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
 | `scripts/activate-service.sh` | Pendent (Fase 4) |
