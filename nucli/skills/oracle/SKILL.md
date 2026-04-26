@@ -43,6 +43,14 @@ Risc: [descripció del risc].
 3. Donarà un veredicte clar — no opcions ambigues
 4. Si la pregunta no justifica oracle, t'ho dirà i et redirigirà
 
+## Després de la resposta d'oracle
+
+1. Registra la decisió a `docs/decisions.md` (plantilla a `nucli/plantilles/decisions.md`).
+2. Si el projecte usa l'Oracle Gate (hooks), esborra la marca:
+   ```bash
+   rm -f .claude/oracle-review-pending
+   ```
+
 ## El que NO farà
 
 - Implementar res
