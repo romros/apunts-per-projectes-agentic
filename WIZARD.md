@@ -32,6 +32,7 @@ Abans de preguntar res, mira el projecte on ets ara:
 
 - Hi ha `CLAUDE.md`? Llegeix-lo.
 - Hi ha `.claude/`? Llista el contingut.
+- Hi ha `.claude/agents/`? Llista els agents existents. **Atenció als duplicats de rol**: si ja existeix un agent que fa de oracle (independentment del nom — pot ser `gran-oracle`, `architect`, etc.), **no instal·lis `oracle.md`**. En comptes d'això, proposa enrichir l'existent amb el contingut de `nucli/oracle.md`. Dos agents amb el mateix rol creen confusió i competència.
 - Hi ha `README.md`? Llegeix les primeres 30 línies.
 - Detecta stack: busca `package.json`, `pyproject.toml`, `Cargo.toml`, `go.mod` o equivalent.
 
@@ -129,7 +130,10 @@ Usa l'esquelet de `plantilles/AGENTS.md` que ja has llegit al Pas 0. No el busqu
 **3. Agents i skills del nucli**
 
 Llegeix `nucli/worker.md`, `nucli/easy-worker.md` i `nucli/oracle.md` des de la URL base.
-Copia'ls a `.claude/agents/worker.md`, `.claude/agents/easy-worker.md` i `.claude/agents/oracle.md` del projecte destí.
+
+Per a `oracle.md`: **primer comprova si ja existeix un agent oracle-equivalent al projecte** (detectat al Pas 1). Si existeix, no sobreescriguis — proposa enrichir l'existent. Si no existeix, copia'l com a `.claude/agents/oracle.md`.
+
+Copia worker i easy-worker sempre: `.claude/agents/worker.md`, `.claude/agents/easy-worker.md`.
 
 Llegeix `nucli/skills/auto-oracle/SKILL.md` des de la URL base.
 Copia'l a `.claude/skills/auto-oracle/SKILL.md` del projecte destí.
