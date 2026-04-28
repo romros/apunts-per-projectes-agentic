@@ -37,6 +37,7 @@ Aporten capacitats al projecte. Opcionals, activables per fricció observada.
 | **OKR** | `serveis/okr/` | — | Rastreig d'objectius i tasques. Custodi de la font de veritat (CSVs). |
 | **PM** | `serveis/pm/` | OKR | Coordinació del flux de treball agentic. Activa sempre amb OKR. |
 | **Dev** | `serveis/dev/` | Memòria | Worker especialitzat per a codi. Skills per projecte + dev-worker. |
+| **Editorial** | `serveis/editorial/` | Memòria (recomanat) | Pipeline multi-agent per a publicació d'articles de blog amb flux scout→brief→redacció→correcció. |
 
 ---
 
@@ -142,5 +143,6 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `serveis/pm/` | ✓ |
 | `serveis/dev/` | ✓ |
 | `serveis/cultura-agents/` | ✓ |
+| `serveis/editorial/` | ✓ |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
 | `scripts/activate-service.sh` | Pendent (Fase 4) |
