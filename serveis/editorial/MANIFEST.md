@@ -1,3 +1,31 @@
+---
+servei: editorial
+categoria: domini
+depen_de:
+  - memoria
+depen_de_recomanat:
+  - docs
+incompatible_amb: []
+requisits_projecte:
+  - analista-dades  # agent que el projecte ha de definir — accés a la font de dades interna. Sense ell, Fases 1 i 3 de /cicle es fan manualment.
+aporta_agents:
+  - radar-web
+  - ideator
+  - investigador-web
+  - redactor
+  - corrector
+aporta_commands:
+  - /cicle
+aporta_skills: []
+escriu_a:
+  - .claude/agents/
+  - .claude/commands/cicle.md
+  - docs/flux-editorial.md
+  - "pluja de idees/"
+  - briefs/
+  - peces/
+---
+
 # Servei Editorial
 
 Pipeline multi-agent per produir articles de blog de qualitat periodística. Combina escaneig de tendències externes, anàlisi de dades internes i un flux de redacció + correcció en 5 fases.
@@ -40,7 +68,7 @@ peces/<slug>/      ← articles finals per tema
 ## Dependències
 
 - **Nucli base obligatori**: orquestrador + worker + easy-worker. `easy-worker` és el recurs de delegació mecànica del pipeline.
-- **Servei Memòria recomanat**: per recordar articles publicats entre sessions i evitar reproposta de temes.
+- **Servei Memòria obligatori**: per recordar articles publicats entre sessions i evitar reproposta de temes.
 - **`analista-dades`**: **NO inclòs** — cada projecte ha de definir el seu propi agent d'anàlisi de dades internes. Veure secció "Configuració post-activació".
 
 ---

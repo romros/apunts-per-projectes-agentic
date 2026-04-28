@@ -1,3 +1,18 @@
+---
+servei: memoria
+categoria: infraestructura
+depen_de: []
+depen_de_recomanat: []
+incompatible_amb: []
+requisits_projecte: []
+aporta_agents:
+  - mem-curator
+aporta_commands: []
+aporta_skills: []
+escriu_a:
+  - .claude/agent-memory/
+---
+
 # Servei Memòria
 
 ## Descripció

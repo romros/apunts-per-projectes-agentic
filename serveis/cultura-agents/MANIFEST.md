@@ -1,3 +1,19 @@
+---
+servei: cultura-agents
+categoria: cultura
+depen_de: []
+depen_de_recomanat: []
+incompatible_amb: []
+requisits_projecte: []
+aporta_agents: []
+aporta_commands: []
+aporta_skills:
+  - cultura
+escriu_a:
+  - .claude/skills/cultura.md
+nota: "No aporta agents propis. Modifica els agents del projecte que declarin 'skills: [cultura]' al frontmatter."
+---
+
 # Servei cultura-agents
 
 ## Descripció

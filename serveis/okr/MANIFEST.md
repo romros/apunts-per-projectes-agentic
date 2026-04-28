@@ -1,3 +1,23 @@
+---
+servei: okr
+categoria: domini
+depen_de: []
+depen_de_recomanat:
+  - docs
+incompatible_amb: []
+requisits_projecte: []
+aporta_agents:
+  - okr-curator
+aporta_commands: []
+aporta_skills:
+  - estat
+escriu_a:
+  - .claude/agents/okr-curator.md
+  - .claude/skills/estat/
+  - "[directori-okr]/"
+nota_territorial: "okr/ és territori exclusiu d'okr-curator. doc-curator NO gestiona fitxers dins d'okr/ excepte si el projecte ho declara explícitament al CLAUDE.md."
+---
+
 # Servei OKR
 
 ## Descripció

@@ -1,3 +1,19 @@
+---
+servei: guia-projectes-agentic
+categoria: meta
+depen_de:
+  - memoria
+depen_de_recomanat: []
+incompatible_amb: []
+requisits_projecte: []
+aporta_agents:
+  - guia-projectes-agentic
+aporta_commands: []
+aporta_skills: []
+escriu_a:
+  - .claude/agents/guia-projectes-agentic.md
+---
+
 # Servei guia-projectes-agentic
 
 ## Descripció

@@ -1,3 +1,21 @@
+---
+servei: docs
+categoria: domini
+depen_de: []
+depen_de_recomanat:
+  - memoria
+incompatible_amb: []
+requisits_projecte: []
+aporta_agents:
+  - doc-curator
+aporta_commands: []
+aporta_skills: []
+escriu_a:
+  - .claude/agents/doc-curator.md
+  - docs/meta/
+nota_territorial: "doc-curator gestiona docs/ però NO toca okr/ — aquest directori pertany exclusivament a okr-curator si el servei OKR és actiu."
+---
+
 # Servei Docs
 
 ## Descripció

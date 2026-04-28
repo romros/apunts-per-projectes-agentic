@@ -1,3 +1,22 @@
+---
+servei: pm
+categoria: domini
+depen_de:
+  - okr
+depen_de_recomanat: []
+incompatible_amb: []
+requisits_projecte: []
+aporta_agents:
+  - pm
+aporta_commands: []
+aporta_skills:
+  - tasca-seguent
+escriu_a:
+  - .claude/agents/pm.md
+  - .claude/skills/tasca-seguent/
+  - docs/coordinacio-pm-okr.md
+---
+
 # Servei PM
 
 ## Descripció

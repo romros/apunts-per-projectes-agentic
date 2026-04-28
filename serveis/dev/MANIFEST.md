@@ -1,3 +1,20 @@
+---
+servei: dev
+categoria: domini
+depen_de:
+  - memoria
+depen_de_recomanat: []
+incompatible_amb: []
+requisits_projecte: []
+aporta_agents:
+  - dev-worker
+aporta_commands: []
+aporta_skills: []
+escriu_a:
+  - .claude/agents/dev-worker.md
+  - .claude/skills/
+---
+
 # Servei Dev
 
 ## Descripció
