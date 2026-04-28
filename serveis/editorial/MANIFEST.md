@@ -1,4 +1,4 @@
----
+```yaml
 servei: editorial
 categoria: domini
 depen_de:
@@ -24,7 +24,7 @@ escriu_a:
   - "pluja de idees/"
   - briefs/
   - peces/
----
+```
 
 # Servei Editorial
 

@@ -1,4 +1,4 @@
----
+```yaml
 servei: guia-projectes-agentic
 categoria: meta
 depen_de:
@@ -12,7 +12,7 @@ aporta_commands: []
 aporta_skills: []
 escriu_a:
   - .claude/agents/guia-projectes-agentic.md
----
+```
 
 # Servei guia-projectes-agentic
 

@@ -1,4 +1,4 @@
----
+```yaml
 servei: okr
 categoria: domini
 depen_de: []
@@ -16,7 +16,7 @@ escriu_a:
   - .claude/skills/estat/
   - "[directori-okr]/"
 nota_territorial: "okr/ és territori exclusiu d'okr-curator. doc-curator NO gestiona fitxers dins d'okr/ excepte si el projecte ho declara explícitament al CLAUDE.md."
----
+```
 
 # Servei OKR
 

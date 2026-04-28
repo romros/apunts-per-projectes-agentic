@@ -1,4 +1,4 @@
----
+```yaml
 servei: memoria
 categoria: infraestructura
 depen_de: []
@@ -11,7 +11,7 @@ aporta_commands: []
 aporta_skills: []
 escriu_a:
   - .claude/agent-memory/
----
+```
 
 # Servei Memòria
 

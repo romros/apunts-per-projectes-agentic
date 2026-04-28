@@ -1,4 +1,4 @@
----
+```yaml
 servei: docs
 categoria: domini
 depen_de: []
@@ -14,7 +14,7 @@ escriu_a:
   - .claude/agents/doc-curator.md
   - docs/meta/
 nota_territorial: "doc-curator gestiona docs/ però NO toca okr/ — aquest directori pertany exclusivament a okr-curator si el servei OKR és actiu."
----
+```
 
 # Servei Docs
 

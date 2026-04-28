@@ -1,4 +1,4 @@
----
+```yaml
 servei: pm
 categoria: domini
 depen_de:
@@ -15,7 +15,7 @@ escriu_a:
   - .claude/agents/pm.md
   - .claude/skills/tasca-seguent/
   - docs/coordinacio-pm-okr.md
----
+```
 
 # Servei PM
 

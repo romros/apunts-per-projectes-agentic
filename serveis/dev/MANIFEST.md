@@ -1,4 +1,4 @@
----
+```yaml
 servei: dev
 categoria: domini
 depen_de:
@@ -13,7 +13,7 @@ aporta_skills: []
 escriu_a:
   - .claude/agents/dev-worker.md
   - .claude/skills/
----
+```
 
 # Servei Dev
 
