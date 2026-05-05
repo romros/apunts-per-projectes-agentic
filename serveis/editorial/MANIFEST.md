@@ -115,6 +115,12 @@ mkdir -p "pluja de idees" briefs peces
 
 ---
 
+## Correcció lingüística en català
+
+Si el projecte publica en català, el servei `corrector-catala` és un complement natural com a darrera capa del pipeline. El `corrector` d'aquest servei verifica compliment de brief i coherència factual; el `corrector-catala` verifica normativa lingüística IEC (ortografia, gramàtica, naturalitat). Les dues capes son independents i compatibles.
+
+---
+
 ## Nota sobre easy-worker
 
 Si el projecte ja té `easy-worker` instal·lat (nucli del framework), no cal instal·lar cap agent addicional de suport mecànic. `easy-worker` és el destí de les delegacions mecàniques de tots els agents editorials.

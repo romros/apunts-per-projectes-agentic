@@ -38,6 +38,8 @@ Aporten capacitats al projecte. Opcionals, activables per fricció observada.
 | **PM** | `serveis/pm/` | OKR | Coordinació del flux de treball agentic. Activa sempre amb OKR. |
 | **Dev** | `serveis/dev/` | Memòria | Worker especialitzat per a codi. Skills per projecte + dev-worker. |
 | **Editorial** | `serveis/editorial/` | Memòria (recomanat) | Pipeline multi-agent per a publicació d'articles de blog amb flux scout→brief→redacció→correcció. |
+| **Analisi-dades** | `serveis/analisi-dades/` | corrector-catala | Pipeline multi-agent per a consultoria de dades: BD→visualització→interpretació→narrativa→correcció. 6 agents (data-analyst, viz-builder, analyst-senior, researcher, redactor-analisi, corrector-catala). |
+| **Corrector-català** | `serveis/corrector-catala/` | — | Correcció lingüística de documents en català. Útil a qualsevol projecte que produeixi text en català. |
 
 ---
 
@@ -144,5 +146,8 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `serveis/dev/` | ✓ |
 | `serveis/cultura-agents/` | ✓ |
 | `serveis/editorial/` | ✓ |
+| `serveis/analisi-dades/` | ✓ |
+| `serveis/corrector-catala/` | ✓ |
+| `extras/scripts-python-viz/` | ✓ |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
 | `scripts/activate-service.sh` | Pendent (Fase 4) |
