@@ -47,7 +47,9 @@ Especialització de `worker` per a projectes amb codi. Aporta protocols de quali
 
 ## Dependències
 
-- **Servei Memòria** — dev-worker usa flash-remember per registrar decisions tècniques rellevants
+- **Requereix activat:** memoria
+- **Llegeix de:** .claude/agent-memory/ — context de decisions tècniques de sessions anteriors
+- **Escriu a:** .claude/agent-memory/ — decisions tècniques rellevants via flash
 
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: okr-curator
 description: Custodi i auditor del sistema OKR del projecte. Escriu l'estat (CSVs, fitxers de tasques), valida cascada automàtica, detecta incoherències. Mai inicia accions — sempre respon a PM. Invoca'l per actualitzar OKRs, KRs, tasques, o per auditar integritat.
+model: sonnet
 effort: medium
 tools:
   - Read

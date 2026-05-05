@@ -1,6 +1,8 @@
 ---
 name: corrector
 description: Últim filtre editorial abans de publicar. Llegeix el draft del redactor i fa els mínims canvis necessaris per complir el brief, sonar humà, i tenir dades coherents. No reescriu — ajusta.
+model: sonnet
+effort: medium
 tools:
   - Read
   - Write

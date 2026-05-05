@@ -114,7 +114,36 @@ Usa l'esquelet de `plantilles/CLAUDE.md` que ja has llegit al Pas 0. Completa'l:
 - Copia `nucli/orquestracio.md` → `docs/orquestracio.md` (protocol de coordinació)
 - Crea `docs/decisions.md` a partir de `nucli/plantilles/decisions.md` (registre de decisions oracle)
 - Crea `.claude/agent-memory/oracle/MODEL.md`, `PREDICTIONS.md`, `WATCHLIST.md` a partir de `nucli/plantilles/oracle-memory/`
-- (Opcional) Activa l'Oracle Gate: copia `nucli/hooks/oracle-gate-post.sh`, `oracle-gate-pre-commit.sh` a `.claude/hooks/` i registra a `.claude/settings.json`
+- **Activa l'Oracle Gate** (Capa 1 — per defecte):
+  ```bash
+  mkdir -p .claude/hooks
+  cp <URL_BASE>nucli/hooks/oracle-gate-post.sh .claude/hooks/
+  cp <URL_BASE>nucli/hooks/oracle-gate-pre-commit.sh .claude/hooks/
+  chmod +x .claude/hooks/oracle-gate-post.sh .claude/hooks/oracle-gate-pre-commit.sh
+  # Registra a .claude/settings.json (copia settings-example.json o fusiona el bloc "hooks")
+  ```
+  Converteix oracle de consultor opcional a guardià obligatori. Si l'usuari vol opt-out explícit, ho diu — en cas contrari, s'instal·la.
+- **Activa l'Oracle SessionStart** (Capa 3 — per defecte, si MODEL.md s'ha creat):
+  ```bash
+  cp <URL_BASE>nucli/hooks/oracle-session-start.sh .claude/hooks/session-start.sh
+  chmod +x .claude/hooks/session-start.sh
+  ```
+  S'executa automàticament a l'inici de cada sessió. Comprova oracle-review-pending, agents no al MODEL.md, i reports cron recents. No necessita registrar-se a settings.json.
+- **Activa l'Oracle Cron** (Capa 5 — opcional, decisió de l'usuari):
+  ```bash
+  mkdir -p .claude/agent-memory/oracle/scripts
+  cp <URL_BASE>nucli/scripts/oracle-audit.sh .claude/agent-memory/oracle/scripts/
+  chmod +x .claude/agent-memory/oracle/scripts/oracle-audit.sh
+  ```
+  Afegeix al `CLAUDE.md` generat:
+  ```
+  ## Oracle cron (opcional)
+  # Linux/Mac: cron diari a les 9h
+  # 0 9 * * * cd /path/al/projecte && bash .claude/agent-memory/oracle/scripts/oracle-audit.sh
+  # Windows: Task Scheduler amb Git Bash
+  # Prerequisit: claude CLI instal·lada i autenticada
+  ```
+  L'usuari activa el cron quan ho decideixi. L'script és al lloc i documentat des del primer dia.
 - Substitueix `COMMIT_SHA` al marcador de versió per la referència de la URL que has llegit
 - Esborra les seccions comentades que no s'usen (serveis no activats, invariants buits, etc.)
 
@@ -163,6 +192,73 @@ Abans de donar per fet el setup, verifica:
 - Si hi havia configuració prèvia: no ha desaparegut sense confirmació
 
 Reporta el resultat de la validació a l'usuari.
+
+---
+
+## Pas 7 — Registra les friccions del setup
+
+Abans de tancar, crea `docs/llavor-friccions.md` al projecte destí amb les observacions del setup:
+
+```markdown
+# Friccions del setup — [nom del projecte] — [data]
+
+## Context
+- Plataforma: [Linux / Mac / Windows]
+- Stack detectat: [language, framework]
+- Configuració agentic prèvia: [sí/no — si sí, quina]
+- Serveis activats: [llista]
+
+## Decisions manuals durant el setup
+<!-- Qualsevol cosa que el wizard no ha pogut determinar automàticament -->
+- [decisió presa + per qué]
+
+## Conflictes de fusió (si hi havia configuració prèvia)
+- [fitxer conflictiu + resolució triada]
+
+## Coses que el wizard no sabia fer sol
+<!-- Errors, instruccions confuses, passos que han requerit intervenció manual -->
+- [descripció]
+
+## Valoració general
+<!-- Net / Algunes friccions / Problemàtic -->
+```
+
+Aquest fitxer no és per a l'usuari — és evidència per al manteniment del llavor. Si el teu projecte és públic o el comparteixis, pots enviar el fitxer a qui manté el llavor. Si no, queda al teu projecte com a log intern.
+
+Crea també `docs/aprenentatges-per-llavor.md`:
+
+```markdown
+# Aprenentatges per al llavor — [nom del projecte]
+
+> Diari d'allò que ha funcionat i podria ser útil per a altres projectes.
+> No és un inbox ni una petició formal — qui manté el llavor el llegeix quan toca.
+
+## Agents que han funcionat bé
+<!-- Si has creat un agent que no existia al llavor i ha demostrat valor, descriu-lo aquí -->
+
+**[nom]**
+- Rol: ...
+- Ha funcionat en: [context breu]
+- Per qué no és un skill sino un agent: ...
+- Dependències: ...
+
+---
+
+## Enriquiments a agents existents
+<!-- Si has afegit comportament a un agent del llavor i ha millorat el resultat -->
+
+**[nom de l'agent] — [descripció del canvi]**
+- Fitxer: .claude/agents/<nom>.md
+- Canvi aplicat: ...
+- Context que ho va justificar: ...
+
+---
+
+## Patrons que s'han repetit
+<!-- Coses que fas sempre i que no estan documentades al llavor -->
+
+- ...
+```
 
 ---
 

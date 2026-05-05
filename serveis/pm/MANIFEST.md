@@ -39,8 +39,9 @@ Product Manager agentic per al projecte. Gestiona el flux de treball: defineix t
 
 ## Dependències
 
-- **Servei OKR** — PM treballa sobre les tasques i l'estat gestionat per OKR-curator
-- **Format de tasques**: `serveis/okr/plantilles/tasca.md` — PM defineix tasques seguint aquest esquema
+- **Requereix activat:** okr
+- **Llegeix de:** [directori-okr]/ — llista de tasques, estat de KRs i OKRs
+- **Escriu a:** [directori-okr]/ — proposa transicions d'estat (executades via okr-curator)
 
 ---
 

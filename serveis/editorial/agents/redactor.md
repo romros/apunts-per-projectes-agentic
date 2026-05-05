@@ -1,6 +1,8 @@
 ---
 name: redactor
 description: Redactor de l'editorial. Rep brief + dades internes + dossier web i entrega un draft complet en prosa. Del titular al tancament — no un esquema, un article.
+model: sonnet
+effort: high
 tools:
   - Read
   - Write

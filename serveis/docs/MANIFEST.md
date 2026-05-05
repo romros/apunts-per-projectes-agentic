@@ -51,9 +51,10 @@ El `CLAUDE.md` del projecte ha de declarar explícitament quins fitxers i direct
 
 ## Dependències
 
-Cap. El Servei Docs no depèn d'altres serveis.
-
-*(Nota: si el projecte usa Servei Memòria, el doc-curator pot usar `flash-remember` per registrar decisions documental. Recomanat però no obligatori.)*
+- **Requereix activat:** (cap)
+- **Llegeix de:** (cap)
+- **Escriu a:** (cap altre servei)
+- **Recomanat:** memoria — el custodi documental pot usar flash per registrar decisions entre sessions
 
 ---
 

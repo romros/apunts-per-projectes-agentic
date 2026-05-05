@@ -1,6 +1,8 @@
 ---
 name: dev-worker
 description: Worker especialitzat per a projectes amb codi. Hereda el rol de worker i afegeix protocols de qualitat de codi — quality review propi, format BLOCKED específic per a decisions de codi, i resum estructurat amb evidència de tests. Invoca'l per tasques d'implementació, refactorització o debugging.
+model: sonnet
+effort: high
 tools:
   - Read
   - Edit

@@ -43,7 +43,7 @@ agents amb `skills: [cultura]` en el frontmatter
 | Pack | Descripció | Estat |
 |------|------------|-------|
 | `neutral` | Tècnic pur. Cap personalitat. Default. | ✓ |
-| `laboratori` | Evidència, urgència artesanal, pragmatisme militant. Instruments especialitzats d'una sola ment. | ✓ (validat laboratori_profes) |
+| `laboratori` | Evidència, urgència artesanal, pragmatisme militant. Instruments especialitzats d'una sola ment. | ✓ (validat en producció) |
 
 Altres packs son **hipòtesis**. Entren al catàleg quan un projecte real els validi — mai abans.
 
@@ -51,7 +51,9 @@ Altres packs son **hipòtesis**. Entren al catàleg quan un projecte real els va
 
 ## Dependències
 
-Cap.
+- **Requereix activat:** (cap)
+- **Llegeix de:** (cap)
+- **Escriu a:** (cap altre servei)
 
 ---
 
@@ -85,7 +87,7 @@ Un pack nou es justifica quan:
 - Els agents han adoptat un to coherent i reconeixible
 - La cultura ha demostrat valor en les interaccions
 
-Format canònic (veure `packs/monastic.md` com a referència):
+Format canònic (veure `packs/laboratori.md` com a referència):
 - To de comunicació
 - Metàfores i imatges
 - Valors que guien les respostes

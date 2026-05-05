@@ -67,9 +67,11 @@ peces/<slug>/      ← articles finals per tema
 
 ## Dependències
 
-- **Nucli base obligatori**: orquestrador + worker + easy-worker. `easy-worker` és el recurs de delegació mecànica del pipeline.
-- **Servei Memòria obligatori**: per recordar articles publicats entre sessions i evitar reproposta de temes.
-- **`analista-dades`**: **NO inclòs** — cada projecte ha de definir el seu propi agent d'anàlisi de dades internes. Veure secció "Configuració post-activació".
+- **Requereix activat:** memoria
+- **Llegeix de:** .claude/agent-memory/ — articles publicats i decisions editorials de sessions anteriors
+- **Escriu a:** .claude/agent-memory/ — articles i decisions via flash
+- **Recomanat:** docs — el custodi documental pot gestionar la biblioteca d'articles
+- **Extern requerit:** analista-dades — agent específic del projecte, no inclòs al servei. Veure "Configuració post-activació".
 
 ---
 

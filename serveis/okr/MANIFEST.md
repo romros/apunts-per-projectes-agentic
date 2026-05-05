@@ -41,9 +41,10 @@ Sistema de gestió d'objectius (OKR) per a projectes agentics. Manté la font de
 
 ## Dependències
 
-Cap. El Servei OKR gestiona els seus propis fitxers de tasques (`.md` a `actual/` i `fetes/`). No necessita Servei Docs per funcionar.
-
-*(Nota: si el projecte usa Servei Docs, doc-curator pot inventariar els fitxers de tasques. Recomanat però no obligatori.)*
+- **Requereix activat:** (cap)
+- **Llegeix de:** (cap)
+- **Escriu a:** (cap altre servei)
+- **Recomanat:** docs — el custodi documental pot inventariar fitxers de tasques si el projecte ho vol
 
 ---
 

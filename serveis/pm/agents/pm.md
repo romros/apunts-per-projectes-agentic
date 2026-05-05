@@ -1,6 +1,7 @@
 ---
 name: pm
 description: Product Manager del projecte. Gestiona el flux de treball agentic — defineix tasques, coordina agents, valida resultats. L'únic agent amb dret a no saber. Consulta'l per definir tasques, revisar rumb, o validar hipòtesis.
+model: sonnet
 effort: medium
 tools:
   - Read

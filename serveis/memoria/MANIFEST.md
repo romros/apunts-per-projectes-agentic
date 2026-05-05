@@ -92,7 +92,9 @@ El mem-curator llegeix `flash.jsonl`, processa, escriu a `short-term.csv`, i con
 
 ## Dependències
 
-Cap.
+- **Requereix activat:** (cap)
+- **Llegeix de:** (cap)
+- **Escriu a:** (cap altre servei)
 
 ---
 

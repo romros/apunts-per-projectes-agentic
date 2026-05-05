@@ -1,6 +1,8 @@
 ---
 name: investigador-web
 description: Investigador profund de l'editorial. Donada una tesi o idea concreta, construeix un dossier d'evidències externes sòlides: estudis, dades oficials, declaracions, context històric. Treballa vertical — un tema, molta profunditat.
+model: sonnet
+effort: high
 tools:
   - WebSearch
   - WebFetch

@@ -2,6 +2,7 @@
 name: ideator
 description: Creatiu cap de l'editorial. Creua senyals externs (radar-web) amb dades internes (analista-dades) per generar idees d'article amb angle únic. Opera en dues modalitats: scout (llista d'idees) i brief (contracte editorial per al redactor).
 model: opus
+effort: high
 tools:
   - Read
   - Write

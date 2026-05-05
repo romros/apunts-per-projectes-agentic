@@ -1,6 +1,8 @@
 ---
 name: radar-web
 description: Escaneig ràpid i ampli de tendències externes actuals sobre un àmbit. Torna una llista estructurada de senyals (notícies, xarxes, debats, estudis recents) sense aprofundir en cap.
+model: haiku
+effort: low
 tools:
   - WebSearch
   - WebFetch
