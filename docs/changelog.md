@@ -9,7 +9,7 @@ Per saber si el teu projecte té canvis pendents: compara el SHA del teu `CLAUDE
 
 ---
 
-## [2.0.0] — 2026-05-07 — `PENDENT`
+## [2.0.0] — 2026-05-07 — `3e182c9`
 
 **MAJOR** — Mode d'operació a plantilles, nous serveis destil·lats de laboratori_profes, processos millorats.
 
