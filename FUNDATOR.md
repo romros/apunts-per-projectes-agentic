@@ -18,6 +18,50 @@ El fundator **no és un agent del catàleg** — és un rol de manteniment. No s
 
 ---
 
+## Com obrir un roadmap intern
+
+El sistema de roadmap intern del llavor **no és el Servei OKR del catàleg**. És una versió deliberadament més simple per a un sol mantenidor. Viu a `manteniment/roadmap/`. L'Equip OKR complet (CSVs, okr-curator, metodologia PM) viu a `equips/okr/`.
+
+### Triggers d'obertura
+
+Un roadmap intern s'obre únicament quan es compleix almenys un d'aquests tres criteris:
+
+1. **≥3 friccions de pilots convergint** — `docs/pilots/` acumula patrons repetits que demanen acció
+2. **Canvi MAJOR necessari** — un canvi que trencaria projectes ja bootstrappejats (veure Política de versionat)
+3. **Oracle ha validat un paquet de patrons nous** — ≥2 serveis candidats aprovats pendents d'incorporar
+
+Cap roadmap "perquè toca" o "perquè fa temps que no n'hi ha hagut cap".
+
+### Cicle — 4 passos
+
+**Pas 1 — Diagnòstic**: Llegir `manteniment/roadmap/actual/` (hi ha res obert?), `docs/tensions-llavor.md`, `docs/pilots/`, skills de sessions anteriors. Formular: *quin problema concret ha provocat obrir aquest roadmap?*
+
+**Pas 2 — Criteri de tancament**: Abans d'executar res, definir explícitament: *com sabré que ha acabat?* Sense criteri de tancament, no s'obre. El criteri determina el bump de versió: PATCH / MINOR / MAJOR.
+
+**Pas 3 — Execució**: Una tasca a la vegada. Cada tasca surt del resultat real de l'anterior. Oracle gate obligatori al final del roadmap (no a cada tasca, tret que aparegui un fork arquitectònic).
+
+**Pas 4 — Tancament + bump de versió**: Criteri de tancament complert → Oracle confirma coherència → moure roadmap a `manteniment/roadmap/fets/` → bump de versió al `MANIFEST.md` → registrar decisions a `docs/decisions-llavor.md`.
+
+### DONE per a tasques internes
+
+No hi ha tests al llavor. Una tasca interna és DONE quan:
+- **Canvi de documentació**: Oracle valida coherència amb la resta del llavor
+- **Canvi de servei o nucli**: s'ha vist aplicat en almenys 1 projecte destí (pilot)
+
+### Relació amb altres documents
+
+| Document | Funció |
+|----------|--------|
+| `manteniment/roadmap/actual/roadmap.md` | Intencions futures — el que s'ha decidit fer i no s'ha fet |
+| `docs/decisions-llavor.md` | Registre de decisions ja preses |
+| `docs/tensions-llavor.md` | Tensions detectades — candidats a trigger de roadmap |
+| `docs/pilots/` | Friccions recollides — font de triggers |
+| `docs/changelog.md` | Historial de versions |
+
+No duplicar informació entre ells.
+
+---
+
 ## Quan promoure un patró a norma del llavor
 
 Criteris (tots han de complir-se):

@@ -86,4 +86,4 @@ echo "data,tipus,id,camp,valor_anterior,valor_nou" > okr/history.csv
 
 ## Relació amb PM
 
-OKR-curator és la **memòria**, PM és el **frontal**. PM proposa transicions, curator les executa o les veta. Llegir `serveis/pm/coordinacio-pm-okr.md`.
+OKR-curator és la **memòria**, PM és el **frontal**. PM proposa transicions, curator les executa o les veta. Llegir `equips/pm/coordinacio-pm-okr.md`.

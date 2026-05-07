@@ -85,7 +85,7 @@ Sense registre, les decisions es repetiran. La memòria dels agents és un cache
 
 ## Quan el Servei PM s'activa
 
-Quan `@pm` està actiu, aquest protocol queda substituït per `serveis/pm/agents/pm.md`. Les diferències clau:
+Quan `@pm` està actiu, aquest protocol queda substituït per `equips/pm/agents/pm.md`. Les diferències clau:
 
 | Sense PM | Amb PM |
 |----------|--------|

@@ -5,6 +5,12 @@ status: validat
 origen: projecte domini .cat (consultoria de dades puntCAT)
 depen_de:
   - corrector-catala
+aporta_agents:
+  - data-analyst
+  - viz-builder
+  - analyst-senior
+  - researcher
+  - redactor-analisi
 ```
 
 # Servei: analisi-dades

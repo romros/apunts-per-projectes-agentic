@@ -19,31 +19,39 @@ Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:
 
 ---
 
-## Infraestructura — sempre activa
+## Equips
+
+Produeixen feina per encàrrec. Cada equip té un workflow intern i genera output. Opcionals, activables per fricció observada.
+
+| Equip | Directori | Depèn de | Descripció |
+|-------|-----------|----------|------------|
+| **OKR** | `equips/okr/` | — | Rastreig d'objectius i tasques. Custodi de la font de veritat (CSVs). |
+| **PM** | `equips/pm/` | OKR | Coordinació del flux de treball agentic. Activa sempre amb OKR. |
+| **Dev** | `equips/dev/` | Memòria | Worker especialitzat per a codi. Skills per projecte + dev-worker. |
+| **Editorial** | `equips/editorial/` | Memòria (recomanat) | Pipeline multi-agent per a publicació d'articles de blog amb flux scout→brief→redacció→correcció. |
+| **Analisi-dades** | `equips/analisi-dades/` | corrector-catala | Pipeline multi-agent per a consultoria de dades: BD→visualització→interpretació→narrativa→correcció. 6 agents (data-analyst, viz-builder, analyst-senior, researcher, redactor-analisi, corrector-catala). |
+
+---
+
+## Serveis
+
+Infraestructura transversal. Sostenen el sistema. Opcionals excepte Memòria (obligatòria).
+
+### Infraestructura — sempre activa
 
 | Component | Directori | Rol |
 |-----------|-----------|-----|
 | **Memòria** | `serveis/memoria/` | Pipeline de memòria persistent. Obligatori. Sense memòria, els agents comencen de zero cada sessió. |
 
----
-
-## Serveis de domini
-
-Aporten capacitats al projecte. Opcionals, activables per fricció observada.
+### Serveis de domini
 
 | Servei | Directori | Depèn de | Descripció |
 |--------|-----------|----------|------------|
 | **Docs** | `serveis/docs/` | — | Custòdia documental entre sessions. Inventari, coherència, progrés. |
-| **OKR** | `serveis/okr/` | — | Rastreig d'objectius i tasques. Custodi de la font de veritat (CSVs). |
-| **PM** | `serveis/pm/` | OKR | Coordinació del flux de treball agentic. Activa sempre amb OKR. |
-| **Dev** | `serveis/dev/` | Memòria | Worker especialitzat per a codi. Skills per projecte + dev-worker. |
-| **Editorial** | `serveis/editorial/` | Memòria (recomanat) | Pipeline multi-agent per a publicació d'articles de blog amb flux scout→brief→redacció→correcció. |
-| **Analisi-dades** | `serveis/analisi-dades/` | corrector-catala | Pipeline multi-agent per a consultoria de dades: BD→visualització→interpretació→narrativa→correcció. 6 agents (data-analyst, viz-builder, analyst-senior, researcher, redactor-analisi, corrector-catala). |
 | **Corrector-català** | `serveis/corrector-catala/` | — | Correcció lingüística de documents en català. Útil a qualsevol projecte que produeixi text en català. |
+| **UX Expert** | `serveis/ux-expert/` | — | Revisió UX per a projectes amb interfície. Activa si el projecte té component UI. |
 
----
-
-## Serveis de cultura
+### Serveis de cultura
 
 Paquets culturals opcionals. Cap projecte els necessita, però poden donar coherència i veu als agents.
 
@@ -51,23 +59,46 @@ Paquets culturals opcionals. Cap projecte els necessita, però poden donar coher
 |--------|-----------|-------------------|
 | **cultura-agents** | `serveis/cultura-agents/` | `neutral` (default), `laboratori` (validat) |
 
----
-
-## Serveis meta
+### Serveis meta
 
 Governança del sistema agentic — no aporten capacitat de domini, vetllen pel sistema en si.
 
 | Servei | Directori | Depèn de | Quan activar |
 |--------|-----------|----------|--------------|
 | **guia-projectes-agentic** | `serveis/guia-projectes-agentic/` | Memòria | Quan el sistema agentic ja porta camí i cal que algú el mantingui i faci créixer |
+| **Code Curator** | `serveis/code-curator/` | Memòria | Auditoria arquitectònica del codebase. Activa si el projecte té codebase de producció. |
 
 ---
 
-Cada servei té `serveis/<nom>/MANIFEST.md` amb: descripció, fitxers que aporta, dependències, i instruccions d'activació manual.
+## Commands
 
-Activar un servei = activar-lo amb les seves dependències transitives.
+Workflows amb **entry point explícit de l'usuari**. Creables com a slash commands a `.claude/commands/` del projecte destí.
+
+| Command | Fitxer | Quan usar-lo |
+|---------|--------|-------------|
+| **Tasca següent** | `commands/tasca-seguent.md` | L'usuari dona el go per tancar la tasca activa i obrir la següent |
+| **Revisar opinió externa** | `commands/revisa-opinio.md` | Arriba feedback extern sobre la tasca en curs i cal avaluar-lo |
+
+---
+
+## Processos
+
+Workflows **interns entre agents**, sense entry point d'usuari. Els dispara el sistema, no l'usuari directament. Veure `processos/README.md` per a la distinció commands vs processos.
+
+| Procés | Fitxer | Disparador |
+|--------|--------|-----------|
+| **Executar una tasca** | `processos/executar-tasca.md` | L'usuari proposa una tasca nova |
+| **Tancar una tasca** | `processos/tancar-tasca.md` | PM ha validat que l'evidència cobreix el DoD |
+| **Nou roadmap** | `processos/nou-roadmap.md` | El roadmap actual és tancat |
+| **Gestió de deutes** | `processos/gestio-deutes.md` | Worker o PM detecta un deute fora del scope de la tasca |
+
+---
+
+Cada equip o servei té el seu `MANIFEST.md` amb: descripció, fitxers que aporta, dependències, i instruccions d'activació manual.
+
+Activar un equip o servei = activar-lo amb les seves dependències transitives.
 - Si `scripts/activate-service.sh` existeix: resol dependències automàticament.
-- Si no: activa manualment seguint `serveis/<nom>/MANIFEST.md` de cada servei i dependències.
+- Si no: activa manualment seguint el `MANIFEST.md` de cada peça i les seves dependències.
 
 ---
 
@@ -141,13 +172,23 @@ Esquelets parametritzables per al wizard. **No còpies del projecte origen** —
 | `serveis/memoria/` | ✓ |
 | `serveis/docs/` | ✓ |
 | `serveis/guia-projectes-agentic/` | ✓ |
-| `serveis/okr/` | ✓ |
-| `serveis/pm/` | ✓ |
-| `serveis/dev/` | ✓ |
+| `equips/okr/` | ✓ |
 | `serveis/cultura-agents/` | ✓ |
-| `serveis/editorial/` | ✓ |
-| `serveis/analisi-dades/` | ✓ |
 | `serveis/corrector-catala/` | ✓ |
+| `equips/pm/` | ✓ |
+| `equips/dev/` | ✓ |
+| `equips/editorial/` | ✓ |
+| `equips/analisi-dades/` | ✓ |
+| `commands/README.md` | ✓ |
+| `commands/tasca-seguent.md` | ✓ |
+| `commands/revisa-opinio.md` | ✓ |
+| `processos/README.md` | ✓ |
+| `processos/executar-tasca.md` | ✓ |
+| `processos/tancar-tasca.md` | ✓ |
+| `processos/nou-roadmap.md` | ✓ |
 | `extras/scripts-python-viz/` | ✓ |
+| `serveis/ux-expert/` | ✓ |
+| `serveis/code-curator/` | ✓ |
+| `processos/gestio-deutes.md` | ✓ |
 | `scripts/bootstrap.sh` | Pendent (Fase 4) |
 | `scripts/activate-service.sh` | Pendent (Fase 4) |

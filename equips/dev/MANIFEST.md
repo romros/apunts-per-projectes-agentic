@@ -1,5 +1,5 @@
 ```yaml
-servei: dev
+name: dev
 categoria: domini
 depen_de:
   - memoria

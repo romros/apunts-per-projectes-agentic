@@ -3,6 +3,8 @@ name: corrector-catala
 version: 1.0.0
 status: validat
 origen: projecte domini .cat (consultoria de dades)
+aporta_agents:
+  - corrector-catala
 ```
 
 # Servei: corrector-catala
@@ -42,5 +44,5 @@ Correcció lingüística de documents en català. Útil a qualsevol projecte que
 
 - **No té memòria persistent** — cada invocació és independent. El context de cada sessió el porta l'orquestrador.
 - **Registre esperat obligatori**: sense registre declarat, l'agent l'infereix i és font d'error. Formalitzar-lo al brief del projecte.
-- **Independència de pipeline**: pot invocar-se sol (un document qualsevol) o com a últim pas d'un pipeline multi-agent (ex: `serveis/analisi-dades`, `serveis/editorial`). En projectes editorials en català, és complementari al `corrector` editorial — cobreixen capes diferents: el corrector editorial verifica compliment de brief i coherència factual; el corrector-catala verifica normativa lingüística IEC. No es substitueixen.
-- Quan s'usa dins del servei `analisi-dades`, rep el document final del redactor.
+- **Independència de pipeline**: pot invocar-se sol (un document qualsevol) o com a últim pas d'un pipeline multi-agent (ex: `equips/analisi-dades`, `equips/editorial`). En projectes editorials en català, és complementari al `corrector` editorial — cobreixen capes diferents: el corrector editorial verifica compliment de brief i coherència factual; el corrector-catala verifica normativa lingüística IEC. No es substitueixen.
+- Quan s'usa dins de l'equip `analisi-dades`, rep el document final del redactor.

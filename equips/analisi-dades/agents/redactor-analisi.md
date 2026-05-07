@@ -8,7 +8,7 @@ tools:
   - Write
   - Edit
 skills:
-  - serveis/analisi-dades/skills/data-narrative
+  - equips/analisi-dades/skills/data-narrative
 ---
 
 # Redactor

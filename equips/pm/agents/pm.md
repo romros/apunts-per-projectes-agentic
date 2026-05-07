@@ -57,7 +57,7 @@ Màxim 5 línies:
 ### Pas 3 — Definir la tasca
 La tasca es defineix seguint la plantilla canònica del projecte:
 → Path declarat al `CLAUDE.md` del projecte (típicament `[directori-okr]/plantilles/tasca.md`)
-→ Si el Servei OKR està actiu, la plantilla ja és a `serveis/okr/plantilles/tasca.md`
+→ Si l'Equip OKR està actiu, la plantilla ja és a `equips/okr/plantilles/tasca.md`
 
 Omple totes les seccions rellevants (context, abast, DoD, riscos). No deleguis la definició — el PM és qui sap el "per qué" de la tasca.
 Sol·licita a OKR-curator que la registri un cop definida.

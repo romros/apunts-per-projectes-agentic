@@ -41,6 +41,23 @@ Comença sempre pel mínim. Escala per necessitat, mai per precaució.
 
 ---
 
+## Mode d'operació
+
+Per defecte: **mode consultiu** — el sistema espera confirmació de l'usuari abans de continuar (pas 4 de `processos/executar-tasca.md`).
+
+**Mode automàtic** (activable per projecte): el PM i l'Oracle prenen decisions tàctiques sense esperar confirmació explícita. Roman intervé només per fork points arquitectònics no resolubles o decisions de producte.
+
+Per activar al `CLAUDE.md` del projecte destí, afegeix:
+```
+## Mode d'operació: AUTOMÀTIC
+- "Yes" automàtic: un cop Oracle aprova, les tasques passen a worker sense esperar OK de l'usuari
+- Decisions tàctiques: PM ↔ Oracle sense interrupció
+- L'usuari intervé NOMÉS per: fork points no resolubles, decisions de producte, override explícit
+```
+Si la secció no existeix o no diu AUTOMÀTIC → mode consultiu.
+
+---
+
 ## Modes de prompt
 
 L'usuari pot prefixar la seva petició amb un mode explícit:
