@@ -29,6 +29,8 @@ Auditoria arquitectònica del codebase. Detecta violacions de capa, acoblaments 
 **Llegeix de:** codebase del projecte
 **Escriu a:** `docs/auditoria-arquitectura.md` (o equivalent declarat per l'orquestrador)
 
+*Com usa memòria:* code-curator no escriu flash directament. La dependència de memòria és indirecta — l'orquestrador pot desar les troballes recurrents via `@mem-curator` per evitar re-auditar àrees ja revisades. La dependència és **recomanada**, no obligatòria en sentit estricte.
+
 ## Activació manual
 
 1. Copiar `agents/code-curator.md` a `.claude/agents/code-curator.md`

@@ -40,6 +40,15 @@ Registre de decisions de disseny del framework. Format: data, decisió, raonamen
 
 ---
 
+## 2026-05-08 — `ux-expert` usa `model: opus` (Criteri B)
+
+**Decisió**: `ux-expert` porta `model: opus` hardcoded al frontmatter.
+**Raonament**: El model és part de la identitat arquitectònica de l'agent (Criteri B de `CLAUDE.md`). `ux-expert` fa judici qualitatiu expert sobre UX — el mateix tipus d'avaluació que `analyst-senior` i `ideator`, que també usen Opus. Haiku o Sonnet no tenen el criteri estètic necessari per a validació UX de qualitat.
+**Alternativa descartada**: Sonnet sense model hardcoded, igual que `code-curator`. Descartada perquè la qualitat del judici UX depèn directament del model, no és una qüestió d'esforç.
+**Condició de revisió**: Si un model Sonnet futur demostra judici UX equiparable a Opus en projectes pilot.
+
+---
+
 ## 2026-05-08 — GRAPH.md com a font de veritat
 
 **Decisió**: Si MANIFEST.md i GRAPH.md discrepessin → GRAPH.md mana.
