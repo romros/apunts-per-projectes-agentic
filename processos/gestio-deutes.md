@@ -11,7 +11,7 @@ cost-estimat:
   factors: "7 passos distribuïts en 3 moments del cicle, cost baix per invocació individual"
 ---
 
-# Gestió de deutes tècnics
+# Gestió de deutes
 
 ## Quan s'usa
 
@@ -23,17 +23,19 @@ Quan una tasca troba un deute (codi, arquitectura, documentació) que no és res
 
 1. Worker o PM detecta el deute i el descriu breument — (@dev-worker o @pm)
 2. PM valora: resolubles dins la tasca actual? Si sí: resolver ara (tolerància 0 amb deutes fàcils). Si no: registrar — (@pm)
-3. PM afegeix entrada a `okr/roadmaps/actual/deutes.md` — (@pm via @okr-curator)
+3. PM redacta l'entrada del deute (descripció breu, causa, impacte estimat) — (@pm)
+4. OKR-curator registra l'entrada a `okr/roadmaps/actual/deutes.md` — (@okr-curator)
 
 ### Quan es tanca un roadmap
 
-4. PM revisa `okr/roadmaps/actual/deutes.md` i classifica cada deute: absorbir al roadmap nou, diferir conscientment, o descartar — (@pm)
-5. Deutes que es difereixen passen a `okr/deutes-globals.md` amb data i justificació — (@pm via @okr-curator)
+5. PM revisa `okr/roadmaps/actual/deutes.md` i classifica cada deute: absorbir al roadmap nou, diferir conscientment, o descartar — (@pm)
+6. PM identifica els deutes a diferir i els descriu amb data i justificació — (@pm)
+7. OKR-curator mou les entrades a `okr/deutes-globals.md` — (@okr-curator)
 
 ### Quan s'obre un roadmap nou
 
-6. PM llegeix `okr/deutes-globals.md` i decideix quins entren al nou roadmap com a tasques — (@pm)
-7. Els que no entren resten a globals amb nota de revisió — (@pm)
+8. PM llegeix `okr/deutes-globals.md` i decideix quins entren al nou roadmap com a tasques — (@pm)
+9. Els que no entren resten a globals amb nota de revisió — (@pm)
 
 ## Condició de sortida
 

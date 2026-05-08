@@ -19,7 +19,7 @@ Quan el PM ha validat que la tasca ha complert el seu DoD i l'evidència és exe
 
 ## Passos
 
-1. Review: Oracle obligatori si la tasca ha tingut correccions post-revisió, toca arquitectura o introdueix decisions amb efecte durador. PM sol per tasques purament mecàniques — (@pm + @gran-oracle)
+1. Review: Oracle obligatori si la tasca ha tingut correccions post-revisió, toca arquitectura o introdueix decisions amb efecte durador. PM sol per tasques purament mecàniques — (@pm + @oracle)
 2. PM declara la tasca com a DONE amb resum d'evidència — (@pm)
 3. OKR-curator actualitza el registre de tasques (tasca passa a `fetes/`, estat `done`) — (@okr-curator)
 4. OKR-curator actualitza els KRs i OKRs afectats — (@okr-curator)

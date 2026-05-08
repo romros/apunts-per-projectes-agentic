@@ -22,7 +22,7 @@ Quan l'usuari dona el go per tancar la tasca actual i definir la propera. Agrupa
 1. Tancament de la tasca anterior (seguir `processos/tancar-tasca.md`) — (@pm + @okr-curator)
 2. PM identifica la propera tasca del backlog (llegint estat real del projecte) — (@pm)
 3. PM genera la definició formal de la nova tasca — (@pm)
-4. Oracle revisa la tasca generada i retorna veredicte (APROVADA / AMB CORRECCIONS / REBUTJADA) — (@oracle o @gran-oracle segons el projecte)
+4. Oracle revisa la tasca generada i retorna veredicte (APROVADA / AMB CORRECCIONS / REBUTJADA) — (@oracle)
 5. PM incorpora correccions si cal; si cal una segona revisió, es fa — (@pm)
 6. PM presenta la tasca a l'usuari amb resum breu i punts de decisió si n'hi ha — (@pm)
 7. Usuari dona OK → la tasca s'assigna al worker — (usuari)

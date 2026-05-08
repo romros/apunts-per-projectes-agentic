@@ -110,6 +110,7 @@ Activar un equip o servei = activar-lo amb les seves dependències transitives.
 |--------|--------|---------|
 | Mapa de dependències | `GRAPH.md` | Font de veritat: agents, processos, dependències entre components |
 | Convencions de nomenclatura | `docs/convencions.md` | BPMN com a estàndard, glossari canònic, regles de noms |
+| Glossari canònic | `docs/GLOSSARI.md` | Definicions mútuament excloents: Agent, Equip, Servei, Procés, Command, DoD, OKR |
 | Plantilla de procés | `plantilles/proces.md` | Estructura canònica per a nous processos |
 
 ---

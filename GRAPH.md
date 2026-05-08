@@ -41,7 +41,7 @@ Actualitzar quan s'afegeixi o elimini un component.
 
 | ID | Nom (BPMN) | Actors principals | Disparador | Fitxer |
 |----|-----------|-------------------|-----------|--------|
-| PROC-001 | Execució de tasca | pm, dev-worker, okr-curator | Usuari proposa tasca nova | `processos/executar-tasca.md` |
+| PROC-001 | Execució de tasca | pm, dev-worker, okr-curator, easy-worker | Usuari proposa tasca nova | `processos/executar-tasca.md` |
 | PROC-002 | Tancament de tasca | pm, okr-curator, oracle | PM valida que l'evidència cobreix el DoD | `processos/tancar-tasca.md` |
 | PROC-003 | Obertura de roadmap | pm, oracle, okr-curator | Roadmap actual tancat | `processos/nou-roadmap.md` |
 | PROC-004 | Gestió de deutes | pm, okr-curator | Worker o PM detecta deute fora del scope | `processos/gestio-deutes.md` |
