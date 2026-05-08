@@ -1,4 +1,5 @@
 ---
+id: PROC-004
 equips: [pm, okr]
 disparador: qualsevol tasca detecta un deute que no pot resoldre en el seu propi scope
 ---

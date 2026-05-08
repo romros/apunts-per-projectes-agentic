@@ -102,6 +102,16 @@ Activar un equip o servei = activar-lo amb les seves dependències transitives.
 
 ---
 
+## Mapes i convencions
+
+| Recurs | Fitxer | Propòsit |
+|--------|--------|---------|
+| Mapa de dependències | `GRAPH.md` | Font de veritat: agents, processos, dependències entre components |
+| Convencions de nomenclatura | `docs/convencions.md` | BPMN com a estàndard, glossari canònic, regles de noms |
+| Plantilla de procés | `plantilles/proces.md` | Estructura canònica per a nous processos |
+
+---
+
 ## Normes globals
 
 `NORMES_GLOBALS.md` — 9 regles fundacionals. S'incorporen al `CLAUDE.md` del projecte destí.

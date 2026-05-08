@@ -1,4 +1,5 @@
 ---
+id: PROC-002
 equips: [pm, okr]
 disparador: PM ha validat que l'evidència cobreix el DoD de la tasca activa
 ---

@@ -1,4 +1,5 @@
 ---
+id: CMD-001
 equips: [pm, dev, okr]
 disparador: l'usuari dona el OK per tancar la tasca activa i obrir la següent
 ---

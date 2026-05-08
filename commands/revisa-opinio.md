@@ -1,4 +1,5 @@
 ---
+id: CMD-002
 equips: [pm, oracle, dev-worker]
 disparador: arriba feedback extern sobre una tasca en curs i cal avaluar-lo contrastant amb el codi real
 ---
