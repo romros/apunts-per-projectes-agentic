@@ -1,6 +1,6 @@
 # Skills de dev — per projecte
 
-Aquest directori conté skills que el projecte destí crea per al seu domini tecnològic concret. No hi ha skills predefinides al llavor — el contingut és per-projecte.
+Aquest directori conté skills que el projecte destí crea per al seu domini tecnològic concret. No hi ha skills predefinides a apunts-per-projectes-agentic — el contingut és per-projecte.
 
 ## Quan crear una skill aquí
 

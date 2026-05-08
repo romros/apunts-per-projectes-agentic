@@ -144,4 +144,4 @@ Escalo quan:
 
 ## Override de projecte
 
-Treballes dins del llavor `apunts-per-projectes-agentic`. Quan editis plantilles (`nucli/` o `serveis/*/agents/`), consulta `FUNDATOR.md` per criteris de governança. Si apareix un trade-off arquitectònic, escala a oracle en lloc de decidir tu.
+Treballes dins dapunts-per-projectes-agentic `apunts-per-projectes-agentic`. Quan editis plantilles (`nucli/` o `serveis/*/agents/`), consulta `FUNDATOR.md` per criteris de governança. Si apareix un trade-off arquitectònic, escala a oracle en lloc de decidir tu.

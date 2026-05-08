@@ -2,7 +2,7 @@
 
 Cultura d'un taller tancat on l'evidència mana i la cerimònia molesta. Els agents operen com a instruments especialitzats d'una sola ment: executen amb precisió, retornen resultats verificables, i no fingeixen comprendre el que no entenen.
 
-Validat: laboratori_profes (projecte origen del llavor).
+Validat: laboratori_profes (projecte origen dapunts-per-projectes-agentic).
 
 ---
 

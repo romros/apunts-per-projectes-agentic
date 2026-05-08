@@ -22,14 +22,14 @@ La plantilla (`nucli/`) i la còpia operacional (`.claude/agents/`) poden diverg
 
 ## Projectes ja bootstrappejats — risc de divergència silenciosa
 
-Cada projecte destí té fitxers copiats per valor des d'un SHA concret. Si el llavor evoluciona (nous invariants, agents actualitzats), els projectes existents no ho saben. No hi ha `seed sync` implementat.
+Cada projecte destí té fitxers copiats per valor des d'un SHA concret. Si apunts-per-projectes-agentic evoluciona (nous invariants, agents actualitzats), els projectes existents no ho saben. No hi ha `seed sync` implementat.
 
-**Senyal d'alerta**: quan un projecte destí invoca un agent del llavor i el comportament és diferent del que el seu CLAUDE.md descriu.
+**Senyal d'alerta**: quan un projecte destí invoca un agent dapunts-per-projectes-agentic i el comportament és diferent del que el seu CLAUDE.md descriu.
 
 ---
 
 ## Catàleg sense validació multi-projecte
 
-Serveis com `okr`, `pm`, `dev`, `editorial` han entrat al catàleg validats en un sol projecte (el laboratori d'origen). La regla és ≥2 contextos per promoure a norma. Cap d'ells compleix la regla pròpia del llavor.
+Serveis com `okr`, `pm`, `dev`, `editorial` han entrat al catàleg validats en un sol projecte (el laboratori d'origen). La regla és ≥2 contextos per promoure a norma. Cap d'ells compleix la regla pròpia dapunts-per-projectes-agentic.
 
 **Senyal d'alerta**: quan un projecte destí activi un d'aquests serveis i trobi que els supòsits no apliquen al seu domini.

@@ -1,4 +1,4 @@
-# Roadmap intern del llavor
+# Roadmap intern dapunts-per-projectes-agentic
 
 > **Atenció**: Això NO és el Servei OKR del catàleg.
 > És la gestió interna del repo `apunts-per-projectes-agentic`.

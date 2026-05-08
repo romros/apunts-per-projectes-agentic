@@ -1,7 +1,8 @@
 ---
 name: ux-expert
+description: Validador d'experiència d'usuari. Avalua interfícies, fluxos i fricció des de la perspectiva de l'usuari final. Retorna veredicte (APROVADA / AMB OBSERVACIONS / REBUTJADA) amb recomanacions concretes. No modifica — emet criteri.
 model: opus
-effort: standard
+effort: high
 tools:
   - Read
   - Glob

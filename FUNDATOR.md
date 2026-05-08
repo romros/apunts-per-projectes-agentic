@@ -1,4 +1,4 @@
-# FUNDATOR.md — manteniment intern del llavor
+# FUNDATOR.md — manteniment intern d'apunts-per-projectes-agentic
 
 > Aquest fitxer és per a qui **manté** el repo `apunts-per-projectes-agentic`, no per a qui l'usa.
 > Si has arribat aquí buscant com fer el teu projecte agentic, ves a `WIZARD.md`.
@@ -7,11 +7,11 @@
 
 ## Rol de fundator
 
-El fundator és qui manté aquest llavor concret. Les seves responsabilitats:
+El fundator és qui manté apunts-per-projectes-agentic concret. Les seves responsabilitats:
 
 - Actualitzar el catàleg de serveis quan un patró nou s'ha validat en ≥2 projectes reals
-- Gestionar versions del llavor (canvis que afecten projectes ja bootstrappejats)
-- Detectar tensions internes del llavor (incoherències entre WIZARD.md, MANIFEST.md i els serveis)
+- Gestionar versions d'apunts-per-projectes-agentic (canvis que afecten projectes ja bootstrappejats)
+- Detectar tensions internes d'apunts-per-projectes-agentic (incoherències entre WIZARD.md, MANIFEST.md i els serveis)
 - Decidir quan un patró d'un pilot promou a norma global
 
 El fundator **no és un agent del catàleg** — és un rol de manteniment. No s'instal·la a projectes destí.
@@ -20,7 +20,7 @@ El fundator **no és un agent del catàleg** — és un rol de manteniment. No s
 
 ## Com obrir un roadmap intern
 
-El sistema de roadmap intern del llavor **no és el Servei OKR del catàleg**. És una versió deliberadament més simple per a un sol mantenidor. Viu a `manteniment/roadmap/`. L'Equip OKR complet (CSVs, okr-curator, metodologia PM) viu a `equips/okr/`.
+El sistema de roadmap intern d'apunts-per-projectes-agentic **no és el Servei OKR del catàleg**. És una versió deliberadament més simple per a un sol mantenidor. Viu a `manteniment/roadmap/`. L'Equip OKR complet (CSVs, okr-curator, metodologia PM) viu a `equips/okr/`.
 
 ### Triggers d'obertura
 
@@ -44,25 +44,26 @@ Cap roadmap "perquè toca" o "perquè fa temps que no n'hi ha hagut cap".
 
 ### DONE per a tasques internes
 
-No hi ha tests al llavor. Una tasca interna és DONE quan:
-- **Canvi de documentació**: Oracle valida coherència amb la resta del llavor
+No hi ha tests a apunts-per-projectes-agentic. Una tasca interna és DONE quan:
+- **Canvi de documentació**: Oracle valida coherència amb la resta d'apunts-per-projectes-agentic
 - **Canvi de servei o nucli**: s'ha vist aplicat en almenys 1 projecte destí (pilot)
 
 ### Relació amb altres documents
 
 | Document | Funció |
 |----------|--------|
+| `GRAPH.md` | Font de veritat de tots els components: agents, processos, commands, dependències. Si discrepa amb un MANIFEST.md → GRAPH.md mana. |
 | `manteniment/roadmap/actual/roadmap.md` | Intencions futures — el que s'ha decidit fer i no s'ha fet |
-| `docs/decisions-llavor.md` | Registre de decisions ja preses |
+| `docs/decisions-llavor.md` | Registre de decisions ja preses (es crea quan hi ha la primera decisió) |
 | `docs/tensions-llavor.md` | Tensions detectades — candidats a trigger de roadmap |
-| `docs/pilots/` | Friccions recollides — font de triggers |
+| `docs/pilots/` | Friccions recollides — font de triggers (es crea quan hi ha el primer pilot) |
 | `docs/changelog.md` | Historial de versions |
 
 No duplicar informació entre ells.
 
 ---
 
-## Quan promoure un patró a norma del llavor
+## Quan promoure un patró a norma d'apunts-per-projectes-agentic
 
 Criteris (tots han de complir-se):
 
@@ -79,12 +80,12 @@ Si un patró compleix 1-3 però no 4: es queda a `docs/pilots/` com a candidat f
 
 Un servei és un paquet d'agents, normes i scripts que s'activa com a unitat. Per entrar al catàleg:
 
-1. Ha existit de forma orgànica en almenys un projecte real (no inventat per al llavor)
+1. Ha existit de forma orgànica en almenys un projecte real (no inventat per a apunts-per-projectes-agentic)
 2. S'ha destil·lat seguint el cicle de 4 passos (preguntar a l'agent original → oracle → llegat → escriure fitxers)
 3. Té `MANIFEST.md` amb dependències declarades
 4. L'agent principal (si n'hi ha) té el filtre contingut/comportament aplicat
 
-Si un servei no compleix tots quatre: es documenta com a hipòtesi a `docs/serveis-candidats.md`, no entra al catàleg.
+Si un servei no compleix tots quatre: es documenta com a hipòtesi a `docs/candidats/<nom>.md`, no entra al catàleg.
 
 ---
 
@@ -92,11 +93,11 @@ Si un servei no compleix tots quatre: es documenta com a hipòtesi a `docs/serve
 
 ### Per qué cal
 
-Un projecte bootstrappejat fa 3 mesos i un altre d'avui es basen en versions del llavor potencialment diferentes. Canvis a `plantilles/CLAUDE.md`, `nucli/oracle.md` o `NORMES_GLOBALS.md` afecten projectes futurs però no actualitzen els existents. Sense política, els projectes divergeixen silenciosament.
+Un projecte bootstrappejat fa 3 mesos i un altre d'avui es basen en versions d'apunts-per-projectes-agentic potencialment diferentes. Canvis a `plantilles/CLAUDE.md`, `nucli/oracle.md` o `NORMES_GLOBALS.md` afecten projectes futurs però no actualitzen els existents. Sense política, els projectes divergeixen silenciosament.
 
 ### Com funciona
 
-El llavor usa **versionat semàntic** al `MANIFEST.md`:
+apunts-per-projectes-agentic usa **versionat semàntic** al `MANIFEST.md`:
 
 - **PATCH** (ex. 1.0.1): correccions de text, millores de claredat, scripts que no canvien comportament. Els projectes existents poden ignorar-ho.
 - **MINOR** (ex. 1.1.0): nous serveis al catàleg, noves capes opcionals. Els projectes existents no es trenquen però poden adoptar-ho.
@@ -116,7 +117,7 @@ Cada `CLAUDE.md` i `AGENTS.md` generat pel WIZARD conté:
 # Generat des de apunts-per-projectes-agentic@<COMMIT_SHA>
 ```
 
-Quan un projecte existeix vol saber si té canvis pendents d'adoptar, compara el seu SHA amb el HEAD del llavor i mira `docs/changelog.md` per al rang.
+Quan un projecte existeix vol saber si té canvis pendents d'adoptar, compara el seu SHA amb el HEAD d'apunts-per-projectes-agentic i mira `docs/changelog.md` per al rang.
 
 ---
 
@@ -141,12 +142,13 @@ No actuar sobre una sola fricció. L'evidència és el patró, no l'anècdota.
 
 ## Detecció de tensions internes
 
-Signes que el llavor té una tensió interna (el fundator les detecta):
+Signes que apunts-per-projectes-agentic té una tensió interna (el fundator les detecta):
 
 - El WIZARD descriu un flux que un fitxer de nucli contradiu
 - Un MANIFEST declara una dependència que el WIZARD no instal·la
 - Una norma de `NORMES_GLOBALS.md` no té reflex a `plantilles/CLAUDE.md`
 - Un artefacte existeix al repo però no té ruta d'instal·lació documentada
+- Un component existeix al filesystem però no apareix a `GRAPH.md` → tensió fins verificar si és intencional o oblit
 
 Quan detectis una tensió:
 1. Obre una nota a `docs/tensions-llavor.md` (crear si no existeix) amb data i descripció
@@ -253,9 +255,9 @@ Si no compleix tots quatre, es queda a `docs/candidats/` com a hipòtesi.
 
 ---
 
-## Arxiu de decisions del llavor
+## Arxiu de decisions d'apunts-per-projectes-agentic
 
-Decisions de disseny importants del llavor (per qué el WIZARD fa X, per qué el nucli té Y) viuen a `docs/decisions-llavor.md`.
+Decisions de disseny importants d'apunts-per-projectes-agentic (per qué el WIZARD fa X, per qué el nucli té Y) viuen a `docs/decisions-llavor.md`.
 
 Format:
 ```

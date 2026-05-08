@@ -28,7 +28,7 @@ Especialització de `worker` per a projectes amb codi. Aporta protocols de quali
 ## Composició amb el nucli
 
 **Skills aportades** (contingut de referència per projecte):
-- `skills/` — buit al llavor. El projecte destí hi crea les seves skills: arquitectura de capes, patrons de testing, validació canònica, convencions de codi.
+- `skills/` — buit a apunts-per-projectes-agentic. El projecte destí hi crea les seves skills: arquitectura de capes, patrons de testing, validació canònica, convencions de codi.
 
 **Agent propi — dev-worker.md** (per qué no és només skills):
 - Justificació (Criteri C): el protocol de comunicació canvia respecte a `worker`. Quality review obligatòria abans de reportar, format de resum enriquit amb tests, criteris d'escalada específics (contractes compartits, regressions).

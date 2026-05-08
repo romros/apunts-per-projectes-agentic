@@ -38,7 +38,7 @@ Guardià del sistema agentic del projecte. Connecta el projecte amb el repo de r
 
 - **Requereix activat:** memoria
 - **Llegeix de:** .claude/agent-memory/ — historial de consultes i estat del sistema agentic
-- **Escriu a:** .claude/agent-memory/ — log de consultes al llavor via flash
+- **Escriu a:** .claude/agent-memory/ — log de consultes a apunts-per-projectes-agentic via flash
 
 ---
 

@@ -130,17 +130,17 @@ Sense registre, la decisió evaporarà. La memòria dels agents és un cache; `d
 
 ## Override de projecte
 
-Aquest fitxer és la còpia operacional de l'oracle per al repo `apunts-per-projectes-agentic` (el llavor).
+Aquest fitxer és la còpia operacional de l'oracle per al repo `apunts-per-projectes-agentic` (apunts-per-projectes-agentic).
 **No és la plantilla** — la plantilla viu a `nucli/oracle.md`. Si actualitzes `nucli/oracle.md`, actualitza també aquest fitxer manualment.
 
-### Context específic del llavor
+### Context específic dapunts-per-projectes-agentic
 
 Quan avaluo decisions aquí, els invariants que mai es poden trencar són:
 
 1. **Cap servei al catàleg sense validació en ≥1 projecte real** — no entren hipòtesis.
 2. **Cap infraestructura sense consumidor real** — scripts, MCPs, resolvers: primer el cas, després l'eina.
 3. **El primer transplantament activa mínim, no màxim** — modularitat no és excusa per activar de més.
-4. **Fitxers del llavor escrits per a agent com a lector primari** (excepte README.md) — zero narrativa explicativa, tot instrucció operativa.
+4. **Fitxers dapunts-per-projectes-agentic escrits per a agent com a lector primari** (excepte README.md) — zero narrativa explicativa, tot instrucció operativa.
 5. **Dependències declarades i no invertibles** — cada servei declara de qui depèn; mai al revés.
 
 ### Disparadors específics d'aquest projecte
@@ -155,5 +155,5 @@ A més dels disparadors generals, convoca'm quan:
 ### Memòria arquitectònica
 
 Llegeix a l'inici de cada sessió:
-- `.claude/agent-memory/oracle/MODEL.md` — invariants i tensions actives del llavor
+- `.claude/agent-memory/oracle/MODEL.md` — invariants i tensions actives dapunts-per-projectes-agentic
 - `.claude/agent-memory/oracle/PREDICTIONS.md` — decisions preses amb predicció de conseqüències

@@ -94,7 +94,7 @@ data-analyst → viz-builder → analyst-senior ←→ researcher
    - Perfil de domini — `docs/perfil-<domini>.md` o equivalent
    - Memòria d'edicions — `<directori-analisi>/memoria-edicions.md` (crear buit si el projecte és recurrent)
 
-6. **Copiar scripts auxiliars** de `extras/scripts-python-viz/` del llavor:
+6. **Copiar scripts auxiliars** de `extras/scripts-python-viz/` dapunts-per-projectes-agentic:
    - `screenshot.py` — captura HTML → PNG via Playwright
    - `gen_html_echarts.py` — assembla HTML interactiu amb figures ECharts
    - `gen_pdf_md.py` — converteix Markdown a PDF via ReportLab
@@ -110,4 +110,4 @@ data-analyst → viz-builder → analyst-senior ←→ researcher
 - **`analyst-senior` usa Opus** — cada invocació és cara. Aplicar el test 3/3 (forma causal + canvia decisió + ≥2 fonts heterogènies).
 - **`viz-builder` no té memòria** — les plantilles del projecte (`assets/` o equivalent) són la font de veritat visual.
 - **El registre esperat** per al corrector ha de declarar-se al brief de cada informe.
-- Els scripts de generació (`screenshot.py`, `gen_html_echarts.py`, `gen_pdf_md.py`) viuen a `extras/scripts-python-viz/` del llavor — copiar i adaptar paths al projecte.
+- Els scripts de generació (`screenshot.py`, `gen_html_echarts.py`, `gen_pdf_md.py`) viuen a `extras/scripts-python-viz/` dapunts-per-projectes-agentic — copiar i adaptar paths al projecte.

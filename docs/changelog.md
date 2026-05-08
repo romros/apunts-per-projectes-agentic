@@ -1,4 +1,4 @@
-# Changelog del llavor
+# Changelog d'apunts-per-projectes-agentic
 
 Format de versió: [MAJOR.MINOR.PATCH](https://semver.org)
 - **PATCH**: correccions de text, claredat. Projectes existents poden ignorar-ho.
@@ -13,7 +13,7 @@ Per saber si el teu projecte té canvis pendents: compara el SHA del teu `CLAUDE
 
 **MAJOR** — Mode d'operació a plantilles, nous serveis destil·lats de laboratori_profes, processos millorats.
 
-### Trencador (llegir si el teu projecte ja usa el llavor)
+### Trencador (llegir si el teu projecte ja usa apunts-per-projectes-agentic)
 
 **`plantilles/CLAUDE.md`** — nova secció `## Mode d'operació` entre Calibratge operacional i Modes de prompt. Si el teu `CLAUDE.md` ve d'una versió anterior: el sistema continua funcionant en mode consultiu per defecte. Per adoptar la secció (recomanat):
 ```
@@ -47,7 +47,7 @@ Per activar mode automàtic: afegeix bloc "## Mode d'operació: AUTOMÀTIC" al C
 
 **YAML frontmatters** — `analisi-dades`, `dev`, `corrector-catala`: camps `name:` i `aporta_agents:` afegits per coherència.
 
-### Què fer si el teu projecte ja usa el llavor
+### Què fer si el teu projecte ja usa apunts-per-projectes-agentic
 
 **Obligatori si referencieu `serveis/okr/`:** actualitzar a `equips/okr/`.
 
@@ -82,7 +82,7 @@ Per activar mode automàtic: afegeix bloc "## Mode d'operació: AUTOMÀTIC" al C
 - `gen_html_echarts.py` — assembla HTML interactiu amb figures ECharts
 - `gen_pdf_md.py` — Markdown → PDF via ReportLab
 
-### Què fer si el teu projecte ja usa el llavor
+### Què fer si el teu projecte ja usa apunts-per-projectes-agentic
 
 Res obligatori. Addició pura.
 
@@ -103,11 +103,11 @@ Si uses `equips/editorial` en català:
 
 ### Afegit
 
-- **`FUNDATOR.md`** — governança del llavor: criteris de promoció de patrons, versionat semàntic, procés de destil·lació d'agents, gestió de tensions internes
-- **`.claude/agents/oracle.md`** — oracle operacional del llavor amb context propi
-- **`.claude/agent-memory/oracle/`** — MODEL.md, PREDICTIONS.md, WATCHLIST.md del llavor
-- **`.claude/agents/worker.md`** — worker intern del llavor (amb override: consulta FUNDATOR.md per governança)
-- **`.claude/agents/easy-worker.md`** — easy-worker intern del llavor
+- **`FUNDATOR.md`** — governança d'apunts-per-projectes-agentic: criteris de promoció de patrons, versionat semàntic, procés de destil·lació d'agents, gestió de tensions internes
+- **`.claude/agents/oracle.md`** — oracle operacional d'apunts-per-projectes-agentic amb context propi
+- **`.claude/agent-memory/oracle/`** — MODEL.md, PREDICTIONS.md, WATCHLIST.md d'apunts-per-projectes-agentic
+- **`.claude/agents/worker.md`** — worker intern d'apunts-per-projectes-agentic (amb override: consulta FUNDATOR.md per governança)
+- **`.claude/agents/easy-worker.md`** — easy-worker intern d'apunts-per-projectes-agentic
 
 ### Canviat
 
@@ -117,7 +117,7 @@ Si uses `equips/editorial` en català:
 - **`nucli/oracle.md`**: afegit `model: opus`
 - **`nucli/worker.md`**: afegit `model: sonnet`, `effort: medium`
 
-### Què fer si el teu projecte ja usa el llavor
+### Què fer si el teu projecte ja usa apunts-per-projectes-agentic
 
 **Oracle Gate**: si el teu projecte no té Oracle Gate instal·lat i el vols activar:
 ```bash
@@ -140,7 +140,7 @@ chmod +x .claude/hooks/*.sh
 
 - **`serveis/editorial/`** — Pipeline multi-agent per a publicació d'articles de blog: radar-web → ideator → investigador-web → redactor → corrector. Validat en producció a llista.cat.
 
-### Què fer si el teu projecte ja usa el llavor
+### Què fer si el teu projecte ja usa apunts-per-projectes-agentic
 
 Res obligatori. Si el teu projecte publica contingut editorial: llegeix `equips/editorial/MANIFEST.md`.
 

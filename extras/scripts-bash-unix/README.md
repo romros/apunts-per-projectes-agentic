@@ -2,7 +2,7 @@
 
 Scripts per a projectes que volen el pipeline de memòria automatitzat via cron.
 
-**No son el camí principal del llavor.** El Servei Memòria funciona sense scripts — els agents escriuen directament a `flash.jsonl` i el mem-curator consolida quan s'invoca.
+**No son el camí principal dapunts-per-projectes-agentic.** El Servei Memòria funciona sense scripts — els agents escriuen directament a `flash.jsonl` i el mem-curator consolida quan s'invoca.
 
 Aquests scripts son útils si:
 - El projecte corre en Linux/Mac

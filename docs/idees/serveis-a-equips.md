@@ -18,5 +18,5 @@ Abans de promoure: determinar si el canvi és cosmètic (renombrat) o conceptual
 ## Impacte estimat si es fa
 
 - `MANIFEST.md`, `WIZARD.md`, `CLAUDE.md`, `NORMES_GLOBALS.md` — totes les referències a "serveis"
-- Tots els projectes bootstrappejats amb el llavor actual haurien d'actualitzar les seves referències
+- Tots els projectes bootstrappejats amb apunts-per-projectes-agentic actual haurien d'actualitzar les seves referències
 - El WIZARD hauria d'incloure nota de migració

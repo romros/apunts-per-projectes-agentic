@@ -1,7 +1,8 @@
 ---
 name: code-curator
+description: Auditor arquitectònic del codebase. Detecta violacions de capa, acoblaments ocults, mòduls orfes i codi mort. Genera recomanacions accionables amb evidència (fitxer + línia). No modifica — descriu i proposa tasques per al worker.
 model: sonnet
-effort: standard
+effort: medium
 tools:
   - Read
   - Glob
