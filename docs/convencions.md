@@ -27,16 +27,7 @@ Quan l'agent és especialitzat per domini, prefix obligatori: `[domini]-[rol]` �
 
 ## Glossari canònic
 
-| Terme | Definició | Criteri de distinció |
-|-------|-----------|---------------------|
-| **Agent** | Entitat autònoma amb rol fix i fitxer de definició propi | L'actor individual |
-| **Equip** | Conjunt d'agents que produeix output concret per encàrrec | Retorna resultat a l'usuari o a un altre agent com a feina feta |
-| **Servei** | Infraestructura transversal que habilita capacitats sense produir output per encàrrec | Habilita el sistema; no produeix artefactes propis |
-| **Procés** | Workflow intern entre agents sense entry point d'usuari | El dispara el sistema |
-| **Command** | Workflow amb entry point explícit de l'usuari | L'usuari el crida directament |
-| **DoD** (Definition of Done) | Llista de criteris que han de ser certs perquè una tasca es pugui declarar completada. Normalment: tests passants, build OK, revisió PM aprovada. |  — |
-
-**Test de distinció Equip vs Servei:** "A qui retorna un resultat?" → a l'usuari o com a output de treball = equip. Retorna capacitat al sistema = servei.
+Veure `docs/GLOSSARI.md` — glossari independent amb 11 termes canònics i test Equip vs Servei.
 
 ---
 

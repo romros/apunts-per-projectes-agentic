@@ -25,7 +25,7 @@ Quan el cicle de treball actual ha conclòs i cal planificar el següent bloc d'
 4. Oracle valida l'arquitectura dels OKRs si hi ha decisions tècniques estructurals — (@oracle)
 5. Usuari confirma → PM genera els registres formals (OKRs, KRs, tasques) via el servei OKR — (@pm → @okr-curator)
 6. OKR-curator genera el document de roadmap dinàmic — (@okr-curator)
-7. PM defineix la primera tasca (procés `tasca-seguent` des del pas 2)
+7. PM defineix la primera tasca (command `commands/tasca-seguent.md`, des del pas 2)
 
 ## Condició de sortida
 
