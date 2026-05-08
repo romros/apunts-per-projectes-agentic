@@ -13,8 +13,10 @@ Amb la URL base, llegeix aquests fitxers en ordre:
 
 1. `NORMES_GLOBALS.md` — les 9 regles que copiaràs al projecte destí
 2. `MANIFEST.md` — catàleg de components disponibles i el seu estat
-3. `plantilles/CLAUDE.md` — esquelet per generar el CLAUDE.md destí
-4. `plantilles/AGENTS.md` — esquelet per generar l'AGENTS.md destí
+3. `GRAPH.md` — mapa complet d'agents (A01–A23), processos, commands i dependències entre components. **Font de veritat**: si MANIFEST.md i GRAPH.md discrepessin → GRAPH.md mana.
+4. `docs/GLOSSARI.md` — vocabulari canònic (Agent, Equip, Servei, Procés, Command, etc.)
+5. `plantilles/CLAUDE.md` — esquelet per generar el CLAUDE.md destí
+6. `plantilles/AGENTS.md` — esquelet per generar l'AGENTS.md destí
 
 Exemple d'URL per als fitxers de plantilles (substitueix la URL base):
 ```
@@ -72,6 +74,12 @@ Informa l'usuari del que activaràs per defecte:
 
 Pregunta de confirmació: "Confirmes que vols activar el nucli mínim i el Servei Memòria?"
 
+**Mode d'operació** (pregunta opcional aquí o al Pas 5):
+> "Per defecte, el sistema és **consultiu** — espera confirmació teva a cada pas rellevant.
+> Si prefereixes mode **automàtic** (l'agent executa decisions madurades sense validació pas a pas), puc activar-lo ara. Pots canviar-ho més endavant."
+
+Si l'usuari tria automàtic: afegeix el bloc `## Mode d'operació: AUTOMÀTIC` al CLAUDE.md generat (instruccions a `plantilles/CLAUDE.md`).
+
 ---
 
 ## Pas 4 — Serveis addicionals (només si el projecte els necessita)
@@ -80,10 +88,15 @@ Basant-te en la inspecció i la resposta del Pas 2, proposa **únicament** els s
 
 | Si has detectat... | Proposa |
 |--------------------|---------|
-| Objectius i roadmap definits | Servei OKR |
-| Molt volum de tasques paral·leles | Servei PM |
-| Codi i validació canònica | Servei Dev |
-| Documentació creixent | Servei Docs |
+| Objectius i roadmap definits | `equips/okr` |
+| Molt volum de tasques paral·leles | `equips/pm` |
+| Codi i validació canònica | `equips/dev` |
+| Documentació creixent | `serveis/docs` |
+| Codebase de producció per capes | `serveis/code-curator` |
+| Component UI/interfície | `serveis/ux-expert` |
+| Publicació d'articles o contingut editorial | `equips/editorial` |
+| Anàlisi de dades, SQL, gràfics o informes | `equips/analisi-dades` |
+| El projecte publica text en català | `serveis/corrector-catala` |
 
 **Servei meta — proposa sempre en aquests casos:**
 
