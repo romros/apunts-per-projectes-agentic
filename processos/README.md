@@ -33,5 +33,6 @@ Tot projecte agentic té dos tipus de workflows:
 | **Executar una tasca** | L'usuari proposa una tasca nova | `executar-tasca.md` |
 | **Tancar una tasca** | PM ha validat que l'evidència cobreix el DoD | `tancar-tasca.md` |
 | **Nou roadmap** | El roadmap actual és tancat i cal definir el següent | `nou-roadmap.md` |
+| **Gestió de deutes** | Worker o PM detecta un deute fora del scope de la tasca activa | `gestio-deutes.md` |
 
 Els workflows `tasca-seguent` i `revisa-opinio` han estat moguts a `commands/` perquè tenen entry point d'usuari.

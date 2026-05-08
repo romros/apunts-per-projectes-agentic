@@ -53,6 +53,15 @@ Actualitzar quan s'afegeixi o elimini un component.
 | CMD-001 | Inici de tasca següent | pm, dev-worker, okr-curator | Usuari dona go per tancar i obrir la següent | `commands/tasca-seguent.md` |
 | CMD-002 | Revisió d'opinió externa | pm, oracle, dev-worker | Arriba feedback extern sobre tasca en curs | `commands/revisa-opinio.md` |
 
+### Stubs arxivats a `processos/`
+
+Fitxers de redirecció que existeixen per coherència de referències anteriors. No contenen lògica — apunten al fitxer actiu.
+
+| Fitxer stub | Redirigit a | Data de moviment |
+|-------------|-------------|-----------------|
+| `processos/tasca-seguent.md` | `commands/tasca-seguent.md` | 2026-05-07 |
+| `processos/revisa-opinio.md` | `commands/revisa-opinio.md` | 2026-05-07 |
+
 ---
 
 ## Dependències entre components
@@ -112,7 +121,6 @@ graph TD
     GUI["serveis/guia-projectes-agentic"]
     COD["serveis/code-curator"]
     UX["serveis/ux-expert"]
-    CUL["serveis/cultura-agents\n(config, sense agent)"]
   end
 
   PM -->|requereix| OKR
