@@ -1,5 +1,7 @@
 # Catàleg de components
 
+> **Agent nou?** Comença per [`WIZARD.md`](WIZARD.md) — és l'entry point per bootstrapejar un projecte. Aquest fitxer és el catàleg de components.
+
 ## Nucli — Agents base
 
 Obligatori per a qualsevol projecte. Tres rols que no es poden fusionar:

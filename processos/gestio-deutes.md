@@ -1,7 +1,14 @@
 ---
 id: PROC-004
-equips: [pm, okr]
-disparador: qualsevol tasca detecta un deute que no pot resoldre en el seu propi scope
+resum: "Quan una tasca detecta un problema que no pot resoldre ara, el registra perquè no es perdi i el PM decideix quan atacar-lo."
+disparador: worker o PM detecta un deute fora del scope de la tasca activa
+agents: [pm, okr-curator, dev-worker]
+equips-serveis: [equips/pm, equips/okr]
+serveis-requerits: [serveis/memoria]
+cost-estimat:
+  rang-tokens: "8k–15k"
+  model-dominant: sonnet
+  factors: "7 passos distribuïts en 3 moments del cicle, cost baix per invocació individual"
 ---
 
 # Gestió de deutes tècnics

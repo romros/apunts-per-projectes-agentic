@@ -34,6 +34,7 @@ Quan l'agent és especialitzat per domini, prefix obligatori: `[domini]-[rol]` �
 | **Servei** | Infraestructura transversal que habilita capacitats sense produir output per encàrrec | Habilita el sistema; no produeix artefactes propis |
 | **Procés** | Workflow intern entre agents sense entry point d'usuari | El dispara el sistema |
 | **Command** | Workflow amb entry point explícit de l'usuari | L'usuari el crida directament |
+| **DoD** (Definition of Done) | Llista de criteris que han de ser certs perquè una tasca es pugui declarar completada. Normalment: tests passants, build OK, revisió PM aprovada. |  — |
 
 **Test de distinció Equip vs Servei:** "A qui retorna un resultat?" → a l'usuari o com a output de treball = equip. Retorna capacitat al sistema = servei.
 

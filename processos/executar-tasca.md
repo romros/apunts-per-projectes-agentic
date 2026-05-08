@@ -1,7 +1,14 @@
 ---
 id: PROC-001
-equips: [pm, dev, okr]
-disparador: l'usuari proposa una tasca nova o el sistema detecta la propera tasca del backlog
+resum: "El sistema verifica que el problema és real, el defineix formalment, l'executa i valida que el resultat compleix el que s'havia demanat."
+disparador: usuari proposa una tasca nova
+agents: [pm, dev-worker, okr-curator, easy-worker]
+equips-serveis: [equips/pm, equips/dev, equips/okr]
+serveis-requerits: [serveis/memoria]
+cost-estimat:
+  rang-tokens: "20k–50k"
+  model-dominant: sonnet
+  factors: "8 passos seqüencials, 3 agents (pm, dev-worker, okr-curator)"
 ---
 
 # Executar una tasca

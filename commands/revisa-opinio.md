@@ -1,7 +1,14 @@
 ---
 id: CMD-002
-equips: [pm, oracle, dev-worker]
-disparador: arriba feedback extern sobre una tasca en curs i cal avaluar-lo contrastant amb el codi real
+resum: "Quan arriba feedback extern, el sistema el contrasta amb el codi real i decideix punt per punt si s'incorpora o es descarta amb justificació."
+disparador: feedback extern sobre una tasca en curs
+agents: [pm, oracle, dev-worker]
+equips-serveis: [equips/pm, equips/dev]
+serveis-requerits: [serveis/memoria]
+cost-estimat:
+  rang-tokens: "20k–40k"
+  model-dominant: opus
+  factors: "6 passos, pm+oracle en paral·lel (latència reduïda, cost igual), dev-worker per patches mínims"
 ---
 
 # Revisar opinió externa

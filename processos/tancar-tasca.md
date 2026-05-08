@@ -1,7 +1,14 @@
 ---
 id: PROC-002
-equips: [pm, okr]
-disparador: PM ha validat que l'evidència cobreix el DoD de la tasca activa
+resum: "Es valida que la feina feta és correcta, es registra com a completada i s'actualitzen els objectius del projecte."
+disparador: PM ha validat que l'evidència cobreix el DoD
+agents: [pm, okr-curator, oracle, easy-worker]
+equips-serveis: [equips/pm, equips/okr]
+serveis-requerits: [serveis/memoria]
+cost-estimat:
+  rang-tokens: "15k–35k"
+  model-dominant: sonnet
+  factors: "6 passos, oracle condicional (+Opus si hi ha correccions o impacte arquitectònic)"
 ---
 
 # Tancar una tasca

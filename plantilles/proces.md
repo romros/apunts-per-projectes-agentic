@@ -1,15 +1,29 @@
 # Plantilla canònica de procés
 
-<!-- Convenció BPMN (ISO/IEC 19510):
-  - Nom del procés: [Objecte] + [verb nominalitzat] → "Gestió de deutes", "Tancament de tasca"
-  - Nom de cada pas: [Verb infinitiu] + [Objecte] → "Validar DoD", "Actualitzar KRs"
-  - Disparador: [Objecte] + [estat] → "DoD validat", "Tasca proposada"
+<!-- 
+CONVENCIÓ DE NOMS (BPMN ISO/IEC 19510):
+  Procés:     [Objecte] + [verb nominalitzat]  → "Gestió de deutes"
+  Pas/Tasca:  [Verb infinitiu] + [Objecte]     → "Validar DoD"
+  Disparador: [Objecte] + [estat]              → "DoD validat per PM"
+  Agent:      [domini-opcional]-[rol]          → "dev-worker", "pm"
+
+COST-ESTIMAT (ordre de magnitud):
+  Sonnet: ~2–5k tokens/invocació per agent
+  Opus:   ~6–15k tokens/invocació per agent (3× cost)
+  Suma els agents × invocacions per estimar el rang
 -->
 
 ---
-id: PROC-<NNN>
-equips: [<actor1>, <actor2>]
-disparador: <[Objecte] + [estat] — ex: "Tasca proposada per l'usuari">
+id: PROC-<NNN>          # PROC-NNN per processos interns, CMD-NNN per commands d'usuari
+resum: "<Una frase en llenguatge pla per a qualsevol persona. Sense @, sense sigles, sense vocabulari del framework.>"
+disparador: <[Objecte] + [estat] — ex: "DoD validat per PM", "Tasca proposada per l'usuari">
+agents: [<agent1>, <agent2>]        # IDs del GRAPH.md — agents que apareixen als passos
+equips-serveis: [<equip/servei1>]   # paths del GRAPH.md — on viuen els agents
+serveis-requerits: [<servei1>]      # serveis que han d'estar actius per a que funcioni
+cost-estimat:
+  rang-tokens: "<Xk–Yk>"
+  model-dominant: <sonnet|opus|haiku>
+  factors: "<N passos, agents involucrats, paral·lel/seqüencial, notes de cost>"
 ---
 
 # <Nom del procés — [Objecte] + [verb nominalitzat]>
@@ -17,14 +31,14 @@ disparador: <[Objecte] + [estat] — ex: "Tasca proposada per l'usuari">
 ## Quan s'usa
 
 <Context i precondicions. Màxim 3 frases.>
-<Si hi ha risc de confusió amb un altre procés, aclarir quan NO s'usa.>
+<Quan NO s'usa si hi ha risc de confusió amb un altre procés.>
 
 ## Passos
 
 1. <Verb infinitiu + objecte> — (<@actor>)
 2. <Verb infinitiu + objecte> — (<@actor>)
 3. <Verb infinitiu + objecte> — (<@actor>)
-   - Si <condició (gateway BPMN)>: <acció branca A>
+   - Si <condició (gateway)>: <acció branca A>
    - Si no: <acció branca B — o "tornar al pas N">
 
 ## Condició de sortida
@@ -34,4 +48,4 @@ disparador: <[Objecte] + [estat] — ex: "Tasca proposada per l'usuari">
 ## Notes *(opcional)*
 
 - <Restriccions operatives, toleràncies, excepcions documentades.>
-- <Referència a altres processos si aquest en dispara un altre.>
+- <Referència a altres processos si aquest en dispara un altre: "Continua amb PROC-002".>

@@ -79,7 +79,46 @@ Actualitzar quan s'afegeixi o elimini un component.
 | `serveis/memoria` | Sí — sempre | Tot projecte |
 | `serveis/docs` | No | Projectes amb documentació recurrent |
 | `serveis/corrector-catala` | No | Projectes que produeixen text en català |
-| `serveis/cultura-agents` | No | Quan es vol donar veu i personalitat als agents |
+| `serveis/cultura-agents` | No | Quan es vol donar veu i personalitat als agents *(sense agent dedicat — activa via fitxers de configuració)* |
 | `serveis/guia-projectes-agentic` | No | Quan el sistema agèntic ja porta camí i cal mantenir-lo |
 | `serveis/code-curator` | No | Projectes amb codebase de producció per capes |
 | `serveis/ux-expert` | No | Projectes amb component UI/interfície |
+
+---
+
+## Mapa visual
+
+```mermaid
+graph TD
+  subgraph nucli["Nucli"]
+    A01["orquestrador\nClaude principal"]
+    A02["worker"]
+    A03["easy-worker"]
+    A04["oracle (latent)"]
+  end
+
+  subgraph equips_grp["Equips"]
+    PM["equips/pm\npm"]
+    OKR["equips/okr\nokr-curator"]
+    DEV["equips/dev\ndev-worker"]
+    ANA["equips/analisi-dades\ndata-analyst · viz-builder\nanalyst-senior · researcher\nredactor-analisi"]
+    EDI["equips/editorial\nideator · radar-web\ninvestigador-web · redactor · corrector"]
+  end
+
+  subgraph serveis_grp["Serveis"]
+    MEM["serveis/memoria\nmem-curator"]
+    DOC["serveis/docs\ndoc-curator"]
+    CAT["serveis/corrector-catala\ncorrector-catala"]
+    GUI["serveis/guia-projectes-agentic"]
+    COD["serveis/code-curator"]
+    UX["serveis/ux-expert"]
+    CUL["serveis/cultura-agents\n(config, sense agent)"]
+  end
+
+  PM -->|requereix| OKR
+  DEV -->|requereix| MEM
+  ANA -->|requereix| CAT
+  EDI -->|recomanat| MEM
+  GUI -->|requereix| MEM
+  COD -->|requereix| MEM
+```

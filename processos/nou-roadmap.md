@@ -1,7 +1,14 @@
 ---
 id: PROC-003
-equips: [pm, oracle, okr-curator]
-disparador: el roadmap actual és tancat (o les tasques crítiques, DONE) i cal definir el següent
+resum: "Quan un cicle acaba, el sistema planifica el bloc d'objectius següent: defineix OKRs, els valida i prepara la primera tasca."
+disparador: roadmap actual tancat o tasques crítiques DONE
+agents: [pm, oracle, okr-curator]
+equips-serveis: [equips/pm, equips/okr]
+serveis-requerits: [serveis/memoria]
+cost-estimat:
+  rang-tokens: "30k–70k"
+  model-dominant: opus
+  factors: "7 passos, oracle obligatori per validació arquitectònica OKRs, planificació estratègica"
 ---
 
 # Nou roadmap

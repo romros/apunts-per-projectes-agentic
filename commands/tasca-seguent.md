@@ -1,7 +1,14 @@
 ---
 id: CMD-001
-equips: [pm, dev, okr]
-disparador: l'usuari dona el OK per tancar la tasca activa i obrir la següent
+resum: "Un sol moviment que tanca la tasca actual i obre la següent: registra la feina feta, identifica la propera prioritat i la presenta a l'usuari."
+disparador: usuari dona el go per tancar la tasca activa i obrir la següent
+agents: [pm, okr-curator, oracle, dev-worker]
+equips-serveis: [equips/pm, equips/okr, equips/dev]
+serveis-requerits: [serveis/memoria]
+cost-estimat:
+  rang-tokens: "30k–60k"
+  model-dominant: sonnet
+  factors: "7 passos (inclou PROC-002 complet), oracle per revisió nova tasca"
 ---
 
 # Tasca següent
